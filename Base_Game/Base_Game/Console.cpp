@@ -1,5 +1,6 @@
 #include "Console.h"
 
+
 void SetConsoleSettings(int _width, int _height, bool _isFullscreen, const std::wstring& _title)
 {
 	// 제목 설정
