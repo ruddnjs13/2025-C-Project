@@ -34,10 +34,31 @@
     <ClCompile Include="Core.cpp">
       <Filter>01. Core</Filter>
     </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>06. Module</Filter>
+    </ClCompile>
+    <ClCompile Include="Mci.cpp">
+      <Filter>06. Module</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyController.cpp">
+      <Filter>06. Module</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
       <Filter>01. Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>06. Module</Filter>
+    </ClInclude>
+    <ClInclude Include="Mci.h">
+      <Filter>06. Module</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyController.h">
+      <Filter>06. Module</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>99. Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
