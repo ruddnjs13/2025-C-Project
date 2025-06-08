@@ -26,6 +26,9 @@
     <Filter Include="99. Headers">
       <UniqueIdentifier>{c36e3b24-fff5-49e8-aa46-24d3f6112c2a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Object\Player">
+      <UniqueIdentifier>{fd971ca3-2769-41d5-a213-4a8e5290be0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -43,6 +46,9 @@
     <ClCompile Include="KeyController.cpp">
       <Filter>06. Module</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03. Object\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -59,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="Enums.h">
       <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03. Object\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
