@@ -58,7 +58,7 @@ bool InitAllSounds()
 
         // 디바이스 종류 판단         // C스타일: wcs1에서 wcs2의 첫번째 표시를 찾는다.
         //LPCWSTR devType = (wcsstr(it->path.c_str(), L".mp3") != NULL) 
-        //bool isMpeg = it->path.ends_with(L".mp3");
+        bool isMpeg = it->path.ends_with(L".mp3");
         LPCWSTR devType = isMpeg // C++20: 주어진 부분 문자열로 끝나는지 검사
             ? TEXT("mpegvideo")
             : TEXT("waveaudio");
