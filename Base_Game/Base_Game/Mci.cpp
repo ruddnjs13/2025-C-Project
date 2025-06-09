@@ -3,6 +3,7 @@
 #include<Digitalv.h>;
 #include"Console.h";
 #include <vector>;
+#pragma comment(lib, "winmm.lib")
 
 static std::vector<SoundEntry> SoundTable =
 {
