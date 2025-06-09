@@ -16,10 +16,11 @@ void Core::Run()
 
 void Core::Update()
 {
+	Gotoxy(0, 0);
 	PlayerUpdate(gameMap, &player);
 }
 
 void Core::Render()
 {
-	PlayerRender('¢Ò', &player);
+	PlayerRender('¢Á', &player);
 }
