@@ -1,4 +1,7 @@
+#include "Console.h"
 #pragma once
+
+
 class Core
 {
 public:
@@ -7,6 +10,7 @@ private:
 	void Update();
 	void Render();
 };
+
 
 
 
