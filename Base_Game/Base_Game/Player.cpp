@@ -3,10 +3,12 @@
 #include "Enums.h"
 #include "KeyController.h"
 using std::cout;
+using std::cout;
 
 void PlayerInit(PPLAYER pPlayer)
 {
 	pPlayer->position.tStartPos = { 1, 1 };
+	pPlayer->position.tPos = pPlayer->position.tStartPos;
 }
 
 void PlayerUpdate(char _gameMap[40][40], PPLAYER _pPlayer)
@@ -16,9 +18,16 @@ void PlayerUpdate(char _gameMap[40][40], PPLAYER _pPlayer)
 
 void PlayerRender(char player, PPLAYER pPlayer)
 {
-	if (pPlayer->position.tPos.x == 1 &&
-		pPlayer->position.tPos.y == 1)
-		cout << player;
+
+	for (int i = 0; i < 40; ++i)
+	{
+		for (int j = 0; j < 40; ++j)
+		{
+			if (pPlayer->position.tPos.x == j &&
+				pPlayer->position.tPos.y == i)
+				cout << player;
+		}
+	}
 }
 
 void HandleInput(char _gameMap[40][40], PPLAYER _pPlayer)
@@ -38,9 +47,6 @@ void HandleInput(char _gameMap[40][40], PPLAYER _pPlayer)
 		break;
 	case Key::RIGHT:
 		++_pPlayer->position.tNewPos.x;
-		break;
-	case Key::SPACE: // ÆøÅº
-		//SpawnBomb(_gameMap, _pPlayer, vecBomb);
 		break;
 	}
 	/*_pPlayer->position.tNewPos.x =
