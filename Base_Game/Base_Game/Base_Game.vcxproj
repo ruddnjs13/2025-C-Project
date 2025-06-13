@@ -136,6 +136,7 @@
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="Mci.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
@@ -145,6 +146,9 @@
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="Mci.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RenderObject.cpp" />
+    <ClCompile Include="SceneData.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

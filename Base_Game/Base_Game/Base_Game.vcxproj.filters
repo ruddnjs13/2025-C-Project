@@ -49,6 +49,18 @@
     <ClCompile Include="Player.cpp">
       <Filter>03. Object\Player</Filter>
     </ClCompile>
+    <ClCompile Include="RenderObject.cpp">
+      <Filter>03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneData.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -68,6 +80,12 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>03. Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>04. Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
