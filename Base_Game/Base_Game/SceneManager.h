@@ -6,11 +6,9 @@ const int MAP_HEIGHT = 40;
 const int MAP_WIDTH = 41;
 
 
-
 class SceneData
 {
 public:
-	PPLAYER pPlayer;
 	char gameMap[MAP_HEIGHT][MAP_WIDTH];
 	Player player;
 	//Map map;
