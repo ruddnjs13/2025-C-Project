@@ -3,61 +3,62 @@
 
 Player::Player()
 {
-	position.tStartPos = { 0, 0 };
-	position.tPos = position.tStartPos;
+	
 }
 
+void Player::PlayerInit()
+{
+	pPlayer->position.tStartPos = { 1, 1 };
+	pPlayer->position.tPos = pPlayer->position.tStartPos;
 
-void Player::PlayerUpdate(char _gameMap[40][41])
+}
+
+void Player::PlayerUpdate(char _gameMap[40][40])
 {
 	HandleInput(_gameMap);
 }
 
-void Player::PlayerRender(string player)
+void Player::PlayerRender(char player)
 {
-	system("cls");
 	for (int i = 0; i < 40; ++i)
 	{
-		for (int j = 0; j < 41; ++j)
+		for (int j = 0; j < 40; ++j)
 		{
-			if (position.tPos.x == j &&
-				position.tPos.y == i) {
-				Gotoxy(j, i);
+			if (pPlayer->position.tPos.x == j &&
+				pPlayer->position.tPos.y == i)
 				cout << player;
-			}
 		}
 	}
 }
 
-void Player::HandleInput(char _gameMap[40][41])
+void Player::HandleInput(char _gameMap[40][40])
 {
-	position.tNewPos = position.tPos;
+	pPlayer->position.tNewPos = pPlayer->position.tPos;
 	Key eKey = KeyController();
 	switch (eKey)
 	{
 	case Key::UP:
-		--position.tNewPos.y;
+		--pPlayer->position.tNewPos.y;
 		break;
 	case Key::DOWN:
-		++position.tNewPos.y;
+		++pPlayer->position.tNewPos.y;
 		break;
 	case Key::LEFT:
-		--position.tNewPos.x;
+		--pPlayer->position.tNewPos.x;
 		break;
 	case Key::RIGHT:
-		++position.tNewPos.x;
+		++pPlayer->position.tNewPos.x;
 		break;
 	}
+	/*_pPlayer->position.tNewPos.x =
+		std::clamp(_pPlayer->position.tNewPos.x, 0, MAP_WIDTH - 2);
+	_pPlayer->position.tNewPos.y =
+		std::clamp(_pPlayer->position.tNewPos.y, 0, MAP_HEIGHT - 1);
 
-
-	position.tNewPos.x =
-		std::clamp(position.tNewPos.x, 0, 41 - 2);
-	position.tNewPos.y =
-		std::clamp(position.tNewPos.y, 0, 40 - 1);
-
-	if (_gameMap[position.tNewPos.y][position.tNewPos.x]
+	if (_gameMap[_pPlayer->position.tNewPos.y][_pPlayer->position.tNewPos.x]
 		!= (char)Tile::WALL)
-		position.tPos = position.tNewPos;
+		_pPlayer->position.tPos = _pPlayer->position.tNewPos;*/
+	pPlayer->position.tPos = pPlayer->position.tNewPos;
 }
 
 Player::~Player()

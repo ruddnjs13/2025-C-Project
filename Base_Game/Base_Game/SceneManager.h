@@ -1,24 +1,19 @@
-#pragma once
+#include "MapManager.h"
 #include "Player.h"
-#include "Map.h"
 
-const int MAP_HEIGHT = 40;
-const int MAP_WIDTH = 41;
+#pragma once
 
 
 class SceneData
 {
 public:
+	PPLAYER pPlayer;
 	char gameMap[MAP_HEIGHT][MAP_WIDTH];
-	Player player;
-	//Map map;
 
-	SceneData(Player _player, char _gameMap[MAP_HEIGHT][MAP_WIDTH])
-		: player(_player), gameMap(_gameMap[MAP_HEIGHT][MAP_WIDTH])
+	SceneData(PPLAYER _player, char _gameMap[MAP_HEIGHT][MAP_WIDTH])
+		: pPlayer(_player), gameMap(_gameMap[MAP_HEIGHT][MAP_WIDTH])
 	{
 	}
-public:
-	void Render();
 };
 
 
