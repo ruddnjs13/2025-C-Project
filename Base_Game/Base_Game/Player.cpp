@@ -1,24 +1,25 @@
-#include<iostream>
 #include "Player.h"
-#include "Enums.h"
-#include "KeyController.h"
-using std::cout;
-using std::cout;
 
-void PlayerInit(PPLAYER pPlayer)
+
+Player::Player()
+{
+	
+}
+
+void Player::PlayerInit()
 {
 	pPlayer->position.tStartPos = { 1, 1 };
 	pPlayer->position.tPos = pPlayer->position.tStartPos;
+
 }
 
-void PlayerUpdate(char _gameMap[40][40], PPLAYER _pPlayer)
+void Player::PlayerUpdate(char _gameMap[40][40])
 {
-	HandleInput(_gameMap,_pPlayer);
+	HandleInput(_gameMap);
 }
 
-void PlayerRender(char player, PPLAYER pPlayer)
+void Player::PlayerRender(char player)
 {
-
 	for (int i = 0; i < 40; ++i)
 	{
 		for (int j = 0; j < 40; ++j)
@@ -30,23 +31,23 @@ void PlayerRender(char player, PPLAYER pPlayer)
 	}
 }
 
-void HandleInput(char _gameMap[40][40], PPLAYER _pPlayer)
+void Player::HandleInput(char _gameMap[40][40])
 {
-	_pPlayer->position.tNewPos = _pPlayer->position.tPos;
+	pPlayer->position.tNewPos = pPlayer->position.tPos;
 	Key eKey = KeyController();
 	switch (eKey)
 	{
 	case Key::UP:
-		--_pPlayer->position.tNewPos.y;
+		--pPlayer->position.tNewPos.y;
 		break;
 	case Key::DOWN:
-		++_pPlayer->position.tNewPos.y;
+		++pPlayer->position.tNewPos.y;
 		break;
 	case Key::LEFT:
-		--_pPlayer->position.tNewPos.x;
+		--pPlayer->position.tNewPos.x;
 		break;
 	case Key::RIGHT:
-		++_pPlayer->position.tNewPos.x;
+		++pPlayer->position.tNewPos.x;
 		break;
 	}
 	/*_pPlayer->position.tNewPos.x =
@@ -57,5 +58,10 @@ void HandleInput(char _gameMap[40][40], PPLAYER _pPlayer)
 	if (_gameMap[_pPlayer->position.tNewPos.y][_pPlayer->position.tNewPos.x]
 		!= (char)Tile::WALL)
 		_pPlayer->position.tPos = _pPlayer->position.tNewPos;*/
+	pPlayer->position.tPos = pPlayer->position.tNewPos;
+}
 
+Player::~Player()
+{
+	cout << "¼Ò¸êÇÒ°Ô";
 }

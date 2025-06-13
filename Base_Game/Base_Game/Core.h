@@ -1,5 +1,6 @@
-#include "Console.h"
 #pragma once
+#include "Console.h"
+#include "Player.h"
 
 
 class Core
@@ -9,6 +10,7 @@ public:
 private:
 	void Update();
 	void Render();
+	Player player;
 };
 
 
