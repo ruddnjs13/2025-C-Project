@@ -1,11 +1,9 @@
 #include "Core.h"
-#include "Player.h"
 
-PLAYER player = {};
-char gameMap[40][40] = {};
 void Core::Run()
 {
-	PlayerInit(&player);
+	player.PlayerInit();
+
 	while (true)
 	{
 		Update();
@@ -16,11 +14,10 @@ void Core::Run()
 
 void Core::Update()
 {
-	Gotoxy(0, 0);
-	PlayerUpdate(gameMap, &player);
+	//player.PlayerUpdate();
 }
 
 void Core::Render()
 {
-	PlayerRender('¢Á', &player);
+	player.PlayerRender('$');
 }
