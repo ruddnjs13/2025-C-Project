@@ -1,10 +1,10 @@
 #pragma once
 #include<iostream>
 #include<algorithm>
-#include "Player.h"
 #include "Console.h"
 #include "Enums.h"
 #include "KeyController.h"
+#include "Player.h"
 
 using std::cin;
 using std::cout;
@@ -37,6 +37,8 @@ class Player
 public:
 	Player();
 	PLAYERPOS position{};    // 위치 정보
+
+	void PlayerInit();
 
 	void PlayerUpdate(char _gameMap[40][41]);
 
