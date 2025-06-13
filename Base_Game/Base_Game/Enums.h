@@ -17,6 +17,4 @@ enum class Scene
 enum class Tile
 {
 	WALL = '0', ROAD, START, GOAL,
-	BOMB,FLASH_BOMB, EXTRA_BOMB,
-	SLIME, PUSH, END
 };

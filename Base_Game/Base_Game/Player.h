@@ -28,7 +28,7 @@ typedef struct _tagplayerpos
 typedef struct _tagplayer
 {
 	PLAYERPOS position;    // 위치 정보
-} PLAYER, * PPLAYER;
+} Player, * PPLAYER;
 
 class Player
 {

@@ -1,8 +1,12 @@
 #include "Core.h"
+#include "SceneManager.h"
 
 void Core::Run()
 {
-	player.PlayerInit();
+	//player.PlayerInit();
+	SceneManager::GetInstance()->sceneData.map
+		.LoadStage(SceneManager::GetInstance()->sceneData.gameMap);
+
 
 	while (true)
 	{
@@ -20,4 +24,5 @@ void Core::Update()
 void Core::Render()
 {
 	player.PlayerRender('$');
+	SceneManager::GetInstance()->sceneData.Render();
 }
