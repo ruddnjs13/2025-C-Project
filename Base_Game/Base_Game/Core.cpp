@@ -5,6 +5,7 @@ PLAYER player = {};
 char gameMap[40][40] = {};
 void Core::Run()
 {
+	//player.init();
 	PlayerInit(&player);
 	while (true)
 	{
