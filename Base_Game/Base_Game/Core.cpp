@@ -1,23 +1,23 @@
 #include "Core.h"
-
+char gameMap[40][41]{};
 void Core::Run()
 {
-	player.PlayerInit();
 
 	while (true)
 	{
 		Update();
+		Gotoxy(0, 0);
 		Render();
-		FrameSync(30);
+		FrameSync(60);
 	}
 }
 
 void Core::Update()
 {
-	//player.PlayerUpdate();
+	player.PlayerUpdate(gameMap);
 }
 
 void Core::Render()
 {
-	player.PlayerRender('$');
+	player.PlayerRender("¡×");
 }
