@@ -5,6 +5,6 @@ SceneManager* SceneManager::Instance = nullptr;
 void SceneData::Render()
 {
 	//player.PlayerRender()
-	map.MapRender(gameMap);
+	//map.MapRender(gameMap);
 
 }
