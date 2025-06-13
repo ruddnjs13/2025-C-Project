@@ -1,9 +1,11 @@
 #pragma once
 #include<iostream>
+#include<algorithm>
 #include "Player.h"
 #include "Console.h"
 #include "Enums.h"
 #include "KeyController.h"
+
 using std::cin;
 using std::cout;
 typedef struct _pos
@@ -34,14 +36,13 @@ class Player
 {
 public:
 	Player();
-	PPLAYER pPlayer;
-	void PlayerInit();
+	PLAYERPOS position{};    // 위치 정보
 
-	void PlayerUpdate(char _gameMap[40][40]);
+	void PlayerUpdate(char _gameMap[40][41]);
 
-	void PlayerRender(char player);
+	void PlayerRender(string player);
 
-	void HandleInput(char _gameMap[40][40]);
+	void HandleInput(char _gameMap[40][41]);
 	~Player();
 };
 

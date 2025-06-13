@@ -1,28 +1,23 @@
 #include "Core.h"
-#include "SceneManager.h"
-
+char gameMap[40][41]{};
 void Core::Run()
 {
-	//player.PlayerInit();
-	SceneManager::GetInstance()->sceneData.map
-		.LoadStage(SceneManager::GetInstance()->sceneData.gameMap);
-
 
 	while (true)
 	{
 		Update();
+		Gotoxy(0, 0);
 		Render();
-		FrameSync(30);
+		FrameSync(60);
 	}
 }
 
 void Core::Update()
 {
-	//player.PlayerUpdate();
+	player.PlayerUpdate(gameMap);
 }
 
 void Core::Render()
 {
-	player.PlayerRender('$');
-	SceneManager::GetInstance()->sceneData.Render();
+	player.PlayerRender("¡×");
 }
