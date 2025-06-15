@@ -2,7 +2,7 @@
 char gameMap[40][41]{};
 void Core::Run()
 {
-
+	player.PlayerInit();
 	while (true)
 	{
 		Update();

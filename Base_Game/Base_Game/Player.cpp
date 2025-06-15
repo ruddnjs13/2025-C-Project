@@ -1,12 +1,15 @@
 #include "Player.h"
-
-
 Player::Player()
+	:position{}
+{
+}
+
+
+void Player::PlayerInit()
 {
 	position.tStartPos = { 0, 0 };
 	position.tPos = position.tStartPos;
 }
-
 
 void Player::PlayerUpdate(char _gameMap[40][41])
 {
@@ -15,7 +18,6 @@ void Player::PlayerUpdate(char _gameMap[40][41])
 
 void Player::PlayerRender(string player)
 {
-	system("cls");
 	for (int i = 0; i < 40; ++i)
 	{
 		for (int j = 0; j < 41; ++j)
