@@ -1,64 +1,65 @@
 #include "Player.h"
-
-
 Player::Player()
+	:position{}
 {
-	
 }
+
 
 void Player::PlayerInit()
 {
-	pPlayer->position.tStartPos = { 1, 1 };
-	pPlayer->position.tPos = pPlayer->position.tStartPos;
-
+	position.tStartPos = { 0, 0 };
+	position.tPos = position.tStartPos;
 }
 
-void Player::PlayerUpdate(char _gameMap[40][40])
+void Player::PlayerUpdate(char _gameMap[40][41])
 {
 	HandleInput(_gameMap);
 }
 
-void Player::PlayerRender(char player)
+void Player::PlayerRender(string player)
 {
 	for (int i = 0; i < 40; ++i)
 	{
-		for (int j = 0; j < 40; ++j)
+		for (int j = 0; j < 41; ++j)
 		{
-			if (pPlayer->position.tPos.x == j &&
-				pPlayer->position.tPos.y == i)
+			if (position.tPos.x == j &&
+				position.tPos.y == i) {
+				Gotoxy(j, i);
 				cout << player;
+			}
 		}
 	}
 }
 
-void Player::HandleInput(char _gameMap[40][40])
+void Player::HandleInput(char _gameMap[40][41])
 {
-	pPlayer->position.tNewPos = pPlayer->position.tPos;
+	position.tNewPos = position.tPos;
 	Key eKey = KeyController();
 	switch (eKey)
 	{
 	case Key::UP:
-		--pPlayer->position.tNewPos.y;
+		--position.tNewPos.y;
 		break;
 	case Key::DOWN:
-		++pPlayer->position.tNewPos.y;
+		++position.tNewPos.y;
 		break;
 	case Key::LEFT:
-		--pPlayer->position.tNewPos.x;
+		--position.tNewPos.x;
 		break;
 	case Key::RIGHT:
-		++pPlayer->position.tNewPos.x;
+		++position.tNewPos.x;
 		break;
 	}
-	/*_pPlayer->position.tNewPos.x =
-		std::clamp(_pPlayer->position.tNewPos.x, 0, MAP_WIDTH - 2);
-	_pPlayer->position.tNewPos.y =
-		std::clamp(_pPlayer->position.tNewPos.y, 0, MAP_HEIGHT - 1);
 
-	if (_gameMap[_pPlayer->position.tNewPos.y][_pPlayer->position.tNewPos.x]
+
+	position.tNewPos.x =
+		std::clamp(position.tNewPos.x, 0, 41 - 2);
+	position.tNewPos.y =
+		std::clamp(position.tNewPos.y, 0, 40 - 1);
+
+	if (_gameMap[position.tNewPos.y][position.tNewPos.x]
 		!= (char)Tile::WALL)
-		_pPlayer->position.tPos = _pPlayer->position.tNewPos;*/
-	pPlayer->position.tPos = pPlayer->position.tNewPos;
+		position.tPos = position.tNewPos;
 }
 
 Player::~Player()
