@@ -1,8 +1,20 @@
 #include "Core.h"
-char gameMap[40][41]{};
+
+Core::Core()
+	: isRunning(true)
+	, player(nullptr)
+	,map(nullptr)
+{
+	player = new Player;
+	map = new Map;
+}
+Core::~Core()
+{
+}
+
 void Core::Run()
 {
-	player.PlayerInit();
+	Init();
 	while (true)
 	{
 		Update();
@@ -12,12 +24,22 @@ void Core::Run()
 	}
 }
 
+void Core::Init()
+{
+	SetConsoleSettings(1000, 1000, false, L"Game");
+	SetLockResize();
+	SetCursorVisual(false,50);
+	map->LoadStage(map->gameMap);
+	player->PlayerInit();
+}
+
 void Core::Update()
 {
-	player.PlayerUpdate(gameMap);
+	player->PlayerUpdate(map->gameMap);
 }
 
 void Core::Render()
 {
-	player.PlayerRender("¡×");
+	map->MapRender(map->gameMap, player);
+	player->PlayerRender("¢Â");
 }

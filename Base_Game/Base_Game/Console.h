@@ -1,14 +1,11 @@
 #pragma once
 #include<iostream>
-//using namespace std;
 using std::cout;
 using std::wcout;
 using std::endl;
 #include<string>
 using std::string;
 using std::wstring;
-//#include<vector>
-//using std::vector;
 #include<Windows.h>
 
 void SetConsoleSettings(int _width, int _height, bool _isFullscreen, const std::wstring& _title);

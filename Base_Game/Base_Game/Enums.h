@@ -16,5 +16,10 @@ enum class Scene
 
 enum class Tile
 {
-	WALL = '0', ROAD, START, GOAL,
+	WALL = '0', ROAD = '1', START, GOAL
+};
+
+enum class GimickTile
+{
+	A= 65, Z = 90, ENTER = 93
 };
