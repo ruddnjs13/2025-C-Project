@@ -16,7 +16,12 @@ enum class Scene
 
 enum class Tile
 {
-	WALL = '0', ROAD, START, GOAL
+	WALL = '0', ROAD
+};
+
+enum class ColorGimickTile
+{
+	Red = '2', Green, Blue, Yellow, White, Black, Gray, Mint
 };
 
 enum class GimickTile
