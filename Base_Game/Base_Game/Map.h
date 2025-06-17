@@ -1,8 +1,15 @@
 #pragma once
-#include "SceneManager.h"
+
+const int MAP_HEIGHT = 40;
+const int MAP_WIDTH = 41;
+
 #include "Console.h"
 #include <fstream>
+#include "Enums.h"
+#include "Player.h"
 class Player;
+
+
 
 class Map
 {

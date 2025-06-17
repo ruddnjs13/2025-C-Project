@@ -2,13 +2,12 @@
 #include<iostream>
 #include<algorithm>
 #include "Console.h"
-#include "Enums.h"
 #include "KeyController.h"
-#include "Player.h"
 #include "Map.h"
 
 using std::cin;
 using std::cout;
+
 typedef struct _pos
 {
 	int x;
