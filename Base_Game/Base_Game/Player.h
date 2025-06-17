@@ -39,6 +39,7 @@ public:
 	Player();
 	PLAYERPOS position{};    // 위치 정보
 	char alphabet = ' ';
+	char colorGimickTile;
 	void PlayerInit();
 
 	void PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
