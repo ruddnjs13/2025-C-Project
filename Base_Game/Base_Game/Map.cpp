@@ -33,6 +33,40 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 				cout << "  ";
 			else if (IsAlphabet(gameMap[i][j]))
 				cout << ' ' << gameMap[i][j];
+			else if (IsColor(gameMap[i][j]))
+			{
+				switch (gameMap[i][j])
+				{
+				case (char)ColorGimickTile::Red:
+					SetColor(COLOR::RED);
+					break;
+				case (char)ColorGimickTile::Green:
+					SetColor(COLOR::GREEN);
+					break;
+				case (char)ColorGimickTile::Blue:
+					SetColor(COLOR::BLUE);
+					break;
+				case (char)ColorGimickTile::Yellow:
+					SetColor(COLOR::YELLOW);
+					break;
+				case (char)ColorGimickTile::White:
+					SetColor(COLOR::WHITE);
+					break;
+				case (char)ColorGimickTile::Black:
+					SetColor(COLOR::BLACK);
+					break;
+				case (char)ColorGimickTile::Gray:
+					SetColor(COLOR::GRAY);
+					break;
+				case (char)ColorGimickTile::Mint:
+					SetColor(COLOR::MINT);
+					break;
+				default:
+					SetColor();
+				}
+				cout << "бс";
+				SetColor(COLOR::WHITE);
+			}
 			else
 				cout << ' ' << gameMap[i][j];
 		}
@@ -44,6 +78,15 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 bool Map::IsAlphabet(char target)
 {
 	if (target >= (int)GimickTile::A && target <= (int)GimickTile::Z)
+		return true;
+	return false;
+}
+
+bool Map::IsColor(char target)
+{
+	if (target >= (int)ColorGimickTile::Red && target <= (int)ColorGimickTile::Mint)
+		return true;
+	if (target == (char)ColorGimickTile::ENTER)
 		return true;
 	return false;
 }
