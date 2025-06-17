@@ -5,6 +5,7 @@
 #include "Enums.h"
 #include "KeyController.h"
 #include "Player.h"
+#include "Map.h"
 
 using std::cin;
 using std::cout;
@@ -40,11 +41,11 @@ public:
 
 	void PlayerInit();
 
-	void PlayerUpdate(char _gameMap[40][41]);
+	void PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 
 	void PlayerRender(string player);
 
-	void HandleInput(char _gameMap[40][41]);
+	void HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	
 	void Select();
 	~Player();

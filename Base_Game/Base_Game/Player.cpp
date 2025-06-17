@@ -7,31 +7,31 @@ Player::Player()
 
 void Player::PlayerInit()
 {
-	position.tStartPos = { 0, 0 };
+	position.tStartPos = { 5, 5 };
 	position.tPos = position.tStartPos;
 }
 
-void Player::PlayerUpdate(char _gameMap[40][41])
+void Player::PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
-	HandleInput(_gameMap);
+	HandleInput(gameMap);
 }
 
 void Player::PlayerRender(string player)
 {
-	for (int i = 0; i < 40; ++i)
+	for (int i = 0; i < MAP_HEIGHT; ++i)
 	{
-		for (int j = 0; j < 41; ++j)
+		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
 			if (position.tPos.x == j &&
 				position.tPos.y == i) {
-				Gotoxy(j, i);
+				Gotoxy(j*2, i);
 				cout << player;
 			}
 		}
 	}
 }
 
-void Player::HandleInput(char _gameMap[40][41])
+void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
 	position.tNewPos = position.tPos;
 	Key eKey = KeyController();
@@ -55,11 +55,11 @@ void Player::HandleInput(char _gameMap[40][41])
 
 
 	position.tNewPos.x =
-		std::clamp(position.tNewPos.x, 0, 41 - 2);
+		std::clamp(position.tNewPos.x, 0, MAP_HEIGHT - 2);
 	position.tNewPos.y =
-		std::clamp(position.tNewPos.y, 0, 40 - 1);
+		std::clamp(position.tNewPos.y, 0, MAP_WIDTH - 1);
 
-	if (_gameMap[position.tNewPos.y][position.tNewPos.x]
+	if (gameMap[position.tNewPos.y][position.tNewPos.x]
 		!= (char)Tile::WALL)
 		position.tPos = position.tNewPos;
 }
