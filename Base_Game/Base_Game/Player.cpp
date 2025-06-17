@@ -71,7 +71,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	{
 		alphabet = gameMap[position.tPos.y][position.tPos.x];
 	}
-	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Black &&
+	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
 		gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)
 	{
 		colorGimickTile = gameMap[position.tPos.y][position.tPos.x];

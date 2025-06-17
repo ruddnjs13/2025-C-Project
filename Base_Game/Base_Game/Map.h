@@ -1,7 +1,7 @@
 #pragma once
 
-const int MAP_HEIGHT = 40;
-const int MAP_WIDTH = 41;
+const int MAP_HEIGHT = 25;
+const int MAP_WIDTH = 26;
 
 #include "Console.h"
 #include <fstream>
