@@ -49,7 +49,7 @@ void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	case Key::RIGHT:
 		++position.tNewPos.x;
 	case Key::SPACE:
-		Select();
+		Select(gameMap);
 		break;
 	}
 
@@ -64,8 +64,13 @@ void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		position.tPos = position.tNewPos;
 }
 
-void Player::Select()
+void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
+	if (gameMap[position.tPos.y][position.tPos.x] >= (int)GimickTile::A &&
+		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
+	{
+		alphabet = gameMap[position.tPos.y][position.tPos.x];
+	}
 }
 
 Player::~Player()
