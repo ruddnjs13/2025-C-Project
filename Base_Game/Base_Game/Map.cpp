@@ -52,9 +52,6 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 				case (char)ColorGimickTile::White:
 					SetColor(COLOR::WHITE);
 					break;
-				case (char)ColorGimickTile::Black:
-					SetColor(COLOR::BLACK);
-					break;
 				case (char)ColorGimickTile::Gray:
 					SetColor(COLOR::GRAY);
 					break;
@@ -64,7 +61,7 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 				default:
 					SetColor();
 				}
-				cout << "бс";
+				cout << "б▄";
 				SetColor(COLOR::WHITE);
 			}
 			else
