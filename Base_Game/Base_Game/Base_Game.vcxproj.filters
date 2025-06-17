@@ -32,6 +32,9 @@
     <Filter Include="03. Object\Map">
       <UniqueIdentifier>{8a2186e3-55b4-44c7-8266-5640c898d3ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Object\Gimmick">
+      <UniqueIdentifier>{db107c6e-c834-4d86-be14-f28c58a7e0d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -56,7 +59,10 @@
       <Filter>03. Object\Map</Filter>
     </ClCompile>
     <ClCompile Include="GimmickBase.cpp">
-      <Filter>03. Object</Filter>
+      <Filter>03. Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="WordGimmick.cpp">
+      <Filter>03. Object\Gimmick</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +88,10 @@
       <Filter>03. Object\Map</Filter>
     </ClInclude>
     <ClInclude Include="GimmickBase.h">
-      <Filter>03. Object</Filter>
+      <Filter>03. Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="WordGimmick.h">
+      <Filter>03. Object\Gimmick</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

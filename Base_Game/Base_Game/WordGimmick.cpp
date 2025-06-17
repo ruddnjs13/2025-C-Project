@@ -6,4 +6,5 @@ void WordGimmick::Interact(char btnType)
 
 void WordGimmick::GimmickRender()
 {
+
 }
