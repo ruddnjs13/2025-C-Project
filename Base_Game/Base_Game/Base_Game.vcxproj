@@ -137,6 +137,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Mci.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="WordGimmick.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Mci.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="WordGimmick.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
