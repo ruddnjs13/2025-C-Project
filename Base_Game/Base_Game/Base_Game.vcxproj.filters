@@ -29,9 +29,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="03. Object\Gimmick">
-      <UniqueIdentifier>{a5d074ed-a517-4e0f-b515-44a35630b6a4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -55,7 +52,6 @@
     <ClCompile Include="Map.cpp">
       <Filter>03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Gimmick.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -79,6 +75,5 @@
     <ClInclude Include="Map.h">
       <Filter>03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Gimmick.h" />
   </ItemGroup>
 </Project>

@@ -132,7 +132,6 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Enums.h" />
-    <ClInclude Include="Gimmick.h" />
     <ClInclude Include="KeyController.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Mci.h" />
@@ -141,7 +140,6 @@
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Core.cpp" />
-    <ClCompile Include="Gimmick.cpp" />
     <ClCompile Include="KeyController.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
