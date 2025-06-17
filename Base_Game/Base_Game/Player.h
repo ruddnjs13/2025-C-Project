@@ -45,6 +45,8 @@ public:
 	void PlayerRender(string player);
 
 	void HandleInput(char _gameMap[40][41]);
+	
+	void Select();
 	~Player();
 };
 

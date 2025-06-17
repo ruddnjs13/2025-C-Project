@@ -48,6 +48,8 @@ void Player::HandleInput(char _gameMap[40][41])
 		break;
 	case Key::RIGHT:
 		++position.tNewPos.x;
+	case Key::SPACE:
+		Select();
 		break;
 	}
 
@@ -60,6 +62,10 @@ void Player::HandleInput(char _gameMap[40][41])
 	if (_gameMap[position.tNewPos.y][position.tNewPos.x]
 		!= (char)Tile::WALL)
 		position.tPos = position.tNewPos;
+}
+
+void Player::Select()
+{
 }
 
 Player::~Player()
