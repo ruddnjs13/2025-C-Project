@@ -15,7 +15,7 @@ Core::~Core()
 void Core::Run()
 {
 	Init();
-	while (true)
+	while (isRunning)
 	{
 		Update();
 		Gotoxy(0, 0);
