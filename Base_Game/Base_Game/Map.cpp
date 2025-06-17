@@ -70,7 +70,6 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 			else
 				cout << ' ' << gameMap[i][j];
 		}
-
 		cout << endl;
 	}
 }
