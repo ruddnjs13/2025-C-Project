@@ -38,7 +38,7 @@ class Player
 public:
 	Player();
 	PLAYERPOS position{};    // 위치 정보
-
+	char alphabet = ' ';
 	void PlayerInit();
 
 	void PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
@@ -47,7 +47,7 @@ public:
 
 	void HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	
-	void Select();
+	void Select(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	~Player();
 };
 
