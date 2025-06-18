@@ -1,55 +1,28 @@
 #include "ColorGimmick.h"
 
+void ColorGimmick::Init()
+{
+}
+
 void ColorGimmick::Interact(char btnType)
 {
-	color[colorIndex] = btnType;
-	colorIndex++;
+	switch (btnType)
+	{
+
+	}
 }
 
 void ColorGimmick::GimmickRender()
 {
-	for (int i = 0; i < colorIndex; ++i)
+
+	for (int i = 0; i < 5; i++)
 	{
-		switch (color[colorIndex])
+		for (int j = 0; j < WORD_HEIGHT; ++j)
 		{
-		case '2':
-			SetColor(COLOR::RED);
-			colorGimickTile[i] = ColorGimickTile::Red;
-			cout << "бс";
-			break;
-		case '3':
-			SetColor(COLOR::GREEN);
-			colorGimickTile[i] = ColorGimickTile::Green;
-			cout << "бс";
-			break;
-		case '4':
-			SetColor(COLOR::BLUE);
-			colorGimickTile[i] = ColorGimickTile::Blue;
-			cout << "бс";
-			break;
-		case '5':
-			SetColor(COLOR::YELLOW);
-			colorGimickTile[i] = ColorGimickTile::Yellow;
-			cout << "бс";
-			break;
-		case '6':
-			SetColor(COLOR::WHITE);
-			colorGimickTile[i] = ColorGimickTile::White;
-			cout << "бс";
-			break;
-		case '7':
-			SetColor(COLOR::GRAY);
-			colorGimickTile[i] = ColorGimickTile::Gray;
-			cout << "бс";
-			break;
-		case '8':
-			SetColor(COLOR::MINT);
-			colorGimickTile[i] = ColorGimickTile::Mint;
-			cout << "бс";
-			break;
-		default:
-			SetColor(COLOR::WHITE);
-			break;
+
+			Gotoxy(start_x + (WORD_WIDTH * i), start_y + j);
+			cout << "бс" << '\n';
+
 		}
 	}
 }
