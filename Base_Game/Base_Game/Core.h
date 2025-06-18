@@ -2,8 +2,9 @@
 #include "Console.h"
 #include "Player.h"
 #include "Map.h"
+#include "MainMenu.h"
+#include "ColorGimmick.h"
 #include "WordGimmick.h"
-
 
 class Core
 {
@@ -20,10 +21,11 @@ private:
 
 private:
 	bool isRunning;
+	MainMenu* mainMenu;
 	Player* player;
 	Map* map;
+	ColorGimmick* colorGimmick;
 	WordGimmick* wordGimmick;
-	
 };
 
 

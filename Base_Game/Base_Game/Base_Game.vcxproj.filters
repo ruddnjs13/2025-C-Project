@@ -64,6 +64,12 @@
     <ClCompile Include="WordGimmick.cpp">
       <Filter>03. Object\Gimmick</Filter>
     </ClCompile>
+    <ClCompile Include="ColorGimmick.cpp">
+      <Filter>03. Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -92,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="WordGimmick.h">
       <Filter>03. Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorGimmick.h">
+      <Filter>03. Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>04. Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

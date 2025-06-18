@@ -5,10 +5,13 @@ Core::Core()
 	, player(nullptr)
 	,map(nullptr)
 	,wordGimmick(nullptr)
+	, colorGimmick(nullptr)
 {
 	player = new Player;
 	map = new Map;
+	colorGimmick = new ColorGimmick;
 	wordGimmick = new WordGimmick;
+	
 }
 Core::~Core()
 {
@@ -17,7 +20,7 @@ Core::~Core()
 void Core::Run()
 {
 	Init();
-	while (true)
+	while (isRunning)
 	{
 		Update();
 		Gotoxy(0, 0);
@@ -44,6 +47,8 @@ void Core::Update()
 void Core::Render()
 {
 	map->MapRender(map->gameMap, player);
-	player->PlayerRender("¢Â");
+	player->PlayerRender("ï¿½ï¿½");
+	colorGimmick->GimmickRender();
 	wordGimmick->GimmickRender();
+
 }

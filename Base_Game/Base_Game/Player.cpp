@@ -1,7 +1,11 @@
 #include "Player.h"
 Player::Player()
-	:position{}
+	:position{},
+	colorGimick(nullptr),
+	wordGimick(nullptr)
 {
+	colorGimick = new ColorGimmick;
+	wordGimick = new WordGimmick;
 }
 
 
@@ -69,12 +73,12 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	if (gameMap[position.tPos.y][position.tPos.x] >= (int)GimickTile::A &&
 		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
 	{
-		alphabet = gameMap[position.tPos.y][position.tPos.x];
+		wordGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
 		gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)
 	{
-		colorGimickTile = gameMap[position.tPos.y][position.tPos.x];
+		colorGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
 }
 
