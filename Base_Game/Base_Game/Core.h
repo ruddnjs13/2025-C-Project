@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "MainMenu.h"
 #include "ColorGimmick.h"
+#include "WordGimmick.h"
 
 class Core
 {
@@ -24,6 +25,7 @@ private:
 	Player* player;
 	Map* map;
 	ColorGimmick* colorGimmick;
+	WordGimmick* wordGimmick;
 };
 
 
