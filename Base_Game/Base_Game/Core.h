@@ -2,6 +2,7 @@
 #include "Console.h"
 #include "Player.h"
 #include "Map.h"
+#include "WordGimmick.h"
 
 
 class Core
@@ -21,6 +22,8 @@ private:
 	bool isRunning;
 	Player* player;
 	Map* map;
+	WordGimmick* wordGimmick;
+	
 };
 
 
