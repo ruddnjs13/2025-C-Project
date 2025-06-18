@@ -51,6 +51,7 @@ void WordGimmick::Init()
 
 void WordGimmick::Interact(char btnType)
 {
+    
 }
 
 void WordGimmick::GimmickRender()
@@ -64,7 +65,7 @@ void WordGimmick::GimmickRender()
 		{
 
 			Gotoxy(start_x + (WORD_WIDTH * i), start_y + j);
-			wcout << asciiMap[word[slotIdx]][j] << '\n';
+			wcout << asciiMap[word[i]][j] << '\n';
 
 		}
 	}
