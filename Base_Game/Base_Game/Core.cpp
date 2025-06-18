@@ -4,9 +4,11 @@ Core::Core()
 	: isRunning(true)
 	, player(nullptr)
 	,map(nullptr)
+	, colorGimmick(nullptr)
 {
 	player = new Player;
 	map = new Map;
+	colorGimmick = new ColorGimmick;
 }
 Core::~Core()
 {
@@ -42,4 +44,5 @@ void Core::Render()
 {
 	map->MapRender(map->gameMap, player);
 	player->PlayerRender("¢Â");
+	colorGimmick->GimmickRender();
 }

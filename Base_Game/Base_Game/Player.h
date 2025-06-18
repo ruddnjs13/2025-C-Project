@@ -4,6 +4,8 @@
 #include "Console.h"
 #include "KeyController.h"
 #include "Map.h"
+#include "ColorGimmick.h"
+#include "WordGimmick.h"
 
 using std::cin;
 using std::cout;
@@ -37,6 +39,8 @@ class Player
 public:
 	Player();
 	PLAYERPOS position{};    // 위치 정보
+	ColorGimmick* colorGimick;
+	WordGimmick* wordGimick;
 	char alphabet = ' ';
 	char colorGimickTile;
 	void PlayerInit();

@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Map.h"
 #include "MainMenu.h"
-
+#include "ColorGimmick.h"
 
 class Core
 {
@@ -23,6 +23,7 @@ private:
 	MainMenu* mainMenu;
 	Player* player;
 	Map* map;
+	ColorGimmick* colorGimmick;
 };
 
 
