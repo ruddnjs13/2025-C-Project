@@ -1,3 +1,5 @@
+const int WORD_HEIGHT = 6;
+const int WORD_WIDTH = 14;
 #pragma once
 #include "GimmickBase.h"
 #include "Console.h"
@@ -10,6 +12,7 @@ public:
 	char color[5] = { };
 	ColorGimickTile colorGimickTile[5] = {};
 public:
+	virtual void Init() override;
 	virtual void Interact(char btnType) override;
 	virtual void GimmickRender() override;
 
