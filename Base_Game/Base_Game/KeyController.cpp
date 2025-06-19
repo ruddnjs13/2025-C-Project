@@ -25,11 +25,12 @@ Key KeyController()
 
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 	{
+		Sleep(100);
 		return Key::SPACE;
 	}
 	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
 	{
-		Sleep(100);
+		
 		return Key::ESC;
 	}
 	return Key::FAIL;

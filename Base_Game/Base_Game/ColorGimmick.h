@@ -1,5 +1,5 @@
 const int Color_HEIGHT = 6;
-const int Color_WIDTH  = 14;
+const int Color_WIDTH  = 16;
 #pragma once
 #include "GimmickBase.h"
 #include "Console.h"
@@ -9,11 +9,11 @@ class ColorGimmick : public GimmickBase
 {
 public:
 	int colorIndex = 0;
-	char color[5] = { };
+	COLOR color[5] = { COLOR::BLACK,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK };
 	ColorGimickTile colorGimickTile[5] = {};
 public:
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;
 	virtual void GimmickRender() override;
-
+	virtual void Submit() override;
 };

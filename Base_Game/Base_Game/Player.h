@@ -43,7 +43,7 @@ public:
 	WordGimmick* wordGimick;
 	char alphabet = ' ';
 	char colorGimickTile;
-	void PlayerInit();
+	void PlayerInit(ColorGimmick* color, WordGimmick* word);
 
 	void PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 
