@@ -26,14 +26,14 @@ void WordGimmick::Init()
                 temp.push_back(line);
             }
         }
-
-        
     }
 }
 
 void WordGimmick::Interact(char btnType)
 {
-    
+    if (slotIdx > 4) return;
+
+    word[slotIdx++] = btnType;
 }
 
 void WordGimmick::GimmickRender()

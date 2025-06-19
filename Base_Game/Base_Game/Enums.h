@@ -29,3 +29,8 @@ enum class GimickTile
 {
 	A= 65, Z = 90, ENTER = 93
 };
+
+enum class GimmickMode
+{
+	CORLOR=0,WORD=1
+};

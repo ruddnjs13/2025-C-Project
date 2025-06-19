@@ -49,6 +49,6 @@ void Core::Render()
 	map->MapRender(map->gameMap, player);
 	player->PlayerRender("¢Â");
 	//colorGimmick->GimmickRender();
-	wordGimmick->GimmickRender();
+	//wordGimmick->GimmickRender();
 
 }
