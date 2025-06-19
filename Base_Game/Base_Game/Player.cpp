@@ -4,13 +4,13 @@ Player::Player()
 	colorGimick(nullptr),
 	wordGimick(nullptr)
 {
-	colorGimick = new ColorGimmick;
-	wordGimick = new WordGimmick;
 }
 
 
-void Player::PlayerInit()
+void Player::PlayerInit(ColorGimmick* color , WordGimmick* word)
 {
+	this->colorGimick = color;
+	this->wordGimick = word;
 	position.tStartPos = { 5, 5 };
 	position.tPos = position.tStartPos;
 }
@@ -52,6 +52,7 @@ void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		break;
 	case Key::RIGHT:
 		++position.tNewPos.x;
+		break;
 	case Key::SPACE:
 		Select(gameMap);
 		break;
@@ -74,6 +75,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
 	{
 		wordGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
+		
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
 		gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)

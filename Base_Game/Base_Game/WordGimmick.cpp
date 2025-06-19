@@ -48,3 +48,7 @@ void WordGimmick::GimmickRender()
 		}
     }
 }
+
+void WordGimmick::Submit()
+{
+}

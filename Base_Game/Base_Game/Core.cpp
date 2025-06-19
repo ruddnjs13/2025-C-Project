@@ -35,8 +35,9 @@ void Core::Init()
 	SetLockResize();
 	SetCursorVisual(false,50);
 	map->LoadStage(map->gameMap);
-	player->PlayerInit();
-	wordGimmick->Init();
+	player->PlayerInit(colorGimmick,wordGimmick);
+	//wordGimmick->Init();
+	colorGimmick->Init();
 }
 
 void Core::Update()
@@ -48,7 +49,7 @@ void Core::Render()
 {
 	map->MapRender(map->gameMap, player);
 	player->PlayerRender("¢Â");
-	//colorGimmick->GimmickRender();
+	colorGimmick->GimmickRender();
 	//wordGimmick->GimmickRender();
 
 }
