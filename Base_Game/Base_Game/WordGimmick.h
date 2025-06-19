@@ -1,6 +1,6 @@
 #pragma once
-const int WORD_HEIGHT = 6;
-const int WORD_WIDTH = 14;
+const int WORD_HEIGHT = 8;
+const int WORD_WIDTH = 24;
 
 #include <map>
 #include "GimmickBase.h"
@@ -15,8 +15,8 @@ using std::vector;
 class WordGimmick : public GimmickBase
 {
 public:
-	char word[5] = { 'A','A','A','A','A' };
-	map<char, vector<wstring>> asciiMap;
+	char word[5] = { 'A','B','C','X','Q' };
+	map<char, vector<string>> asciiMap;
 public : 
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;

@@ -31,7 +31,7 @@ void Core::Run()
 
 void Core::Init()
 {
-	SetConsoleSettings(1400, 700, false, L"Game");
+	SetConsoleSettings(1600, 700, false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	map->LoadStage(map->gameMap);
@@ -47,8 +47,8 @@ void Core::Update()
 void Core::Render()
 {
 	map->MapRender(map->gameMap, player);
-	player->PlayerRender("ï¿½ï¿½");
-	colorGimmick->GimmickRender();
+	player->PlayerRender("¢Â");
+	//colorGimmick->GimmickRender();
 	wordGimmick->GimmickRender();
 
 }
