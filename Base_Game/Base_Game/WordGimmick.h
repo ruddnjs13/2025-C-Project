@@ -21,5 +21,6 @@ public :
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;
 	virtual void GimmickRender() override;
+	virtual void Submit() override;
 };
 

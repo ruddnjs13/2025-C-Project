@@ -2,6 +2,7 @@
 
 void ColorGimmick::Init()
 {
+	slotIdx = 0;
 }
 
 void ColorGimmick::Interact(char btnType)
@@ -9,40 +10,52 @@ void ColorGimmick::Interact(char btnType)
 	switch (btnType)
 	{
 	case '2':
-		SetColor(COLOR::RED);
+		color[slotIdx] = COLOR::RED;
+		slotIdx++;
 		break;
 	case '3':
-		SetColor(COLOR::GREEN);
+		color[slotIdx] = COLOR::GREEN;
+		slotIdx++;
 		break;
 	case '4':
-		SetColor(COLOR::BLUE);
+		color[slotIdx] = COLOR::BLUE;
+		slotIdx++;
 		break;
 	case '5':
-		SetColor(COLOR::YELLOW);
+		color[slotIdx] = COLOR::YELLOW;
+		slotIdx++;
 		break;
 	case '6':
-		SetColor(COLOR::WHITE);
+		color[slotIdx] = COLOR::WHITE;
+		slotIdx++;
 		break;
 	case '7':
-		SetColor(COLOR::GRAY);
+		color[slotIdx] = COLOR::GRAY;;
+		slotIdx++;
 		break;
 	case '8':
-		SetColor(COLOR::MINT);
+		color[slotIdx] = COLOR::MINT;;
+		slotIdx++;
 		break;
 	}
+	
 }
 
 void ColorGimmick::GimmickRender()
 {
-
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < Color_HEIGHT; ++j)
 		{
-
-			Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
-			cout << "¡á" << '\n';
+			SetColor(color[i], COLOR::BLACK);
+  		    Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
+			cout << "¡á¡á¡á¡á¡á¡á" << "\n";
 
 		}
+		SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
+}
+
+void ColorGimmick::Submit()
+{
 }
