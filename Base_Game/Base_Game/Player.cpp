@@ -82,6 +82,11 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	{
 		colorGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
+	if (gameMap[position.tPos.y][position.tPos.x] == (int)GimickTile::ENTER)
+	{
+			wordGimick->Submit();
+			colorGimick->Submit();
+	}
 }
 
 Player::~Player()
