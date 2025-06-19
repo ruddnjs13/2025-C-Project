@@ -29,6 +29,9 @@ void ColorGimmick::Interact(char btnType)
 	case '8':
 		SetColor(COLOR::MINT);
 		break;
+	default:
+		SetColor(COLOR::WHITE);
+		break;
 	}
 }
 

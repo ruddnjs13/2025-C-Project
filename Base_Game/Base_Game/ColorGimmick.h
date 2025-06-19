@@ -1,5 +1,5 @@
 const int Color_HEIGHT = 6;
-const int Color_WIDTH = 14;
+const int Color_WIDTH  = 14;
 #pragma once
 #include "GimmickBase.h"
 #include "Console.h"
