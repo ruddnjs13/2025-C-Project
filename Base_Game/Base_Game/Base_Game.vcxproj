@@ -134,6 +134,7 @@
     <ClInclude Include="Core.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="GimmickBase.h" />
+    <ClInclude Include="GimmickManager.h" />
     <ClInclude Include="KeyController.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Map.h" />
@@ -146,6 +147,7 @@
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="GimmickBase.cpp" />
+    <ClCompile Include="GimmickManager.cpp" />
     <ClCompile Include="KeyController.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />

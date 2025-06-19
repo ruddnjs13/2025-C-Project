@@ -2,6 +2,8 @@
 #include "WordGimmick.h"
 #include "ColorGimmick.h"
 #include "Enums.h"
+#include "vector"
+using std::vector;
 
 class GimmickManager
 {
@@ -19,7 +21,14 @@ public:
 		return Instance;
 	}
 public:
+	GimmickMode mode = GimmickMode::CORLOR;
+
 	WordGimmick* wordGimmick;
 	ColorGimmick* colorGimmick;
+
+public:
+	
+	virtual bool CheckAnswer(vector<char> answer);
+
 };
 
