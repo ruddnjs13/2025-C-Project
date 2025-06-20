@@ -4,14 +4,9 @@ Core::Core()
 	: isRunning(true)
 	, player(nullptr)
 	,map(nullptr)
-	,wordGimmick(nullptr)
-	, colorGimmick(nullptr)
 {
 	player = new Player;
 	map = new Map;
-	colorGimmick = new ColorGimmick;
-	wordGimmick = new WordGimmick;
-	
 }
 Core::~Core()
 {
@@ -31,13 +26,13 @@ void Core::Run()
 
 void Core::Init()
 {
+	srand((unsigned int)time(nullptr));
 	SetConsoleSettings(1600, 700, false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	map->LoadStage(map->gameMap);
-	player->PlayerInit(colorGimmick,wordGimmick);
-	//wordGimmick->Init();
-	colorGimmick->Init();
+	player->PlayerInit();
+	GimmickManager::GetInstance()->Init();
 }
 
 void Core::Update()
@@ -49,7 +44,5 @@ void Core::Render()
 {
 	map->MapRender(map->gameMap, player);
 	player->PlayerRender("¢Â");
-	colorGimmick->GimmickRender();
-	//wordGimmick->GimmickRender();
-
+	GimmickManager::GetInstance()->Render();
 }

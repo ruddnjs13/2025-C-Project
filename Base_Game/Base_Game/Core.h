@@ -5,6 +5,7 @@
 #include "MainMenu.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
+#include "GimmickManager.h"
 
 class Core
 {
@@ -21,11 +22,9 @@ private:
 
 private:
 	bool isRunning;
-	MainMenu* mainMenu;
+	//MainMenu* mainMenu;
 	Player* player;
 	Map* map;
-	ColorGimmick* colorGimmick;
-	WordGimmick* wordGimmick;
 };
 
 

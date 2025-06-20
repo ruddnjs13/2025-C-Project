@@ -1,13 +1,98 @@
 #include "GimmickManager.h"
+#include <algorithm>
+#include <random>
+GimmickManager* GimmickManager::Instance = nullptr;
+std::random_device rd;
+std::mt19937 generator(rd());
 
-bool GimmickManager::CheckAnswer(vector<char> answer)
+
+GimmickManager::GimmickManager()
+	: wordGimmick(nullptr)
+	, colorGimmick(nullptr)
+{
+	wordGimmick = new WordGimmick;
+	colorGimmick = new ColorGimmick;
+}
+
+GimmickManager::~GimmickManager()
+{
+}
+
+void GimmickManager::ShuffleAnswer(vector<char>& answer)
 {
 	if (mode == GimmickMode::CORLOR)
 	{
-		
+		vector<int> arr = {2,3,4,5,6,7,8};
+
+		std::shuffle(arr.begin(), arr.end(),rd);
+
+	    answer.clear();
+		for (int i = 0; i < 5; i++)
+		{
+			answer.push_back(arr[i]);
+		}
+	}
+	else
+	{
+	}
+}
+
+void GimmickManager::CheckAnswer(vector<char> submit)
+{
+	if (mode == GimmickMode::CORLOR)
+	{
+		for (int i = 0; i < MAX_ANSWER_LENGTH; ++i)
+		{
+			if (answer[i] != submit[i])
+			{
+				for (int j = 0; j < Color_HEIGHT; ++j)
+				{
+					SetColor(COLOR::RED, COLOR::BLACK);
+					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+				}
+				SetColor(COLOR::WHITE, COLOR::BLACK);
+			}
+			else
+			{
+				for (int j = 0; j < Color_HEIGHT; ++j)
+				{
+					SetColor(COLOR::GREEN, COLOR::BLACK);
+					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+				}
+				SetColor(COLOR::WHITE, COLOR::BLACK);
+			}
+		}
 	}
 	else if (mode == GimmickMode::WORD)
 	{
-
 	}
+}
+
+void GimmickManager::Init()
+{
+	colorGimmick->Init();
+	wordGimmick->Init();
+
+	ShuffleAnswer(answer);
+}
+
+void GimmickManager::Render()
+{
+	if (mode == GimmickMode::CORLOR)
+	{
+		colorGimmick->GimmickRender();
+	}
+	else
+	{
+		wordGimmick->GimmickRender();
+	}
+}
+
+void GimmickManager::RnderResult()
+{
+
 }

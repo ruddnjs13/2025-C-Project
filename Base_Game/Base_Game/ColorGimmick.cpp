@@ -10,31 +10,31 @@ void ColorGimmick::Interact(char btnType)
 	switch (btnType)
 	{
 	case '2':
-		color[slotIdx] = COLOR::RED;
+		submitArr[slotIdx] = COLOR::RED;
 		slotIdx++;
 		break;
 	case '3':
-		color[slotIdx] = COLOR::GREEN;
+		submitArr[slotIdx] = COLOR::GREEN;
 		slotIdx++;
 		break;
 	case '4':
-		color[slotIdx] = COLOR::BLUE;
+		submitArr[slotIdx] = COLOR::BLUE;
 		slotIdx++;
 		break;
 	case '5':
-		color[slotIdx] = COLOR::YELLOW;
+		submitArr[slotIdx] = COLOR::YELLOW;
 		slotIdx++;
 		break;
 	case '6':
-		color[slotIdx] = COLOR::WHITE;
+		submitArr[slotIdx] = COLOR::WHITE;
 		slotIdx++;
 		break;
 	case '7':
-		color[slotIdx] = COLOR::GRAY;;
+		submitArr[slotIdx] = COLOR::GRAY;;
 		slotIdx++;
 		break;
 	case '8':
-		color[slotIdx] = COLOR::MINT;;
+		submitArr[slotIdx] = COLOR::MINT;;
 		slotIdx++;
 		break;
 	}
@@ -47,7 +47,7 @@ void ColorGimmick::GimmickRender()
 	{
 		for (int j = 0; j < Color_HEIGHT; ++j)
 		{
-			SetColor(color[i], COLOR::BLACK);
+			SetColor(submitArr[i], COLOR::BLACK);
   		    Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
 			cout << "¡á¡á¡á¡á¡á¡á" << "\n";
 
