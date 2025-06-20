@@ -7,7 +7,7 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	if (mapFile.is_open())
 	{
 		for (int i = 0; i < MAP_HEIGHT; i++)
-		{
+		{ 
 			mapFile.getline(gameMap[i], MAP_WIDTH);
 		}
 		mapFile.close();
