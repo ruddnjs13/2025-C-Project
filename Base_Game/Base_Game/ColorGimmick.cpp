@@ -4,10 +4,10 @@ void ColorGimmick::Init()
 {
 	slotIdx = 0;
 	for (int i = 0; i < 5; i++) {
-		submitArr[i] = COLOR::BLACK;
+		submitArr[i] = COLOR::GRAY;
 	}
 
-	start_x = GetConsoleResolution().X / 5 * 2;
+	start_x = GetConsoleResolution().X / 4 +5;
 }
 
 void ColorGimmick::Interact(char btnType)
