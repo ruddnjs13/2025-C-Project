@@ -72,7 +72,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
-		 gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)
+		 gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Mint)
 	{
 		GimmickManager::GetInstance()->colorGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
@@ -83,7 +83,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
-				submit.push_back((int)GimmickManager::GetInstance()->colorGimmick->submitArr[i]);
+				submit.push_back((int)GimmickManager::GetInstance()->colorGimmick->ColorSetArr[i]);
 			}
 			GimmickManager::GetInstance()->CheckAnswer(submit);
 		}
