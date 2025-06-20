@@ -16,30 +16,37 @@ void ColorGimmick::Interact(char btnType)
 	{
 	case '2':
 		submitArr[slotIdx] = COLOR::RED;
+		colorGimickTile[slotIdx] = ColorGimickTile::Red;
 		slotIdx++;
 		break;
 	case '3':
 		submitArr[slotIdx] = COLOR::GREEN;
+		colorGimickTile[slotIdx] = ColorGimickTile::Green;
 		slotIdx++;
 		break;
 	case '4':
 		submitArr[slotIdx] = COLOR::BLUE;
+		colorGimickTile[slotIdx] = ColorGimickTile::Blue;
 		slotIdx++;
 		break;
 	case '5':
 		submitArr[slotIdx] = COLOR::YELLOW;
+		colorGimickTile[slotIdx] = ColorGimickTile::Yellow;
 		slotIdx++;
 		break;
 	case '6':
 		submitArr[slotIdx] = COLOR::WHITE;
+		colorGimickTile[slotIdx] = ColorGimickTile::White;
 		slotIdx++;
 		break;
 	case '7':
 		submitArr[slotIdx] = COLOR::GRAY;;
+		colorGimickTile[slotIdx] = ColorGimickTile::Gray;
 		slotIdx++;
 		break;
 	case '8':
 		submitArr[slotIdx] = COLOR::MINT;;
+		colorGimickTile[slotIdx] = ColorGimickTile::Mint;
 		slotIdx++;
 		break;
 	}
