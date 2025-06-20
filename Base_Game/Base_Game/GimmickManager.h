@@ -8,7 +8,7 @@
 using std::vector;
 
 const int MAX_ANSWER_LENGTH = 5;
-const int RESULT_X = GetConsoleResolution().X / 4 + 5;
+const int RESULT_X = GetConsoleResolution().X / 10*9-2;
 const int RESULT_Y = GetConsoleResolution().Y / 2;
 
 class GimmickManager

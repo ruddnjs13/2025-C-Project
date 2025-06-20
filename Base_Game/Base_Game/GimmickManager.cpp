@@ -82,6 +82,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 	{
 		Sleep(2000);
 		Reset();
+
 	}
 }
 
@@ -108,6 +109,7 @@ void GimmickManager::Render()
 void GimmickManager::Reset()
 {
 	colorGimmick->Init();
+	system("cls");
 }
 
 void GimmickManager::RnderResult()
