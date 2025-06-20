@@ -42,7 +42,7 @@ public:
 	void CheckAnswer(vector<char> submit);
 	void Init();
 	void Render();
-
+	void Reset();
 	void RnderResult();
 
 

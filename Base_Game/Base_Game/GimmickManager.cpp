@@ -39,6 +39,8 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 
 void GimmickManager::CheckAnswer(vector<char> submit)
 {
+	bool isSelect = true;
+
 	if (mode == GimmickMode::CORLOR)
 	{
 		for (int i = 0; i < MAX_ANSWER_LENGTH; ++i)
@@ -53,6 +55,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 
 				}
 				SetColor(COLOR::WHITE, COLOR::BLACK);
+				isSelect = false;
 			}
 			else
 			{
@@ -69,6 +72,16 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 	}
 	else if (mode == GimmickMode::WORD)
 	{
+	}
+
+	if (isSelect)
+	{
+		// ¸ÂÀ½
+	}
+	else
+	{
+		Sleep(2000);
+		Reset();
 	}
 }
 
@@ -90,6 +103,11 @@ void GimmickManager::Render()
 	{
 		wordGimmick->GimmickRender();
 	}
+}
+
+void GimmickManager::Reset()
+{
+	colorGimmick->Init();
 }
 
 void GimmickManager::RnderResult()
