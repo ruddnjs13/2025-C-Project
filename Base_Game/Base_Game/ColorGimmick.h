@@ -9,7 +9,7 @@ class ColorGimmick : public GimmickBase
 {
 public:
 	int colorIndex = 0;
-	COLOR color[5] = { COLOR::BLACK,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK };
+	COLOR submitArr[5] = { COLOR::BLACK,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK ,COLOR::BLACK };
 	ColorGimickTile colorGimickTile[5] = {};
 public:
 	virtual void Init() override;

@@ -6,6 +6,8 @@
 #include "Map.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
+#include "GimmickManager.h"
+#include "Enums.h"
 
 using std::cin;
 using std::cout;
@@ -39,11 +41,9 @@ class Player
 public:
 	Player();
 	PLAYERPOS position{};    // 위치 정보
-	ColorGimmick* colorGimick;
-	WordGimmick* wordGimick;
 	char alphabet = ' ';
-	char colorGimickTile;
-	void PlayerInit(ColorGimmick* color, WordGimmick* word);
+	//char colorGimickTile;
+	void PlayerInit();
 
 	void PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 

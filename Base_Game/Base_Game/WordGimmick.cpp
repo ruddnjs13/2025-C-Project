@@ -26,14 +26,14 @@ void WordGimmick::Init()
                 temp.push_back(line);
             }
         }
-
-        
     }
 }
 
 void WordGimmick::Interact(char btnType)
 {
-    
+    if (slotIdx > 4) return;
+
+    submitArr[slotIdx++] = btnType;
 }
 
 void WordGimmick::GimmickRender()
@@ -44,7 +44,7 @@ void WordGimmick::GimmickRender()
 		for (int j = 0; j < WORD_HEIGHT; ++j)
 		{
 			Gotoxy(start_x + (WORD_WIDTH * i), start_y + j);
-			cout << asciiMap[word[i]][j] << '\n';
+			cout << asciiMap[submitArr[i]][j] << '\n';
 		}
     }
 }

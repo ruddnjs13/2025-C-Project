@@ -1,16 +1,11 @@
 #include "Player.h"
 Player::Player()
-	:position{},
-	colorGimick(nullptr),
-	wordGimick(nullptr)
 {
 }
 
 
-void Player::PlayerInit(ColorGimmick* color , WordGimmick* word)
+void Player::PlayerInit()
 {
-	this->colorGimick = color;
-	this->wordGimick = word;
 	position.tStartPos = { 5, 5 };
 	position.tPos = position.tStartPos;
 }
@@ -58,7 +53,6 @@ void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		break;
 	}
 
-
 	position.tNewPos.x =
 		std::clamp(position.tNewPos.x, 0, MAP_HEIGHT - 2);
 	position.tNewPos.y =
@@ -74,18 +68,29 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	if (gameMap[position.tPos.y][position.tPos.x] >= (int)GimickTile::A &&
 		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
 	{
-		wordGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
+		GimmickManager::GetInstance()->wordGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 		
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
-		gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)
+		 gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Yellow)
 	{
-		colorGimick->Interact(gameMap[position.tPos.y][position.tPos.x]);
+		GimmickManager::GetInstance()->colorGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
 	if (gameMap[position.tPos.y][position.tPos.x] == (int)GimickTile::ENTER)
 	{
-			wordGimick->Submit();
-			colorGimick->Submit();
+		if (GimmickManager::GetInstance()->mode == GimmickMode::CORLOR)
+		{
+			vector<char> submit;
+			for (int i = 0; i < 5; i++)
+			{
+				submit.push_back((int)GimmickManager::GetInstance()->colorGimmick->submitArr[i]);
+			}
+			GimmickManager::GetInstance()->CheckAnswer(submit);
+		}
+		else
+		{
+			GimmickManager::GetInstance()->wordGimmick->Submit();
+		}
 	}
 }
 

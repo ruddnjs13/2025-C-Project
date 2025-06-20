@@ -15,7 +15,7 @@ using std::vector;
 class WordGimmick : public GimmickBase
 {
 public:
-	char word[5] = { 'A','B','C','X','Q' };
+	char submitArr[5] = { 'A','B','C','X','Q' };
 	map<char, vector<string>> asciiMap;
 public : 
 	virtual void Init() override;

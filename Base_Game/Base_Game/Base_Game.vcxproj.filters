@@ -70,6 +70,9 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>04. Scene</Filter>
     </ClCompile>
+    <ClCompile Include="GimmickManager.cpp">
+      <Filter>02. Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GimmickManager.h">
+      <Filter>02. Manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
