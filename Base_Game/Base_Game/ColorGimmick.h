@@ -2,7 +2,6 @@ const int Color_HEIGHT = 6;
 const int Color_WIDTH  = 16;
 #pragma once
 #include "GimmickBase.h"
-#include "Console.h"
 #include "Enums.h"
 
 class ColorGimmick : public GimmickBase 

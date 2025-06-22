@@ -1,12 +1,11 @@
 #pragma once
 #include "WordGimmick.h"
+#include <algorithm>
+#include <random>
 #include "ColorGimmick.h"
-#include "Enums.h"
-#include "vector"
-#include "Console.h"
-
+#include <vector>
 using std::vector;
-
+using std::cout;
 const int MAX_ANSWER_LENGTH = 5;
 const int RESULT_X = GetConsoleResolution().X / 5*4;
 const int RESULT_Y = GetConsoleResolution().Y / 2;

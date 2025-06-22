@@ -1,8 +1,8 @@
 #include "Mci.h"
 #include<mmsystem.h>
 #include<Digitalv.h>;
-#include"Console.h";
 #include <vector>;
+#include"Console.h";
 #pragma comment(lib, "winmm.lib")
 
 static std::vector<SoundEntry> SoundTable =
