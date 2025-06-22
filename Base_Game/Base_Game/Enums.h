@@ -21,7 +21,7 @@ enum class Tile
 
 enum class ColorGimickTile
 {
-	Red = '2', Green, Blue, Yellow, White, Gray, Mint,
+	Red = '2', Green, Blue, Yellow, White, Mint,
 	ENTER = 93
 };
 

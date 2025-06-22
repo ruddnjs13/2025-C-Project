@@ -46,25 +46,21 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
-				test.push_back(0);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-
 					cout <<"■■■■■"<< '\n';
 				}
 				isSelect = false;
 			}
 			else
 			{
-				test.push_back(1);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
 					cout <<"■■■■■"<< '\n';
-
 				}
 			}
 		}
