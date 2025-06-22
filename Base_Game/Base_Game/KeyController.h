@@ -1,3 +1,3 @@
 #pragma once
 #include "Enums.h"
-Key KeyController();
+Key KeyController(int idx);

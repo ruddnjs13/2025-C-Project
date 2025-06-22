@@ -49,7 +49,7 @@ void Player::PlayerRender(string player)
 void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
 	position.tNewPos = position.tPos;
-	Key eKey = KeyController();
+	Key eKey = KeyController(playerIdx);
 	switch (eKey)
 	{
 	case Key::UP:
