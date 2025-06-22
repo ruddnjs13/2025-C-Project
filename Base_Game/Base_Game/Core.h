@@ -22,7 +22,6 @@ private:
 
 private:
 	bool isRunning;
-	int playerTurn = 1;
 	//MainMenu* mainMenu;
 	Player* player1;
 	Player* player2;

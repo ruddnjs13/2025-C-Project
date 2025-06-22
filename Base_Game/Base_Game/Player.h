@@ -43,6 +43,7 @@ class Player
 {
 public:
 	int playerIdx = 0;
+	bool myTurn = false;
 
 	Player(int idx);
 	PLAYERPOS position{};  // 위치 정보

@@ -3,7 +3,7 @@
 Key KeyController(int idx)
 {
 
-	if (idx == 0)
+	if (idx == 1)
 	{
 		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
@@ -25,7 +25,7 @@ Key KeyController(int idx)
 			//Sleep(100);
 			return Key::RIGHT;
 		}
-		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
+		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
 			Sleep(100);
 			return Key::SPACE;

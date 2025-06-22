@@ -14,6 +14,7 @@ void Player::PlayerInit()
 
 void Player::PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
+	if (myTurn == false) return;
 	HandleInput(gameMap);
 }
 

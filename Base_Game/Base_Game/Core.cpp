@@ -7,7 +7,9 @@ Core::Core()
 	,map1(nullptr)
 {
 	player1 = new Player(0);
+	player1->myTurn = true;
 	player2 = new Player(1);
+	player2->myTurn = false;
 	map1 = new Map;
 }
 Core::~Core()
@@ -40,14 +42,8 @@ void Core::Init()
 
 void Core::Update()
 {
-	if (playerTurn == 0)
-	{
 		player1->PlayerUpdate(map1->gameMap);
-	}
-	else
-	{
 		player2->PlayerUpdate(map1->gameMap);
-	}
 }
 
 void Core::Render()
