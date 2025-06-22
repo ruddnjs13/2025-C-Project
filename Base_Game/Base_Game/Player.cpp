@@ -1,12 +1,14 @@
 #include "Player.h"
-Player::Player()
-{
-}
 
+
+Player::Player(int idx)
+{
+	playerIdx = idx;
+}
 
 void Player::PlayerInit()
 {
-	position.tStartPos = { 5, 5 };
+	position.tStartPos = { MAP_START_X, START_Y };
 	position.tPos = position.tStartPos;
 }
 
@@ -21,11 +23,25 @@ void Player::PlayerRender(string player)
 	{
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
-			if (position.tPos.x == j &&
-				position.tPos.y == i) {
-				Gotoxy(j*2, i);
-				cout << player;
+			if (playerIdx == 0)
+			{
+				if (position.tPos.x == j &&
+					position.tPos.y == i)
+				{
+					Gotoxy(j * 2, i + MAP_START_Y);
+					cout << player;
+				}
 			}
+			else
+			{
+				if (position.tPos.x == j &&
+					position.tPos.y == i)
+				{
+					Gotoxy((45+j) * 2, i + MAP_START_Y);
+					cout << player;
+				}
+			}
+			
 		}
 	}
 }
@@ -83,7 +99,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
-				submit.push_back((int)GimmickManager::GetInstance()->colorGimmick->ColorSetArr[i]);
+				submit.push_back((GimmickManager::GetInstance()->colorGimmick->colorGimickTile[i]));
 			}
 			GimmickManager::GetInstance()->CheckAnswer(submit);
 		}

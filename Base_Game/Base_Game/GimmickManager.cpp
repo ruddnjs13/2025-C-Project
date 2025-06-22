@@ -22,7 +22,7 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 {
 	if (mode == GimmickMode::CORLOR)
 	{
-		vector<int> arr = {2,3,4,5,6,7,8};
+		vector<int> arr = {'2','3','4','5','6','7','8'};
 
 		std::shuffle(arr.begin(), arr.end(),rd);
 
@@ -47,6 +47,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
+				test.push_back(0);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
@@ -54,11 +55,11 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
 
 				}
-				SetColor(COLOR::WHITE, COLOR::BLACK);
 				isSelect = false;
 			}
 			else
 			{
+				test.push_back(1);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
@@ -66,9 +67,9 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
 
 				}
-				SetColor(COLOR::WHITE, COLOR::BLACK);
 			}
 		}
+				SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
 	else if (mode == GimmickMode::WORD)
 	{
@@ -82,7 +83,6 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 	{
 		Sleep(2000);
 		Reset();
-
 	}
 }
 
@@ -114,5 +114,4 @@ void GimmickManager::Reset()
 
 void GimmickManager::RnderResult()
 {
-
 }

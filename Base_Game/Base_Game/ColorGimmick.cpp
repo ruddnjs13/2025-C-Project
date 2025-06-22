@@ -5,48 +5,48 @@ void ColorGimmick::Init()
 	slotIdx = 0;
 	for (int i = 0; i < 5; i++) {
 		submitArr[i] = COLOR::GRAY;
+		colorGimickTile[i] = '0';
 	}
-
-	start_x = GetConsoleResolution().X / 4 +5;
 }
 
 void ColorGimmick::Interact(char btnType)
 {
+	if (slotIdx > 4) return;
 	switch (btnType)
 	{
 	case '2':
 		submitArr[slotIdx] = COLOR::RED;
-		colorGimickTile[slotIdx] = ColorGimickTile::Red;
+		colorGimickTile[slotIdx] = '2';
 		slotIdx++;
 		break;
 	case '3':
 		submitArr[slotIdx] = COLOR::GREEN;
-		colorGimickTile[slotIdx] = ColorGimickTile::Green;
+		colorGimickTile[slotIdx] = '3';
 		slotIdx++;
 		break;
 	case '4':
 		submitArr[slotIdx] = COLOR::BLUE;
-		colorGimickTile[slotIdx] = ColorGimickTile::Blue;
+		colorGimickTile[slotIdx] = '4';
 		slotIdx++;
 		break;
 	case '5':
 		submitArr[slotIdx] = COLOR::YELLOW;
-		colorGimickTile[slotIdx] = ColorGimickTile::Yellow;
+		colorGimickTile[slotIdx] = '5';
 		slotIdx++;
 		break;
 	case '6':
 		submitArr[slotIdx] = COLOR::WHITE;
-		colorGimickTile[slotIdx] = ColorGimickTile::White;
+		colorGimickTile[slotIdx] = '6';
 		slotIdx++;
 		break;
 	case '7':
 		submitArr[slotIdx] = COLOR::GRAY;;
-		colorGimickTile[slotIdx] = ColorGimickTile::Gray;
+		colorGimickTile[slotIdx] = '7';
 		slotIdx++;
 		break;
 	case '8':
 		submitArr[slotIdx] = COLOR::MINT;;
-		colorGimickTile[slotIdx] = ColorGimickTile::Mint;
+		colorGimickTile[slotIdx] = '8';
 		slotIdx++;
 		break;
 	}

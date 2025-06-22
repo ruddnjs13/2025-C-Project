@@ -12,6 +12,9 @@
 using std::cin;
 using std::cout;
 
+const int START_X = 10;
+const int START_Y = 5;
+
 typedef struct _pos
 {
 	int x;
@@ -39,8 +42,10 @@ typedef struct _tagplayer
 class Player
 {
 public:
-	Player();
-	PLAYERPOS position{};    // 위치 정보
+	int playerIdx = 0;
+
+	Player(int idx);
+	PLAYERPOS position{};  // 위치 정보
 	char alphabet = ' ';
 	//char colorGimickTile;
 	void PlayerInit();

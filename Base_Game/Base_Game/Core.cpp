@@ -2,11 +2,13 @@
 
 Core::Core()
 	: isRunning(true)
-	, player(nullptr)
-	,map(nullptr)
+	, player1(nullptr)
+	, player2(nullptr)
+	,map1(nullptr)
 {
-	player = new Player;
-	map = new Map;
+	player1 = new Player(0);
+	player2 = new Player(1);
+	map1 = new Map;
 }
 Core::~Core()
 {
@@ -27,22 +29,31 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1600, 700, false, L"Game");
+	SetConsoleSettings(1242, 700,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
-	map->LoadStage(map->gameMap);
-	player->PlayerInit();
+	map1->LoadStage(map1->gameMap);
+	player1->PlayerInit();
+	player2->PlayerInit();
 	GimmickManager::GetInstance()->Init();
 }
 
 void Core::Update()
 {
-	player->PlayerUpdate(map->gameMap);
+	if (playerTurn == 0)
+	{
+		player1->PlayerUpdate(map1->gameMap);
+	}
+	else
+	{
+		player2->PlayerUpdate(map1->gameMap);
+	}
 }
 
 void Core::Render()
 {
-	map->MapRender(map->gameMap, player);
-	player->PlayerRender("¢Â");
+	map1->MapRender(map1->gameMap, player1);
+	player1->PlayerRender("¢Â");
+	player2->PlayerRender("¢Â");
 	GimmickManager::GetInstance()->Render();
 }

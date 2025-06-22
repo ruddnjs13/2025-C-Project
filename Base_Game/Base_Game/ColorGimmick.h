@@ -10,7 +10,7 @@ class ColorGimmick : public GimmickBase
 public:
 	int colorIndex = 0;
 	COLOR submitArr[5] = { COLOR::GRAY,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY };
-	ColorGimickTile colorGimickTile[5] = {};
+	char colorGimickTile[5] = {};
 public:
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;
