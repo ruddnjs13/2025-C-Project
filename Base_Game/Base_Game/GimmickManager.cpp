@@ -23,7 +23,7 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 
 	if (mode == GimmickMode::CORLOR)
 	{
-		vector<int> arr = {'2','3','4','5','6','7','8'};
+		vector<int> arr = {'2','3','4','5','6','7'};
 
 		std::shuffle(arr.begin(), arr.end(),rd);
 

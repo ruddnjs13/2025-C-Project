@@ -10,6 +10,10 @@ void ColorGimmick::Init()
 
 void ColorGimmick::Interact(char btnType)
 {
+	if (slotIdx >= 5)
+	{
+		return;
+	}
 	switch (btnType)
 	{
 	case '2':

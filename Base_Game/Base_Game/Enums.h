@@ -11,7 +11,7 @@ enum class Menu
 
 enum class Scene
 {
-	TITLE, GAME, INFO, QUIT, END
+	TITLE,STAGESLECT,WINCHECK, GAME, INFO, QUIT, END
 };
 
 enum class Tile
