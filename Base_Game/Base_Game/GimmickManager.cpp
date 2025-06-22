@@ -1,7 +1,7 @@
 #include "GimmickManager.h"
-
+#include <algorithm>
+#include <random>
 GimmickManager* GimmickManager::Instance = nullptr;
-
 
 
 GimmickManager::GimmickManager()
@@ -18,11 +18,13 @@ GimmickManager::~GimmickManager()
 
 void GimmickManager::ShuffleAnswer(vector<char>& answer)
 {
+	std::random_device rd;
+	std::mt19937 generator(rd());
+
 	if (mode == GimmickMode::CORLOR)
 	{
-		std::random_device rd;
-		std::mt19937 generator(rd());
 		vector<int> arr = {'2','3','4','5','6','7','8'};
+
 		std::shuffle(arr.begin(), arr.end(),rd);
 
 	    answer.clear();
@@ -46,21 +48,25 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
+				test.push_back(0);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout <<"â– â– â– â– â– "<< '\n';
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
 				}
 				isSelect = false;
 			}
 			else
 			{
+				test.push_back(1);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout <<"â– â– â– â– â– "<< '\n';
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
 				}
 			}
 		}
@@ -72,6 +78,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 
 	if (isSelect)
 	{
+		// ¸ÂÀ½
 	}
 	else
 	{
