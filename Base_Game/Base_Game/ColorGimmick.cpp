@@ -57,7 +57,7 @@ void ColorGimmick::GimmickRender()
 	{
 		for (int j = 0; j < Color_HEIGHT; ++j)
 		{
-			SetColor(ColorSetArr[i], COLOR::BLACK);
+			SetColor(submitArr[i], COLOR::BLACK);
   		    Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
 			cout << "¡á¡á¡á¡á¡á¡á" << "\n";
 
