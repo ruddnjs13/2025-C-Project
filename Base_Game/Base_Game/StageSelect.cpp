@@ -1,7 +1,5 @@
 #include "StageSelect.h"
 
-std::random_device rd;
-std::mt19937 generator(rd());
 
 void StageSelect::StageSelectInit()
 {
@@ -10,6 +8,10 @@ void StageSelect::StageSelectInit()
 
 void StageSelect::ShuffleStage()
 {
+	std::random_device rd;
+	std::mt19937 generator(rd());
+
+
 	stageArr.clear();
 	std::vector<int> stages = { 1, 2, 3};
 	std::shuffle(stages.begin(), stages.end(), rd);
