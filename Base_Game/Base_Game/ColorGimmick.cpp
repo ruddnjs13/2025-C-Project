@@ -38,11 +38,6 @@ void ColorGimmick::Interact(char btnType)
 		slotIdx++;
 		break;
 	case '7':
-		submitArr[slotIdx] = COLOR::GRAY;;
-		colorGimickTile[slotIdx] = (char)ColorGimickTile::Gray;
-		slotIdx++;
-		break;
-	case '8':
 		submitArr[slotIdx] = COLOR::MINT;;
 		colorGimickTile[slotIdx] = (char)ColorGimickTile::Mint;
 		slotIdx++;

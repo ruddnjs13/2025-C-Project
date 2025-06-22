@@ -57,9 +57,6 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 				case (char)ColorGimickTile::White:
 					SetColor(COLOR::WHITE);
 					break;
-				case (char)ColorGimickTile::Gray:
-					SetColor(COLOR::GRAY);
-					break;
 				case (char)ColorGimickTile::Mint:
 					SetColor(COLOR::MINT);
 					break;
