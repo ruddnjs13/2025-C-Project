@@ -8,8 +8,8 @@ class ColorGimmick : public GimmickBase
 {
 public:
 	int colorIndex = 0;
-	COLOR ColorSetArr[5] = { COLOR::GRAY,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY };
-	ColorGimickTile submitArr[5] = {};
+	COLOR submitArr[5] = { COLOR::GRAY,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY ,COLOR::GRAY };
+	char colorGimickTile[5] = {};
 public:
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;

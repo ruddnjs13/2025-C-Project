@@ -20,9 +20,9 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 {
 	if (mode == GimmickMode::CORLOR)
 	{
-		vector<int> arr = {2,3,4,5,6,7,8};
 		std::random_device rd;
 		std::mt19937 generator(rd());
+		vector<int> arr = {'2','3','4','5','6','7','8'};
 		std::shuffle(arr.begin(), arr.end(),rd);
 
 	    answer.clear();
@@ -46,28 +46,29 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
+				test.push_back(0);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+					cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 				}
-				SetColor(COLOR::WHITE, COLOR::BLACK);
 				isSelect = false;
 			}
 			else
 			{
+				test.push_back(1);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+					cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 				}
-				SetColor(COLOR::WHITE, COLOR::BLACK);
 			}
 		}
+				SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
 	else if (mode == GimmickMode::WORD)
 	{
@@ -75,13 +76,12 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 
 	if (isSelect)
 	{
-		// ¸ÂÀ½
+		// ï¿½ï¿½ï¿½ï¿½
 	}
 	else
 	{
 		Sleep(2000);
 		Reset();
-
 	}
 }
 
@@ -113,5 +113,4 @@ void GimmickManager::Reset()
 
 void GimmickManager::RnderResult()
 {
-
 }

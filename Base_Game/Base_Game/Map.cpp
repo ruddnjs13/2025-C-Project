@@ -21,6 +21,7 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 
 void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 {
+	Gotoxy(MAP_START_X, MAP_START_Y);
 	for (int i = 0; i < MAP_HEIGHT; ++i)
 	{
 		for (int j = 0; j < MAP_WIDTH; ++j)

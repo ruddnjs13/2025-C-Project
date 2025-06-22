@@ -16,11 +16,14 @@ class WordGimmick : public GimmickBase
 {
 public:
 	char submitArr[5] = { 'A','B','C','X','Q' };
-	map<char, vector<string>> asciiMap;
+	map<char, vector<wstring>> asciiMap;
 public : 
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;
 	virtual void GimmickRender() override;
 	virtual void Submit() override;
 };
+
+
+
 
