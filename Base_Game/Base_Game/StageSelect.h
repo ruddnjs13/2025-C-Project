@@ -1,11 +1,11 @@
 #pragma once
-#include<iostream>
-#include<vector>
-#include"Console.h"
 #include <algorithm>
 #include <random>
+#include"Console.h"
+#include<vector>
 
 using std::vector;
+
 class StageSelect
 {
 public:

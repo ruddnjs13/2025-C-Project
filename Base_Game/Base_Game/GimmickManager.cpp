@@ -1,9 +1,7 @@
 #include "GimmickManager.h"
-#include <algorithm>
-#include <random>
+
 GimmickManager* GimmickManager::Instance = nullptr;
-std::random_device rd;
-std::mt19937 generator(rd());
+
 
 
 GimmickManager::GimmickManager()
@@ -22,8 +20,9 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 {
 	if (mode == GimmickMode::CORLOR)
 	{
+		std::random_device rd;
+		std::mt19937 generator(rd());
 		vector<int> arr = {'2','3','4','5','6','7','8'};
-
 		std::shuffle(arr.begin(), arr.end(),rd);
 
 	    answer.clear();
@@ -52,7 +51,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+					cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 				}
 				isSelect = false;
@@ -64,7 +63,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+					cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 				}
 			}
@@ -77,7 +76,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 
 	if (isSelect)
 	{
-		// ¸ÂÀ½
+		// ï¿½ï¿½ï¿½ï¿½
 	}
 	else
 	{

@@ -1,10 +1,9 @@
 #pragma once
 #include "WordGimmick.h"
+#include <algorithm>
+#include <random>
 #include "ColorGimmick.h"
-#include "Enums.h"
-#include "vector"
-#include "Console.h"
-
+#include <vector>
 using std::vector;
 
 const int MAX_ANSWER_LENGTH = 5;
