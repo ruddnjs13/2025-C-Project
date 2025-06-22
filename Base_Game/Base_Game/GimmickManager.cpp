@@ -51,7 +51,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "�������" << "\n";
+					cout << "■■■■■" << "\n";
 
 				}
 				isSelect = false;
@@ -63,7 +63,7 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
 					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "�������" << "\n";
+					cout << "■■■■■" << "\n";
 
 				}
 			}
