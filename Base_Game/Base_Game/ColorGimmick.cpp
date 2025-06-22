@@ -5,48 +5,47 @@ void ColorGimmick::Init()
 	slotIdx = 0;
 	for (int i = 0; i < 5; i++) {
 		submitArr[i] = COLOR::GRAY;
-		colorGimickTile[i] = '0';
+		ColorSetArr[i] = COLOR::GRAY;
 	}
 }
 
 void ColorGimmick::Interact(char btnType)
 {
-	if (slotIdx > 4) return;
 	switch (btnType)
 	{
 	case '2':
-		submitArr[slotIdx] = COLOR::RED;
-		colorGimickTile[slotIdx] = '2';
+		ColorSetArr[slotIdx] = COLOR::RED;
+		submitArr[slotIdx] = ColorGimickTile::Red;
 		slotIdx++;
 		break;
 	case '3':
-		submitArr[slotIdx] = COLOR::GREEN;
-		colorGimickTile[slotIdx] = '3';
+		ColorSetArr[slotIdx] = COLOR::GREEN;
+		submitArr[slotIdx] = ColorGimickTile::Green;
 		slotIdx++;
 		break;
 	case '4':
-		submitArr[slotIdx] = COLOR::BLUE;
-		colorGimickTile[slotIdx] = '4';
+		ColorSetArr[slotIdx] = COLOR::BLUE;
+		submitArr[slotIdx] = ColorGimickTile::Blue;
 		slotIdx++;
 		break;
 	case '5':
-		submitArr[slotIdx] = COLOR::YELLOW;
-		colorGimickTile[slotIdx] = '5';
+		ColorSetArr[slotIdx] = COLOR::YELLOW;
+		submitArr[slotIdx] = ColorGimickTile::Yellow;
 		slotIdx++;
 		break;
 	case '6':
-		submitArr[slotIdx] = COLOR::WHITE;
-		colorGimickTile[slotIdx] = '6';
+		ColorSetArr[slotIdx] = COLOR::WHITE;
+		submitArr[slotIdx] = ColorGimickTile::White;
 		slotIdx++;
 		break;
 	case '7':
-		submitArr[slotIdx] = COLOR::GRAY;;
-		colorGimickTile[slotIdx] = '7';
+		ColorSetArr[slotIdx] = COLOR::GRAY;;
+		submitArr[slotIdx] = ColorGimickTile::Gray;
 		slotIdx++;
 		break;
 	case '8':
-		submitArr[slotIdx] = COLOR::MINT;;
-		colorGimickTile[slotIdx] = '8';
+		ColorSetArr[slotIdx] = COLOR::MINT;;
+		submitArr[slotIdx] = ColorGimickTile::Mint;
 		slotIdx++;
 		break;
 	}
@@ -59,9 +58,9 @@ void ColorGimmick::GimmickRender()
 	{
 		for (int j = 0; j < Color_HEIGHT; ++j)
 		{
-			SetColor(submitArr[i], COLOR::BLACK);
+			SetColor(ColorSetArr[i], COLOR::BLACK);
   		    Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
-			cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+			cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 		}
 		SetColor(COLOR::WHITE, COLOR::BLACK);
