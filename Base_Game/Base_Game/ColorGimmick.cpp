@@ -4,15 +4,13 @@ void ColorGimmick::Init()
 {
 	slotIdx = 0;
 	for (int i = 0; i < 5; i++) {
+		submitArr[i] = COLOR::GRAY;
 		ColorSetArr[i] = COLOR::GRAY;
 	}
-
-	start_x = GetConsoleResolution().X / 4 +5;
 }
 
 void ColorGimmick::Interact(char btnType)
 {
-
 	switch (btnType)
 	{
 	case '2':
@@ -62,7 +60,7 @@ void ColorGimmick::GimmickRender()
 		{
 			SetColor(ColorSetArr[i], COLOR::BLACK);
   		    Gotoxy(start_x + (Color_WIDTH * i), start_y + j);
-			cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+			cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << "\n";
 
 		}
 		SetColor(COLOR::WHITE, COLOR::BLACK);
