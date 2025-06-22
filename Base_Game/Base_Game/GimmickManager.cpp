@@ -1,9 +1,7 @@
 #include "GimmickManager.h"
-#include <algorithm>
-#include <random>
+
 GimmickManager* GimmickManager::Instance = nullptr;
-std::random_device rd;
-std::mt19937 generator(rd());
+
 
 
 GimmickManager::GimmickManager()
@@ -23,7 +21,8 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 	if (mode == GimmickMode::CORLOR)
 	{
 		vector<int> arr = {2,3,4,5,6,7,8};
-
+		std::random_device rd;
+		std::mt19937 generator(rd());
 		std::shuffle(arr.begin(), arr.end(),rd);
 
 	    answer.clear();
