@@ -37,13 +37,14 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1242, 700,false, L"Game");
+	SetConsoleSettings(1242, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	/*map1->LoadStage(map1->gameMap);
 	player1->PlayerInit();
 	player2->PlayerInit();
 	GimmickManager::GetInstance()->Init();*/
+	GameManager::GetInstance()->Init();
 }
 
 void Core::Update()
@@ -80,12 +81,14 @@ void Core::Update()
 	{
 		player2->PlayerUpdate(map1->gameMap);
 	}*/
+	GameManager::GetInstance()->Update();
 }
 
 void Core::Render()
 {
 	/*map1->MapRender(map1->gameMap, player1);
-	player1->PlayerRender("¢Â");
-	player2->PlayerRender("¢Â");
+	player1->PlayerRender("ï¿½ï¿½");
+	player2->PlayerRender("ï¿½ï¿½");
 	GimmickManager::GetInstance()->Render();*/
+	GameManager::GetInstance()->Render();
 }

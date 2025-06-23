@@ -1,22 +1,32 @@
-#include "GimmickManager.h"
+#include "GameManager.h"
 #include <algorithm>
 #include <random>
-GimmickManager* GimmickManager::Instance = nullptr;
+GameManager* GameManager::Instance = nullptr;
 
 
-GimmickManager::GimmickManager()
+GameManager::GameManager()
 	: wordGimmick(nullptr)
 	, colorGimmick(nullptr)
+	,player1(nullptr)
+	,player2(nullptr)
+	,map1(nullptr)
+	,map2(nullptr)
+	,map3(nullptr)
 {
 	wordGimmick = new WordGimmick;
 	colorGimmick = new ColorGimmick;
+	player1 = new Player(0);
+	player2 = new Player(1);
+	map1 = new Map(0);
+	map2 = new Map(1);
+	map3 = new Map(2);
 }
 
-GimmickManager::~GimmickManager()
+GameManager::~GameManager()
 {
 }
 
-void GimmickManager::ShuffleAnswer(vector<char>& answer)
+void GameManager::ShuffleAnswer(vector<char>& answer)
 {
 	std::random_device rd;
 	std::mt19937 generator(rd());
@@ -38,7 +48,7 @@ void GimmickManager::ShuffleAnswer(vector<char>& answer)
 	}
 }
 
-void GimmickManager::CheckAnswer(vector<char> submit)
+void GameManager::CheckAnswer(vector<char> submit)
 {
 	bool isSelect = true;
 
@@ -48,7 +58,6 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
-				test.push_back(0);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::RED, COLOR::BLACK);
@@ -60,7 +69,6 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 			}
 			else
 			{
-				test.push_back(1);
 				for (int j = 0; j < Color_HEIGHT; ++j)
 				{
 					SetColor(COLOR::GREEN, COLOR::BLACK);
@@ -84,35 +92,73 @@ void GimmickManager::CheckAnswer(vector<char> submit)
 	{
 		Sleep(2000);
 		Reset();
+		ChangeTurn(player1, player2);
 	}
 }
 
-void GimmickManager::Init()
+void GameManager::Init()
 {
 	colorGimmick->Init();
 	wordGimmick->Init();
+	player1->myTurn = true;
+	player2->myTurn = false;
+
+	player1->PlayerInit();
+	player2->PlayerInit();
+
+	map1->LoadStage(map1->gameMap);
+	map2->LoadStage(map2->gameMap);
+	//map3->LoadStage(map3->gameMap);
 
 	ShuffleAnswer(answer);
 }
 
-void GimmickManager::Render()
+void GameManager::Update()
+{
+	if (mode == GimmickMode::CORLOR)
+	{
+		player1->PlayerUpdate(map1->gameMap);
+		player2->PlayerUpdate(map1->gameMap);
+	}
+	else if (mode == GimmickMode::WORD)
+	{
+		player1->PlayerUpdate(map2->gameMap);
+		player2->PlayerUpdate(map2->gameMap);
+	}
+
+}
+
+
+void GameManager::Render()
 {
 	if (mode == GimmickMode::CORLOR)
 	{
 		colorGimmick->GimmickRender();
+		map1->MapRender(map1->gameMap);
+		player1->PlayerRender("¢Â");
+		player2->PlayerRender("¢Â");
+
 	}
-	else
+	else if(mode == GimmickMode::WORD)
 	{
 		wordGimmick->GimmickRender();
+		map2->MapRender(map2->gameMap);
+		player1->PlayerRender("¢Â");
+		player2->PlayerRender("¢Â");
 	}
 }
 
-void GimmickManager::Reset()
+void GameManager::Reset()
 {
 	colorGimmick->Init();
 	system("cls");
 }
 
-void GimmickManager::RnderResult()
+
+void GameManager::ChangeTurn(Player* p1, Player* p2)
 {
+	p1->myTurn = !p1->myTurn;
+	p2->myTurn = !p2->myTurn;
 }
+
+

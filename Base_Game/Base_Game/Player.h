@@ -6,7 +6,7 @@
 #include "Map.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
-#include "GimmickManager.h"
+#include "GameManager.h"
 #include "Enums.h"
 
 using std::cin;
@@ -43,6 +43,7 @@ class Player
 {
 public:
 	int playerIdx = 0;
+	bool myTurn = false;
 
 	Player(int idx);
 	PLAYERPOS position{};  // 위치 정보

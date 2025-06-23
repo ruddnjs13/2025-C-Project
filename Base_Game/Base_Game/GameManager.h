@@ -1,4 +1,6 @@
 #pragma once
+#include "Player.h"
+#include "Map.h"
 #include "WordGimmick.h"
 #include <algorithm>
 #include <random>
@@ -10,27 +12,33 @@ const int MAX_ANSWER_LENGTH = 5;
 const int RESULT_X = GetConsoleResolution().X / 2;
 const int RESULT_Y = GetConsoleResolution().Y / 2;
 
-class GimmickManager
+class Player;
+class Map;
+class GameManager
 {
 private:
-	static GimmickManager* Instance;
-	GimmickManager();
-	~GimmickManager();
+	static GameManager* Instance;
+	GameManager();
+	~GameManager();
 
 public:
-	static GimmickManager* GetInstance()
+	static GameManager* GetInstance()
 	{
 		if (Instance == nullptr)
 		{
-			Instance = new GimmickManager;
+			Instance = new GameManager;
 		}
 		return Instance;
 	}
 public:
-	GimmickMode mode = GimmickMode::CORLOR;
+	GimmickMode mode = GimmickMode::WORD;
 
 	vector<char> answer;
-	vector<int> test = {0};
+	Player* player1;
+	Player* player2;
+	Map* map1;
+	Map* map2;
+	Map* map3;
 
 	WordGimmick* wordGimmick;
 	ColorGimmick* colorGimmick;
@@ -40,10 +48,9 @@ public:
 	void ShuffleAnswer(vector<char>& answer);
 	void CheckAnswer(vector<char> submit);
 	void Init();
+	void Update();
 	void Render();
 	void Reset();
-	void RnderResult();
-
-
+	void ChangeTurn(Player* p1, Player* p2);
 };
 

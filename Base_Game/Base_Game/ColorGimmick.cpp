@@ -64,7 +64,3 @@ void ColorGimmick::GimmickRender()
 		SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
 }
-
-void ColorGimmick::Submit()
-{
-}

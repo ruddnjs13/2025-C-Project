@@ -8,12 +8,13 @@ Player::Player(int idx)
 
 void Player::PlayerInit()
 {
-	position.tStartPos = { MAP_START_X, START_Y };
+	position.tStartPos = { 7,6 };
 	position.tPos = position.tStartPos;
 }
 
 void Player::PlayerUpdate(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
+	if (myTurn == false) return;
 	HandleInput(gameMap);
 }
 
@@ -84,28 +85,33 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	if (gameMap[position.tPos.y][position.tPos.x] >= (int)GimickTile::A &&
 		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
 	{
-		GimmickManager::GetInstance()->wordGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
+		GameManager::GetInstance()->wordGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 		
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
 		 gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Mint)
 	{
-		GimmickManager::GetInstance()->colorGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
+		GameManager::GetInstance()->colorGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
 	if (gameMap[position.tPos.y][position.tPos.x] == (int)GimickTile::ENTER)
 	{
-		if (GimmickManager::GetInstance()->mode == GimmickMode::CORLOR)
+		if (GameManager::GetInstance()->mode == GimmickMode::CORLOR)
 		{
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
-				submit.push_back((GimmickManager::GetInstance()->colorGimmick->colorGimickTile[i]));
+				submit.push_back((GameManager::GetInstance()->colorGimmick->colorGimickTile[i]));
 			}
-			GimmickManager::GetInstance()->CheckAnswer(submit);
+			GameManager::GetInstance()->CheckAnswer(submit);
 		}
 		else
 		{
-			GimmickManager::GetInstance()->wordGimmick->Submit();
+			vector<char> submit;
+			for (int i = 0; i < 5; i++)
+			{
+				submit.push_back((GameManager::GetInstance()->wordGimmick->submitArr[i]));
+			}
+			GameManager::GetInstance()->CheckAnswer(submit);
 		}
 	}
 }

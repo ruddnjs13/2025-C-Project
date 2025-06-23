@@ -9,6 +9,7 @@
 #include "GimmickManager.h"
 #include "PlayerWinCheck.h"
 #include "GameScene.h"
+#include "GameManager.h"
 
 class Core
 {
@@ -33,6 +34,7 @@ private:
 	Player* player2;
 	GameScene* gameScene;
 	Map* map1;
+
 };
 
 

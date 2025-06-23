@@ -1,13 +1,19 @@
 #include "Map.h"
 
-void Map::LoadStage(string loadMap,char gameMap[MAP_HEIGHT][MAP_WIDTH])
+
+Map::Map(int idx)
 {
-	std::ifstream mapFile(loadMap);
+	mapIdx = idx;
+}
+
+void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
+{
+	std::ifstream mapFile(stageNames[mapIdx]);
 
 	if (mapFile.is_open())
 	{
 		for (int i = 0; i < MAP_HEIGHT; i++)
-		{ 
+		{
 			mapFile.getline(gameMap[i], MAP_WIDTH);
 		}
 		mapFile.close();
@@ -15,28 +21,29 @@ void Map::LoadStage(string loadMap,char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 	else
 	{
-		cout << "¸Ê ÆÄÀÏ ÃÊ±âÈ­ ½ÇÆÐ" << endl;
+		cout << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½" << endl;
 	}
 }
 
-void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
+void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
 	Gotoxy(MAP_START_X, MAP_START_Y);
 	for (int i = 0; i < MAP_HEIGHT; ++i)
 	{
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
-			if (j == player->position.tPos.x && i == player->position.tPos.y)
-				cout << "¢Â";
-			else if (gameMap[i][j] == (char)Tile::WALL)
-				cout << "¡á";
+			/*if (j == player1->position.tPos.x && i == player2->position.tPos.y)
+				cout << "ï¿½ï¿½";
+			else */
+			if (gameMap[i][j] == (char)Tile::WALL)
+				cout << "ï¿½ï¿½";
 			else if (gameMap[i][j] == (char)Tile::ROAD)
 				cout << "  ";
 			else if (IsAlphabet(gameMap[i][j]))
 				cout << ' ' << gameMap[i][j];
 			else if (gameMap[i][j] == (char)GimickTile::ENTER)
 			{
-				cout << "¢ß";
+				cout << "ï¿½ï¿½";
 			}
 			else if (IsColor(gameMap[i][j]))
 			{
@@ -63,7 +70,7 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
 				default:
 					SetColor();
 				}
-				cout << "¡Ü";
+				cout << "ï¿½ï¿½";
 				SetColor(COLOR::WHITE);
 			}
 			else

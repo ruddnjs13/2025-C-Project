@@ -70,7 +70,7 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>04. Scene</Filter>
     </ClCompile>
-    <ClCompile Include="GimmickManager.cpp">
+    <ClCompile Include="GameManager.cpp">
       <Filter>02. Manager</Filter>
     </ClCompile>
     <ClCompile Include="PlayerWinCheck.cpp">
@@ -85,6 +85,7 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>02. Manager</Filter>
     </ClCompile>
+    <ClCompile Include="AsciiAlphabets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -120,7 +121,7 @@
     <ClInclude Include="MainMenu.h">
       <Filter>04. Scene</Filter>
     </ClInclude>
-    <ClInclude Include="GimmickManager.h">
+    <ClInclude Include="GameManager.h">
       <Filter>02. Manager</Filter>
     </ClInclude>
     <ClInclude Include="PlayerWinCheck.h">
@@ -135,5 +136,6 @@
     <ClInclude Include="SceneManager.h">
       <Filter>02. Manager</Filter>
     </ClInclude>
+    <ClInclude Include="AsciiAlphabets.h" />
   </ItemGroup>
 </Project>
