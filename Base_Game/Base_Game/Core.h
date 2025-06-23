@@ -2,9 +2,13 @@
 #include "Console.h"
 #include "Player.h"
 #include "Map.h"
+#include "StageSelect.h"
 #include "MainMenu.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
+#include "GimmickManager.h"
+#include "PlayerWinCheck.h"
+#include "GameScene.h"
 #include "GameManager.h"
 
 class Core
@@ -22,7 +26,15 @@ private:
 
 private:
 	bool isRunning;
-	//MainMenu* mainMenu;
+	int playerTurn = 1;
+	MainMenu* mainMenu;
+	StageSelect* stageSelect;
+	PlayerWinCheck* playerWinCheck;
+	Player* player1;
+	Player* player2;
+	GameScene* gameScene;
+	Map* map1;
+
 };
 
 
