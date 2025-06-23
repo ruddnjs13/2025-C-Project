@@ -2,7 +2,21 @@
 
 Core::Core()
 	: isRunning(true)
+	, player1(nullptr)
+	, player2(nullptr)
+	,map1(nullptr)
+	, mainMenu(nullptr)
+	, stageSelect(nullptr)
+	, playerWinCheck(nullptr)
+	, gameScene(nullptr)
 {
+	player1 = new Player(0);
+	player2 = new Player(1);
+	map1 = new Map(0);
+	mainMenu = new MainMenu;
+	stageSelect = new StageSelect;
+	playerWinCheck = new PlayerWinCheck;
+	gameScene = new GameScene;
 }
 Core::~Core()
 {
@@ -26,16 +40,55 @@ void Core::Init()
 	SetConsoleSettings(1242, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
+	/*map1->LoadStage(map1->gameMap);
+	player1->PlayerInit();
+	player2->PlayerInit();
+	GimmickManager::GetInstance()->Init();*/
 	GameManager::GetInstance()->Init();
 }
 
 void Core::Update()
 {
+	switch (SceneManager::GetInstance()->currentScene)
+	{
+	case Scene::TITLE:
+		mainMenu->MainMenuScene();
+		break;
+	case Scene::STAGESLECT:
+		system("cls");
+		stageSelect->StageSelectScene();
+		break;
+	case Scene::WINCHECK:
+		system("cls");
+		playerWinCheck->PlayerWinCheckScene(SceneManager::GetInstance()->player1Win, SceneManager::GetInstance()->player2Win);
+		break;
+	case Scene::GAME:
+		gameScene->GamePlayerScene(map1,player1,player2);
+		break;
+	case Scene::INFO:
+		break;
+	case Scene::QUIT:
+		break;
+	case Scene::END:
+		isRunning = false;
+		break;
+	}
+	/*if (playerTurn == 0)
+	{
+		player1->PlayerUpdate(map1->gameMap);
+	}
+	else
+	{
+		player2->PlayerUpdate(map1->gameMap);
+	}*/
 	GameManager::GetInstance()->Update();
 }
 
 void Core::Render()
 {
-	
+	/*map1->MapRender(map1->gameMap, player1);
+	player1->PlayerRender("��");
+	player2->PlayerRender("��");
+	GimmickManager::GetInstance()->Render();*/
 	GameManager::GetInstance()->Render();
 }

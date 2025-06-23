@@ -1,5 +1,6 @@
 #include "Map.h"
 
+
 Map::Map(int idx)
 {
 	mapIdx = idx;
@@ -20,7 +21,7 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 	else
 	{
-		cout << "¸Ê ÆÄÀÏ ÃÊ±âÈ­ ½ÇÆÐ" << endl;
+		cout << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½" << endl;
 	}
 }
 
@@ -32,17 +33,17 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
 			/*if (j == player1->position.tPos.x && i == player2->position.tPos.y)
-				cout << "¢Â";
+				cout << "ï¿½ï¿½";
 			else */
 			if (gameMap[i][j] == (char)Tile::WALL)
-				cout << "¡á";
+				cout << "ï¿½ï¿½";
 			else if (gameMap[i][j] == (char)Tile::ROAD)
 				cout << "  ";
 			else if (IsAlphabet(gameMap[i][j]))
 				cout << ' ' << gameMap[i][j];
 			else if (gameMap[i][j] == (char)GimickTile::ENTER)
 			{
-				cout << "¢ß";
+				cout << "ï¿½ï¿½";
 			}
 			else if (IsColor(gameMap[i][j]))
 			{
@@ -69,7 +70,7 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 				default:
 					SetColor();
 				}
-				cout << "¡Ü";
+				cout << "ï¿½ï¿½";
 				SetColor(COLOR::WHITE);
 			}
 			else
