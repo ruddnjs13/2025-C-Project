@@ -1,8 +1,8 @@
 #include "Map.h"
 
-void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
+void Map::LoadStage(string loadMap,char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
-	std::ifstream mapFile("Stage2.txt");
+	std::ifstream mapFile(loadMap);
 
 	if (mapFile.is_open())
 	{

@@ -17,7 +17,7 @@ class Map
 public:
 	char gameMap[MAP_HEIGHT][MAP_WIDTH];
 public:
-	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
+	void LoadStage(string loadMap,char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
