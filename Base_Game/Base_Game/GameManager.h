@@ -32,7 +32,7 @@ public:
 		return Instance;
 	}
 public:
-	GimmickMode mode = GimmickMode::WORD;
+	GimmickMode mode = GimmickMode::CORLOR;
 
 	vector<char> answer;
 	WordList wordList;

@@ -6,10 +6,9 @@
 #include "MainMenu.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
-#include "GimmickManager.h"
+#include "GameManager.h"
 #include "PlayerWinCheck.h"
 #include "GameScene.h"
-#include "GameManager.h"
 
 class Core
 {

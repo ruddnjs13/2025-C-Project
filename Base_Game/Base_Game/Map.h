@@ -21,9 +21,8 @@ public:
 	int mapIdx = 0;
 public:
 Map(int idx);
-	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player);
-	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
+	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
 };

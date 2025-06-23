@@ -21,7 +21,7 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 	else
 	{
-		cout << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½" << endl;
+		cout << "·Îµå ¾ÈµÊ" << endl;
 	}
 }
 
@@ -33,17 +33,17 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
 			/*if (j == player1->position.tPos.x && i == player2->position.tPos.y)
-				cout << "ï¿½ï¿½";
+				cout << "??";
 			else */
 			if (gameMap[i][j] == (char)Tile::WALL)
-				cout << "ï¿½ï¿½";
+				cout << "¡á";
 			else if (gameMap[i][j] == (char)Tile::ROAD)
 				cout << "  ";
 			else if (IsAlphabet(gameMap[i][j]))
 				cout << ' ' << gameMap[i][j];
 			else if (gameMap[i][j] == (char)GimickTile::ENTER)
 			{
-				cout << "ï¿½ï¿½";
+				cout << "¢ß";
 			}
 			else if (IsColor(gameMap[i][j]))
 			{
@@ -70,7 +70,7 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 				default:
 					SetColor();
 				}
-				cout << "ï¿½ï¿½";
+				cout << "¡á";
 				SetColor(COLOR::WHITE);
 			}
 			else
