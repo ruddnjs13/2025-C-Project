@@ -41,11 +41,11 @@ void StageSelect::StageSelectRender()
 	{
 	case GimmickMode::CORLOR:
 		stageName = "색깔맞추기";
-		SceneManager::GetInstance()->mode = GimmickMode::CORLOR;
+		GameManager::GetInstance()->mode = GimmickMode::CORLOR;
 		break;
 	case GimmickMode::WORD:
 		stageName = "단어맞추기";
-		SceneManager::GetInstance()->mode = GimmickMode::WORD;
+		GameManager::GetInstance()->mode = GimmickMode::WORD;
 		break;
 
 	}
