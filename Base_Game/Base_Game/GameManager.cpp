@@ -26,8 +26,9 @@ GameManager::~GameManager()
 {
 }
 
-void GameManager::ShuffleAnswer(vector<char>& answer)
+void GameManager::ChooseAnswer(vector<char>& answer)
 {
+	answer.clear();
 	std::random_device rd;
 	std::mt19937 generator(rd());
 
@@ -43,8 +44,18 @@ void GameManager::ShuffleAnswer(vector<char>& answer)
 			answer.push_back(arr[i]);
 		}
 	}
-	else
+	else if (mode == GimmickMode::WORD)
 	{
+		std::uniform_int_distribution<> dis(1, 20);
+
+		string arr = wordList.list[dis(rd)];
+
+		for (int i = 0; i < 5; i++)
+		{
+			answer.push_back(arr[i]);
+		}
+
+		int a = 0;
 	}
 }
 
@@ -78,10 +89,35 @@ void GameManager::CheckAnswer(vector<char> submit)
 				}
 			}
 		}
-				SetColor(COLOR::WHITE, COLOR::BLACK);
+		SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
 	else if (mode == GimmickMode::WORD)
 	{
+		for (int i = 0; i < MAX_ANSWER_LENGTH; ++i)
+		{
+			if (answer[i] != submit[i])
+			{
+				for (int j = 0; j < Color_HEIGHT; ++j)
+				{
+					SetColor(COLOR::RED, COLOR::BLACK);
+					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+				}
+				isSelect = false;
+			}
+			else
+			{
+				for (int j = 0; j < Color_HEIGHT; ++j)
+				{
+					SetColor(COLOR::GREEN, COLOR::BLACK);
+					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+				}
+			}
+		}
+		SetColor(COLOR::WHITE, COLOR::BLACK);
 	}
 
 	if (isSelect)
@@ -110,7 +146,7 @@ void GameManager::Init()
 	map2->LoadStage(map2->gameMap);
 	//map3->LoadStage(map3->gameMap);
 
-	ShuffleAnswer(answer);
+	ChooseAnswer(answer);
 }
 
 void GameManager::Update()
@@ -151,6 +187,7 @@ void GameManager::Render()
 void GameManager::Reset()
 {
 	colorGimmick->Init();
+	wordGimmick->Init();
 	system("cls");
 }
 

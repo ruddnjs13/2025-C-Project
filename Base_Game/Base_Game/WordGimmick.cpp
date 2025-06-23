@@ -2,7 +2,11 @@
 
 void WordGimmick::Init()
 {
-   
+	slotIdx = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		submitArr[i] = 'A';
+	}
 }
 
 void WordGimmick::Interact(char btnType)
@@ -12,8 +16,6 @@ void WordGimmick::Interact(char btnType)
     submitArr[slotIdx++] = btnType;
 	system("cls");
 }
-
-
 
 void WordGimmick::GimmickRender()
 {

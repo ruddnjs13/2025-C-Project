@@ -6,6 +6,7 @@
 #include <random>
 #include "ColorGimmick.h"
 #include <vector>
+#include "WordList.h"
 using std::vector;
 using std::cout;
 const int MAX_ANSWER_LENGTH = 5;
@@ -34,6 +35,7 @@ public:
 	GimmickMode mode = GimmickMode::WORD;
 
 	vector<char> answer;
+	WordList wordList;
 	Player* player1;
 	Player* player2;
 	Map* map1;
@@ -45,7 +47,7 @@ public:
 
 public:
 	
-	void ShuffleAnswer(vector<char>& answer);
+	void ChooseAnswer(vector<char>& answer);
 	void CheckAnswer(vector<char> submit);
 	void Init();
 	void Update();

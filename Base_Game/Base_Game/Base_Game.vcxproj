@@ -144,6 +144,7 @@
     <ClInclude Include="PlayerWinCheck.h" />
     <ClInclude Include="StageSelect.h" />
     <ClInclude Include="WordGimmick.h" />
+    <ClInclude Include="WordList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AsciiAlphabets.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="PlayerWinCheck.cpp" />
     <ClCompile Include="StageSelect.cpp" />
     <ClCompile Include="WordGimmick.cpp" />
+    <ClCompile Include="WordList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
