@@ -7,6 +7,7 @@
 #include "ColorGimmick.h"
 #include <vector>
 #include "WordList.h"
+#include "SceneManager.h"
 using std::vector;
 using std::cout;
 const int MAX_ANSWER_LENGTH = 5;

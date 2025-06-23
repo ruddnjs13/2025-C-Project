@@ -14,7 +14,7 @@ void StageSelect::StageSelectInit()
 void StageSelect::StageSelectScene()
 {
 	StageSelectRender();
-	Sleep(1000);
+	Sleep(3000);
 	SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
 }
 

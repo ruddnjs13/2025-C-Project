@@ -122,7 +122,16 @@ void GameManager::CheckAnswer(vector<char> submit)
 
 	if (isSelect)
 	{
-		// ¸ÂÀ½
+		if (player1->myTurn)
+		{
+		  SceneManager::GetInstance()->player1Win++;
+		  SceneManager::GetInstance()->currentScene = Scene::STAGESLECT;
+		}
+		else
+		{
+			SceneManager::GetInstance()->player2Win++;
+			SceneManager::GetInstance()->currentScene = Scene::STAGESLECT;
+		}
 	}
 	else
 	{
