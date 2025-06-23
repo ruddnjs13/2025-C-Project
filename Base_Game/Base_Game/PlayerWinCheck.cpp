@@ -6,7 +6,7 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 {
 	PlayerWinChecker(player1Win, Player2Win);
 	PlayerWinCheckRender();
-	Sleep(1000);
+	Sleep(3000);
 	SceneManager::GetInstance()->currentScene = Scene::GAME;
 	SceneManager::GetInstance()->EnterAnimation();
 }

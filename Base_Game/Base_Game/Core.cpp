@@ -63,7 +63,7 @@ void Core::Update()
 		playerWinCheck->PlayerWinCheckScene(SceneManager::GetInstance()->player1Win, SceneManager::GetInstance()->player2Win);
 		break;
 	case Scene::GAME:
-		gameScene->GamePlayerScene(map1,player1,player2);
+		gameScene->GamePlayerScene();
 		break;
 	case Scene::INFO:
 		break;
@@ -81,7 +81,7 @@ void Core::Update()
 	{
 		player2->PlayerUpdate(map1->gameMap);
 	}*/
-	GameManager::GetInstance()->Update();
+	
 }
 
 void Core::Render()
@@ -90,5 +90,5 @@ void Core::Render()
 	player1->PlayerRender("��");
 	player2->PlayerRender("��");
 	GimmickManager::GetInstance()->Render();*/
-	GameManager::GetInstance()->Render();
+	
 }

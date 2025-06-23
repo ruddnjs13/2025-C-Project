@@ -1,6 +1,7 @@
 #pragma once
 #include "Enums.h"
 #include "Console.h"
+#include "GameManager.h"
 class SceneManager
 {
 private:
@@ -19,7 +20,6 @@ public:
 		return Instance;
 	}
 	Scene currentScene = Scene::TITLE;
-	GimmickMode mode;
 	int player1Win = 0;
 	int player2Win = 0;
 	void EnterAnimation();
