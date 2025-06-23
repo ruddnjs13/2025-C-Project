@@ -6,7 +6,7 @@
 #include "Map.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
-#include "GimmickManager.h"
+#include "GameManager.h"
 #include "Enums.h"
 
 using std::cin;

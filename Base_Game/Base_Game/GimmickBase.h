@@ -14,6 +14,5 @@ public :
 	virtual void Init() = 0;
 	virtual void Interact(char btnType) = 0;
 	virtual void GimmickRender() = 0;
-	virtual void Submit() = 0;
 };
 

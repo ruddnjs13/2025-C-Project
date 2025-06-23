@@ -5,7 +5,7 @@
 #include "MainMenu.h"
 #include "ColorGimmick.h"
 #include "WordGimmick.h"
-#include "GimmickManager.h"
+#include "GameManager.h"
 
 class Core
 {
@@ -23,9 +23,6 @@ private:
 private:
 	bool isRunning;
 	//MainMenu* mainMenu;
-	Player* player1;
-	Player* player2;
-	Map* map1;
 };
 
 

@@ -1,13 +1,18 @@
 #include "Map.h"
 
+Map::Map(int idx)
+{
+	mapIdx = idx;
+}
+
 void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
-	std::ifstream mapFile("Stage2.txt");
+	std::ifstream mapFile(stageNames[mapIdx]);
 
 	if (mapFile.is_open())
 	{
 		for (int i = 0; i < MAP_HEIGHT; i++)
-		{ 
+		{
 			mapFile.getline(gameMap[i], MAP_WIDTH);
 		}
 		mapFile.close();
@@ -19,16 +24,17 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 }
 
-void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player)
+void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 {
 	Gotoxy(MAP_START_X, MAP_START_Y);
 	for (int i = 0; i < MAP_HEIGHT; ++i)
 	{
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
-			if (j == player->position.tPos.x && i == player->position.tPos.y)
+			/*if (j == player1->position.tPos.x && i == player2->position.tPos.y)
 				cout << "в┬";
-			else if (gameMap[i][j] == (char)Tile::WALL)
+			else */
+			if (gameMap[i][j] == (char)Tile::WALL)
 				cout << "бс";
 			else if (gameMap[i][j] == (char)Tile::ROAD)
 				cout << "  ";

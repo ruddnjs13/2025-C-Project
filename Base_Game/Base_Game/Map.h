@@ -4,7 +4,9 @@
 const int MAP_HEIGHT = 15;
 const int MAP_WIDTH = 61;
 const int MAP_START_X = 0;
-const int MAP_START_Y = GetConsoleResolution().Y - MAP_HEIGHT;
+const int MAP_START_Y = GetConsoleResolution().Y - MAP_HEIGHT + 10;
+
+const string stageNames[] = { "stage1.txt", "stage2.txt","stage3.txt" };
 
 #include <fstream>
 #include "Enums.h"
@@ -16,9 +18,11 @@ class Map
 {
 public:
 	char gameMap[MAP_HEIGHT][MAP_WIDTH];
+	int mapIdx = 0;
 public:
+	Map(int idx);
 	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
-	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], Player* player);
+	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
 };

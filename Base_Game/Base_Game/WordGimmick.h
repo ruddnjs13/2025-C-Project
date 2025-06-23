@@ -1,27 +1,25 @@
 #pragma once
-const int WORD_HEIGHT = 8;
-const int WORD_WIDTH = 24;
+const int WORD_HEIGHT = 6;
+const int WORD_WIDTH = 18;
 
-#include <map>
 #include "GimmickBase.h"
-#include<io.h>
-#include<fcntl.h>
+#include "AsciiAlphabets.h"
 #include<vector>
 #include <fstream>
+#include<io.h>
+#include<fcntl.h>
 
-using std::map;
 using std::vector;
 
 class WordGimmick : public GimmickBase
 {
 public:
-	char submitArr[5] = { 'A','B','C','X','Q' };
-	map<char, vector<wstring>> asciiMap;
+	char submitArr[5] = { 'A','A','A','A','A' };
+	AsciiAlphabets asciiAlphabets;
 public : 
 	virtual void Init() override;
 	virtual void Interact(char btnType) override;
 	virtual void GimmickRender() override;
-	virtual void Submit() override;
 };
 
 

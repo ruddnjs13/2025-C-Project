@@ -10,21 +10,24 @@ void WordGimmick::Interact(char btnType)
     if (slotIdx > 4) return;
 
     submitArr[slotIdx++] = btnType;
+	system("cls");
 }
+
+
 
 void WordGimmick::GimmickRender()
 {
-
+	int coutmode = _setmode(_fileno(stdout), _O_U16TEXT);
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < WORD_HEIGHT; ++j)
 		{
 			Gotoxy(start_x + (WORD_WIDTH * i), start_y + j);
-			wcout << asciiMap[submitArr[i]][j] << '\n';
+			wcout << asciiAlphabets.asciiMap[submitArr[i]][j] << '\r' << '\n';
 		}
-    }
+	}
+
+	int wcoutmode = _setmode(_fileno(stdout), coutmode);
 }
 
-void WordGimmick::Submit()
-{
-}
+
