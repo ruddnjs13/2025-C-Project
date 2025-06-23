@@ -12,7 +12,7 @@ Core::Core()
 {
 	player1 = new Player(0);
 	player2 = new Player(1);
-	map1 = new Map;
+	map1 = new Map(0);
 	mainMenu = new MainMenu;
 	stageSelect = new StageSelect;
 	playerWinCheck = new PlayerWinCheck;
