@@ -4,7 +4,7 @@
 const int MAP_HEIGHT = 15;
 const int MAP_WIDTH = 61;
 const int MAP_START_X = 0;
-const int MAP_START_Y = GetConsoleResolution().Y - MAP_HEIGHT + 10;
+const int MAP_START_Y = GetConsoleResolution().Y - MAP_HEIGHT;
 
 const string stageNames[] = { "stage1.txt", "stage2.txt","stage3.txt" };
 
@@ -26,4 +26,22 @@ Map(int idx);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
