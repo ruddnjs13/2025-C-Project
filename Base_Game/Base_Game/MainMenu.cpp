@@ -45,7 +45,7 @@ void MainMenu::MainMenuUpdate()
 void MainMenu::MainMenuRender()
 {
 	COORD resolution = GetConsoleResolution();
-	int y = resolution.Y / 2 -1;
+	int y = resolution.Y / 2;
 	Gotoxy(0, y);
 	int coutmode = _setmode(_fileno(stdout), _O_U16TEXT);
 	    wcout <<L"   ██████╗  █████╗ ██████╗ ████████╗██╗   ██╗██████╗ ██╗ ██████╗ ████████╗"<<'\n';

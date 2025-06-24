@@ -29,9 +29,9 @@ void PlayerWinCheck::PlayerWinCheckRender()
 {
 	if (!isPlayer1Win && !isPlayer2Win) 
 	{
-		Gotoxy(GetConsoleResolution().X / 4, GetConsoleResolution().Y / 2);
+		Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
 		cout << "Player 1 Win : " << player1Win << endl;
-		Gotoxy(GetConsoleResolution().X/2, GetConsoleResolution().Y / 2);
+		Gotoxy(GetConsoleResolution().X/2, GetConsoleResolution().Y / 2+1);
 		cout << "Player 2 Win : " << player2Win << endl;
 	}
 	else
