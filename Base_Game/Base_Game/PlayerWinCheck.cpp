@@ -6,7 +6,7 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 {
 	PlayerWinChecker(player1Win, Player2Win);
 	PlayerWinCheckRender();
-	Sleep(1000);
+	Sleep(3000);
 	SceneManager::GetInstance()->currentScene = Scene::GAME;
 	SceneManager::GetInstance()->EnterAnimation();
 }
@@ -29,9 +29,9 @@ void PlayerWinCheck::PlayerWinCheckRender()
 {
 	if (!isPlayer1Win && !isPlayer2Win) 
 	{
-		Gotoxy(GetConsoleResolution().X / 4, GetConsoleResolution().Y / 2);
+		Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
 		cout << "Player 1 Win : " << player1Win << endl;
-		Gotoxy(GetConsoleResolution().X/2, GetConsoleResolution().Y / 2);
+		Gotoxy(GetConsoleResolution().X/2, GetConsoleResolution().Y / 2+1);
 		cout << "Player 2 Win : " << player2Win << endl;
 	}
 	else

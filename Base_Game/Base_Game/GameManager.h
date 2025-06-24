@@ -7,10 +7,11 @@
 #include "ColorGimmick.h"
 #include <vector>
 #include "WordList.h"
+#include "SceneManager.h"
 using std::vector;
 using std::cout;
 const int MAX_ANSWER_LENGTH = 5;
-const int RESULT_X = GetConsoleResolution().X / 2;
+const int RESULT_X = GetConsoleResolution().X / 5;
 const int RESULT_Y = GetConsoleResolution().Y / 2;
 
 class Player;

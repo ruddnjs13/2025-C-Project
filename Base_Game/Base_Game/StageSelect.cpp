@@ -14,7 +14,7 @@ void StageSelect::StageSelectInit()
 void StageSelect::StageSelectScene()
 {
 	StageSelectRender();
-	Sleep(1000);
+	Sleep(3000);
 	SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
 }
 
@@ -35,17 +35,18 @@ void StageSelect::ShuffleStage()
 
 void StageSelect::StageSelectRender()
 {
-	Gotoxy(GetConsoleResolution().X /2 , GetConsoleResolution().Y /2);
 	string stageName;
 	switch (stageArr[stageIdx])
 	{
 	case GimmickMode::CORLOR:
 		stageName = "색깔맞추기";
-		SceneManager::GetInstance()->mode = GimmickMode::CORLOR;
+		Gotoxy(GetConsoleResolution().X /2 , GetConsoleResolution().Y /2);
+		GameManager::GetInstance()->mode = GimmickMode::CORLOR;
 		break;
 	case GimmickMode::WORD:
 		stageName = "단어맞추기";
-		SceneManager::GetInstance()->mode = GimmickMode::WORD;
+		Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
+		GameManager::GetInstance()->mode = GimmickMode::WORD;
 		break;
 
 	}

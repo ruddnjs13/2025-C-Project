@@ -1,8 +1,13 @@
 #include "GameScene.h"
 
-void GameScene::GamePlayerScene(Map* map,Player* player1,Player* Player2)
+void GameScene::GamePlayerScene()
 {
-	this->map = map;
-	this->player1 = player1;
-	this->player2 = Player2;
+	GameManager::GetInstance()->Update();
+	GameSceneRender();
+	FrameSync(60);
+}
+
+void GameScene::GameSceneRender()
+{
+	GameManager::GetInstance()->Render();
 }
