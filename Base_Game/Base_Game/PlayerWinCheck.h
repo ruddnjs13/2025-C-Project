@@ -13,8 +13,7 @@ public:
 	int player2Win = 0;
 	bool isPlayer1Win = false;
 	bool isPlayer2Win = false;
-	std::map<int, std::vector<std::wstring>> playerWinMessage;
-	std::map<int, std::vector<std::wstring>> playerWinIntMessage;
+	std::map<int, std::vector<std::wstring>> playerWinCheckMessage;
 
 public:
 	PlayerWinCheck();
