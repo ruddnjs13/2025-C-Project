@@ -85,18 +85,23 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	if (gameMap[position.tPos.y][position.tPos.x] >= (int)GimickTile::A &&
 		gameMap[position.tPos.y][position.tPos.x] <= (int)GimickTile::Z)
 	{
+		PlaySoundID(SOUNDID::SELECTWORD);
 		GameManager::GetInstance()->wordGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 		
 	}
 	else if (gameMap[position.tPos.y][position.tPos.x] >= (int)ColorGimickTile::Red &&
 		 gameMap[position.tPos.y][position.tEndPos.x] <= (int)ColorGimickTile::Mint)
 	{
+		PlaySoundID(SOUNDID::SELECTCOLOR);
+	    
 		GameManager::GetInstance()->colorGimmick->Interact(gameMap[position.tPos.y][position.tPos.x]);
 	}
 	if (gameMap[position.tPos.y][position.tPos.x] == (int)GimickTile::ENTER)
 	{
 		if (GameManager::GetInstance()->mode == GimmickMode::CORLOR)
 		{
+			CloseSoundID(SOUNDID::SELECTCOLOR);
+			CloseSoundID(SOUNDID::SELECTWORD);
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
@@ -106,6 +111,8 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		}
 		else
 		{
+			CloseSoundID(SOUNDID::SELECTWORD);
+			CloseSoundID(SOUNDID::SELECTCOLOR);
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{

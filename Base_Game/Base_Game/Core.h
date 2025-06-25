@@ -9,6 +9,7 @@
 #include "GameManager.h"
 #include "PlayerWinCheck.h"
 #include "GameScene.h"
+#include "Mci.h"
 
 class Core
 {
