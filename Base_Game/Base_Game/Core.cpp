@@ -37,7 +37,7 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1000, 800,true, L"Game");
+	SetConsoleSettings(1000, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	/*map1->LoadStage(map1->gameMap);
