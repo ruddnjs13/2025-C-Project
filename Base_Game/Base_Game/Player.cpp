@@ -8,7 +8,6 @@ Player::Player(int idx)
 
 void Player::PlayerInit()
 {
-	position.tStartPos = { 7,6 };
 	position.tPos = position.tStartPos;
 }
 
@@ -38,7 +37,7 @@ void Player::PlayerRender(string player)
 				if (position.tPos.x == j &&
 					position.tPos.y == i)
 				{
-					Gotoxy((45+j) * 2, i + MAP_START_Y);
+					Gotoxy((j) * 2, i + MAP_START_Y);
 					cout << player;
 				}
 			}
@@ -70,10 +69,10 @@ void Player::HandleInput(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		break;
 	}
 
-	position.tNewPos.x =
+	/*position.tNewPos.x =
 		std::clamp(position.tNewPos.x, 0, MAP_HEIGHT - 2);
 	position.tNewPos.y =
-		std::clamp(position.tNewPos.y, 0, MAP_WIDTH - 1);
+		std::clamp(position.tNewPos.y, 0, MAP_WIDTH - 1);*/
 
 	if (gameMap[position.tNewPos.y][position.tNewPos.x]
 		!= (char)Tile::WALL)

@@ -7,6 +7,7 @@ GameManager* GameManager::Instance = nullptr;
 GameManager::GameManager()
 	: wordGimmick(nullptr)
 	, colorGimmick(nullptr)
+	,shootingGimmick(nullptr)
 	,player1(nullptr)
 	,player2(nullptr)
 	,map1(nullptr)
@@ -15,8 +16,11 @@ GameManager::GameManager()
 {
 	wordGimmick = new WordGimmick;
 	colorGimmick = new ColorGimmick;
+	shootingGimmick = new ShootingGimmick;
+
 	player1 = new Player(0);
 	player2 = new Player(1);
+
 	map1 = new Map(0);
 	map2 = new Map(1);
 	map3 = new Map(2);
@@ -24,6 +28,13 @@ GameManager::GameManager()
 
 GameManager::~GameManager()
 {
+	delete wordGimmick;
+	delete colorGimmick;
+	delete player1;
+	delete player2;
+	delete map1;
+	delete map2;
+	delete map3;
 }
 
 void GameManager::ChooseAnswer(vector<char>& answer)
@@ -144,19 +155,45 @@ void GameManager::CheckAnswer(vector<char> submit)
 
 void GameManager::Init()
 {
-	colorGimmick->Init();
-	wordGimmick->Init();
-	player1->myTurn = true;
-	player2->myTurn = false;
+	
+	if (mode == GimmickMode::CORLOR)
+	{
+		colorGimmick->Init();
+		player1->myTurn = true;
+		player2->myTurn = false;
+		PlalyersInit();
+
+		map1->LoadStage(map1->gameMap);
+		ChooseAnswer(answer);
+	}
+	else if (mode == GimmickMode::WORD)
+	{
+		wordGimmick->Init();
+		player1->myTurn = true;
+		player2->myTurn = false;
+		PlalyersInit();
+
+		map2->LoadStage(map2->gameMap);
+		ChooseAnswer(answer);
+	}
+	else if (mode == GimmickMode::SHOOT)
+	{
+		player1->myTurn = true;
+		player2->myTurn = true;
+
+		PlalyersInit();
+
+		map3->LoadStage(map3->gameMap);
+	}
+}
+
+void GameManager::PlalyersInit()
+{
+	player1->position.tStartPos = { 7,6 };
+	player2->position.tStartPos = { 55,6 };
 
 	player1->PlayerInit();
 	player2->PlayerInit();
-
-	map1->LoadStage(map1->gameMap);
-	map2->LoadStage(map2->gameMap);
-	//map3->LoadStage(map3->gameMap);
-
-	ChooseAnswer(answer);
 }
 
 void GameManager::Update()
@@ -171,7 +208,12 @@ void GameManager::Update()
 		player1->PlayerUpdate(map2->gameMap);
 		player2->PlayerUpdate(map2->gameMap);
 	}
-
+	else if (mode == GimmickMode::SHOOT)
+	{
+		player1->PlayerUpdate(map3->gameMap);
+		player2->PlayerUpdate(map3->gameMap);
+		shootingGimmick->Update();
+	}
 }
 
 
@@ -191,6 +233,13 @@ void GameManager::Render()
 		map2->MapRender(map2->gameMap);
 		player1->PlayerRender("¢Â");
 		player2->PlayerRender("¢Â");
+	}
+	else if (mode == GimmickMode::SHOOT)
+	{
+		shootingGimmick->GimmickRender();
+		map3->MapRender(map3->gameMap);
+		player1->PlayerRender("¦«");
+		player2->PlayerRender("¦«");
 	}
 }
 

@@ -145,6 +145,8 @@
     <ClInclude Include="PlayerWinCheck.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="StageSelect.h" />
+    <ClInclude Include="ShootingGimmick.h" />
+    <ClInclude Include="Target.h" />
     <ClInclude Include="WordGimmick.h" />
     <ClInclude Include="WordList.h" />
   </ItemGroup>
@@ -165,6 +167,8 @@
     <ClCompile Include="PlayerWinCheck.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="StageSelect.cpp" />
+    <ClCompile Include="ShootingGimmick.cpp" />
+    <ClCompile Include="Target.cpp" />
     <ClCompile Include="WordGimmick.cpp" />
     <ClCompile Include="WordList.cpp" />
   </ItemGroup>

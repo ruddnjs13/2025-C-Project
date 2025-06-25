@@ -42,9 +42,9 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 			else if (IsAlphabet(gameMap[i][j]))
 				cout << ' ' << gameMap[i][j];
 			else if (gameMap[i][j] == (char)GimickTile::ENTER)
-			{
 				cout << "¢ß";
-			}
+			else if (gameMap[i][j] == (char)Tile::SHOOT)
+				cout << "  ";
 			else if (IsColor(gameMap[i][j]))
 			{
 				switch (gameMap[i][j])

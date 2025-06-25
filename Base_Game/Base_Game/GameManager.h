@@ -8,6 +8,8 @@
 #include <vector>
 #include "WordList.h"
 #include "SceneManager.h"
+#include "Target.h"
+#include "ShootingGimmick.h"
 using std::vector;
 using std::cout;
 const int MAX_ANSWER_LENGTH = 5;
@@ -33,7 +35,7 @@ public:
 		return Instance;
 	}
 public:
-	GimmickMode mode = GimmickMode::CORLOR;
+	GimmickMode mode = GimmickMode::SHOOT;
 
 	vector<char> answer;
 	WordList wordList;
@@ -43,6 +45,7 @@ public:
 	Map* map2;
 	Map* map3;
 
+	ShootingGimmick* shootingGimmick;
 	WordGimmick* wordGimmick;
 	ColorGimmick* colorGimmick;
 
@@ -51,9 +54,11 @@ public:
 	void ChooseAnswer(vector<char>& answer);
 	void CheckAnswer(vector<char> submit);
 	void Init();
+	void PlalyersInit();
 	void Update();
 	void Render();
 	void Reset();
 	void ChangeTurn(Player* p1, Player* p2);
+
 };
 

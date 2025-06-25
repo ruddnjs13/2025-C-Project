@@ -16,7 +16,7 @@ enum class Scene
 
 enum class Tile
 {
-	WALL = '0', ROAD
+	WALL = '0', ROAD, SHOOT = '9'
 };
 
 enum class ColorGimickTile
@@ -32,5 +32,6 @@ enum class GimickTile
 
 enum class GimmickMode
 {
-	CORLOR=0,WORD=1
+	CORLOR=0,WORD=1,SHOOT=2
 };
+
