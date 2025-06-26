@@ -20,6 +20,7 @@ public:
 		return Instance;
 	}
 	Scene currentScene = Scene::TITLE;
+	bool isReset = false;
 	int player1Win = 0;
 	int player2Win = 0;
 	void EnterAnimation();

@@ -10,6 +10,7 @@ void StageSelect::StageSelectInit()
 {
 	ShuffleStage();
 	StageSelectAscii();
+	stageIdx = 0;
 }
 
 void StageSelect::StageSelectScene()
@@ -26,7 +27,7 @@ void StageSelect::ShuffleStage()
 
 
 	stageArr.clear();
-	std::vector<GimmickMode> stages = {GimmickMode::WORD,GimmickMode::WORD , GimmickMode::WORD };
+	std::vector<GimmickMode> stages = {GimmickMode::CORLOR,GimmickMode::WORD , GimmickMode::SHOOT };
 	std::shuffle(stages.begin(), stages.end(), rd);
 	for (int i = 0; i < 3;i++) 
 	{
@@ -43,11 +44,17 @@ void StageSelect::StageSelectRender()
 	case GimmickMode::CORLOR:
 		GameManager::GetInstance()->mode = GimmickMode::CORLOR;
 		stageint = (stageIdx * 10) + 1;
+		GameManager::GetInstance()->Init();
 		break;
 	case GimmickMode::WORD:
-		
 		GameManager::GetInstance()->mode = GimmickMode::WORD;
 		stageint = (stageIdx * 10) + 2;
+		GameManager::GetInstance()->Init();
+		break;
+	case GimmickMode::SHOOT:
+		GameManager::GetInstance()->mode = GimmickMode::SHOOT;
+		GameManager::GetInstance()->Init();
+		stageint = (stageIdx * 10) + 3;
 		break;
 
 	}

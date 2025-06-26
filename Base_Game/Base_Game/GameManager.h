@@ -35,7 +35,7 @@ public:
 		return Instance;
 	}
 public:
-	GimmickMode mode = GimmickMode::WORD;
+	GimmickMode mode;
 
 	vector<char> answer;
 	WordList wordList;

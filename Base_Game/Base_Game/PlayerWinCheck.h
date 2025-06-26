@@ -18,6 +18,7 @@ public:
 
 public:
 	PlayerWinCheck();
+	void PlayerWinInit();
 	void PlayerWinCheckScene(int player1Win, int Player2Win);
 	void PlayerWinChecker(int player1Win,int Player2Win);
 	void PlayerWinCheckRender();

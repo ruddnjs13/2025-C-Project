@@ -5,6 +5,15 @@
 PlayerWinCheck::PlayerWinCheck()
 {
 	PlayerWinCheckAscii();
+	PlayerWinInit();
+}
+
+void PlayerWinCheck::PlayerWinInit()
+{
+	player1Win = 0;
+	player2Win = 0;
+	isPlayer1Win = false;
+	isPlayer2Win = false;
 }
 
 void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
@@ -20,6 +29,7 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 	else
 	{
 		SceneManager::GetInstance()->currentScene = Scene::TITLE;
+		SceneManager::GetInstance()->isReset = true;
 	}
 }
 
