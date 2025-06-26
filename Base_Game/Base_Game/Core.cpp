@@ -37,7 +37,7 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1000, 800,false, L"Game");
+	SetConsoleSettings(1000, 800,true, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	if (!InitAllSounds())
@@ -50,7 +50,9 @@ void Core::Init()
 	player1->PlayerInit();
 	player2->PlayerInit();
 	GimmickManager::GetInstance()->Init();*/
+
 	GameManager::GetInstance()->Init();
+
 }
 
 void Core::Update()

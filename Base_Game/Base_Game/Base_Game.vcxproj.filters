@@ -35,6 +35,15 @@
     <Filter Include="03. Object\Gimmick">
       <UniqueIdentifier>{db107c6e-c834-4d86-be14-f28c58a7e0d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Object\Gimmick\Shooting">
+      <UniqueIdentifier>{15f63343-bfe2-49ce-8ad7-e7a41aeabd86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Object\Gimmick\Color">
+      <UniqueIdentifier>{194b0a59-18fa-4702-a4dc-cd92b073d15c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Object\Gimmick\Word">
+      <UniqueIdentifier>{4c3929d3-3344-419c-baf1-90d08eef58dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -61,12 +70,6 @@
     <ClCompile Include="GimmickBase.cpp">
       <Filter>03. Object\Gimmick</Filter>
     </ClCompile>
-    <ClCompile Include="WordGimmick.cpp">
-      <Filter>03. Object\Gimmick</Filter>
-    </ClCompile>
-    <ClCompile Include="ColorGimmick.cpp">
-      <Filter>03. Object\Gimmick</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>04. Scene</Filter>
     </ClCompile>
@@ -86,6 +89,19 @@
       <Filter>02. Manager</Filter>
     </ClCompile>
     <ClCompile Include="AsciiAlphabets.cpp" />
+    <ClCompile Include="WordList.cpp" />
+    <ClCompile Include="ShootingGimmick.cpp">
+      <Filter>03. Object\Gimmick\Shooting</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorGimmick.cpp">
+      <Filter>03. Object\Gimmick\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="WordGimmick.cpp">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClCompile>
+    <ClCompile Include="Target.cpp">
+      <Filter>03. Object\Gimmick\Shooting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -112,12 +128,6 @@
     <ClInclude Include="GimmickBase.h">
       <Filter>03. Object\Gimmick</Filter>
     </ClInclude>
-    <ClInclude Include="WordGimmick.h">
-      <Filter>03. Object\Gimmick</Filter>
-    </ClInclude>
-    <ClInclude Include="ColorGimmick.h">
-      <Filter>03. Object\Gimmick</Filter>
-    </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>04. Scene</Filter>
     </ClInclude>
@@ -137,5 +147,21 @@
       <Filter>02. Manager</Filter>
     </ClInclude>
     <ClInclude Include="AsciiAlphabets.h" />
+    <ClInclude Include="WordList.h" />
+    <ClInclude Include="ShootingGimmick.h">
+      <Filter>03. Object\Gimmick\Shooting</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorGimmick.h">
+      <Filter>03. Object\Gimmick\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="WordGimmick.h">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClInclude>
+    <ClInclude Include="Target.h">
+      <Filter>03. Object\Gimmick\Shooting</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeDefines.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

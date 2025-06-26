@@ -1,4 +1,5 @@
 #pragma once
+#include"TypeDefines.h"
 #include<iostream>
 #include<algorithm>
 #include "Console.h"
@@ -16,15 +17,6 @@ using std::cout;
 const int START_X = 10;
 const int START_Y = 5;
 
-typedef struct _pos
-{
-	int x;
-	int y;
-	bool operator == (const _pos& other) const
-	{
-		return (x == other.x && y == other.y);
-	}
-}POS, * PPOS;
 
 // 위치 관련 구조체
 typedef struct _tagplayerpos
