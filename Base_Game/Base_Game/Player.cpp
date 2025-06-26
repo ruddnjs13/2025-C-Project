@@ -108,7 +108,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 			}
 			GameManager::GetInstance()->CheckAnswer(submit);
 		}
-		else
+		else if(GameManager::GetInstance()->mode == GimmickMode::WORD)
 		{
 			CloseSoundID(SOUNDID::SELECTWORD);
 			CloseSoundID(SOUNDID::SELECTCOLOR);
@@ -119,6 +119,13 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 			}
 			GameManager::GetInstance()->CheckAnswer(submit);
 		}
+	}
+	else if(GameManager::GetInstance()->mode == GimmickMode::SHOOT)
+	{
+		CloseSoundID(SOUNDID::SELECTWORD);
+		CloseSoundID(SOUNDID::SELECTCOLOR);
+
+		GameManager::GetInstance()->shootingGimmick->CheckHitTargets(playerIdx, position.tPos);
 	}
 }
 

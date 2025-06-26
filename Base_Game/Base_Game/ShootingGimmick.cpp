@@ -17,14 +17,18 @@ void ShootingGimmick::GimmickRender()
 		target->Render();
 	}
 
+	RenderUI();
+
 
 }
 void ShootingGimmick::RenderUI()
 {
-	Gotoxy(POINT_UI_X[0], POINT_UI_Y);
 
+	Gotoxy(POINT_UI_X[0], POINT_UI_Y);
+	cout << "Player1 : " << p1_point;
 
 	Gotoxy(POINT_UI_X[1], POINT_UI_Y);
+	cout << "Player2 : " << p2_point;
 }
 void ShootingGimmick::Update()
 {
@@ -68,6 +72,8 @@ void ShootingGimmick::CheckHitTargets(int playerIdx, POS hitPos)
 	{
 		if (targets[i]->CheckHit(hitPos))
 		{
+			Target* temp = targets[i];
+			temp->ClearSpawnMap(spawnMap);
 			if (playerIdx == 0)
 			{
 				p1_point++;
@@ -77,9 +83,7 @@ void ShootingGimmick::CheckHitTargets(int playerIdx, POS hitPos)
 				p2_point++;
 			}
 
-			Target* temp = targets[i];
 			targets.erase(targets.begin() + i);
-			temp->ClearSpawnMap(spawnMap);
 			delete temp;
 		}
 	}

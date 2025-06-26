@@ -55,17 +55,19 @@ void Target::ClearSpawnMap(char spawnMap[MAP_HEIGHT][MAP_WIDTH])
 bool Target::CheckHit(POS hitPos)
 {
 
-	int dx[] = { -2,-1,0,1,-2 };
-	int dy[] = { 2,1,0,-1,-2 };
+	int dx[] = { -2,-1,0,1,2 };
+	int dy[] = { -2,1,0,-1,2 };
 
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
 		{
-			if (hitPos.x == (myPos.x + dx[i]) && hitPos.y == (myPos.y + dy[j]))
-			{
+			int checkX = myPos.x + dx[i];
+			int checkY = myPos.y + dy[j];
+
+
+			if (hitPos.x == checkX && hitPos.y == checkY)
 				return true;
-			}
 		}
 	}
 	return false;
