@@ -9,6 +9,7 @@
 #include "WordGimmick.h"
 #include "GameManager.h"
 #include "Enums.h"
+#include "Mci.h"
 
 using std::cin;
 using std::cout;

@@ -7,8 +7,9 @@
 
 static std::vector<SoundEntry> SoundTable =
 {
-    { L"Sound\\happyrock.mp3", 50, 0 },
-    { L"Sound\\explosion.wav", 100, 0 }
+    { L"Sound\\dancing-juice-222031.mp3", 50, 0 },
+    { L"Sound\\foley-office-computer-mouse-draw-02.wav", 20, 0 },
+    { L"Sound\\object-pen-pencil-scribble-character-01.wav", 20, 0 },
 };
 
 bool OpenMciDevice(LPCWSTR _deviceType, LPCWSTR _name, UINT& _deviceid)
@@ -86,6 +87,15 @@ void PlaySoundID(SOUNDID _id, bool _repeat)
         return;
     // 정상 재생
     PlayMciDevice(devId, _repeat);
+}
+
+void CloseSoundID(SOUNDID id)
+{
+    UINT devId = SoundTable[(int)id].deviceId;
+    if (devId == 0)
+        return;
+    // 정상 재생
+    CloseMciDevice(devId);
 }
 
 void ReleaseAllSounds()

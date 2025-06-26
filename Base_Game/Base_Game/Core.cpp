@@ -37,9 +37,15 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1000, 800,true, L"Game");
+	SetConsoleSettings(1000, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
+	if (!InitAllSounds())
+	{
+		cout << "사운드 초기화 실패" << endl;
+		return;
+	}
+	PlaySoundID(SOUNDID::BGM, true);
 	/*map1->LoadStage(map1->gameMap);
 	player1->PlayerInit();
 	player2->PlayerInit();

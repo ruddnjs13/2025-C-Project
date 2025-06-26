@@ -1,6 +1,11 @@
-#include "PlayerWinCheck.h"
+﻿#include "PlayerWinCheck.h"
 
 
+
+PlayerWinCheck::PlayerWinCheck()
+{
+	PlayerWinCheckAscii();
+}
 
 void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 {
@@ -29,10 +34,22 @@ void PlayerWinCheck::PlayerWinCheckRender()
 {
 	if (!isPlayer1Win && !isPlayer2Win) 
 	{
-		Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
-		cout << "Player 1 Win : " << player1Win << endl;
-		Gotoxy(GetConsoleResolution().X/2, GetConsoleResolution().Y / 2+1);
-		cout << "Player 2 Win : " << player2Win << endl;
+		int coutmode = _setmode(_fileno(stdout), _O_U16TEXT);
+		Gotoxy(0, GetConsoleResolution().Y / 4);
+		int player1 = (player1Win * 10) + 1;
+		int player2 = (player2Win * 10) + 2;
+		for (int i = 0; i < playerWinCheckMessage[player1].size(); i++)
+		{
+			wcout << playerWinCheckMessage[player1][i] << '\n';
+		}
+		wcout << endl;
+		Gotoxy(0, GetConsoleResolution().Y / 2);
+		for (int i = 0; i < playerWinCheckMessage[player2].size(); i++)
+		{
+			wcout << playerWinCheckMessage[player2][i] << '\n';
+		}
+		wcout << endl;
+		int wcoutmode = _setmode(_fileno(stdout), coutmode);
 	}
 	else
 	{
@@ -47,4 +64,55 @@ void PlayerWinCheck::PlayerWinCheckRender()
 			cout << "Player 2 Win!" << endl;
 		}
 	}
+}
+
+void PlayerWinCheck::PlayerWinCheckAscii()
+{
+	playerWinCheckMessage.insert({ 1,
+		{
+           L"█████╗ ██╗      █████╗ ██╗   ██╗███████╗██████╗      ██╗    ██╗    ██╗██╗███╗   ██╗            ██████╗"
+          ,L"█╔══██╗██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ███║    ██║    ██║██║████╗  ██║    ██╗    ██╔═████╗"
+          ,L"█████╔╝██║     ███████║ ╚████╔╝ █████╗  ██████╔╝    ╚██║    ██║ █╗ ██║██║██╔██╗ ██║    ╚═╝    ██║██╔██║"
+          ,L"█╔═══╝ ██║     ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══██╗     ██║    ██║███╗██║██║██║╚██╗██║    ██╗    ████╔╝██║"
+          ,L"█║     ███████╗██║  ██║   ██║   ███████╗██║  ██║     ██║    ╚███╔███╔╝██║██║ ╚████║    ╚═╝    ╚██████╔╝"
+          ,L"═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝     ╚═╝     ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝            ╚═════╝"
+		}
+		});
+	playerWinCheckMessage.insert({ 11,
+		{
+			 L"██████╗ ██╗      █████╗ ██╗   ██╗███████╗██████╗      ██╗    ██╗    ██╗██╗███╗   ██╗            ██╗"
+			,L"██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ███║    ██║    ██║██║████╗  ██║    ██╗    ███║"
+			,L"██████╔╝██║     ███████║ ╚████╔╝ █████╗  ██████╔╝    ╚██║    ██║ █╗ ██║██║██╔██╗ ██║    ╚═╝    ╚██║"
+			,L"██╔═══╝ ██║     ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══██╗     ██║    ██║███╗██║██║██║╚██╗██║    ██╗     ██║"
+			,L"██║     ███████╗██║  ██║   ██║   ███████╗██║  ██║     ██║    ╚███╔███╔╝██║██║ ╚████║    ╚═╝     ██║"
+			,L"╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝     ╚═╝     ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝            ╚═╝"
+		}
+		});
+	playerWinCheckMessage.insert({ 2,
+		{
+			 L"██████╗ ██╗      █████╗ ██╗   ██╗███████╗██████╗     ██████╗     ██╗    ██╗██╗███╗   ██╗            ██████╗"
+			,L"██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ╚════██╗    ██║    ██║██║████╗  ██║    ██╗    ██╔═████╗"
+			,L"██████╔╝██║     ███████║ ╚████╔╝ █████╗  ██████╔╝     █████╔╝    ██║ █╗ ██║██║██╔██╗ ██║    ╚═╝    ██║██╔██║"
+			,L"██╔═══╝ ██║     ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══██╗    ██╔═══╝     ██║███╗██║██║██║╚██╗██║    ██╗    ████╔╝██║"
+			,L"██║     ███████╗██║  ██║   ██║   ███████╗██║  ██║    ███████╗    ╚███╔███╔╝██║██║ ╚████║    ╚═╝    ╚██████╔╝"
+			,L"╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚══════╝     ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝            ╚═════╝"
+
+		} 
+	});
+
+	playerWinCheckMessage.insert({ 12,
+		{
+			 L"██████╗ ██╗      █████╗ ██╗   ██╗███████╗██████╗     ██████╗     ██╗    ██╗██╗███╗   ██╗            ██╗"
+			,L"██╔══██╗██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ╚════██╗    ██║    ██║██║████╗  ██║    ██╗    ███║"
+			,L"██████╔╝██║     ███████║ ╚████╔╝ █████╗  ██████╔╝     █████╔╝    ██║ █╗ ██║██║██╔██╗ ██║    ╚═╝    ╚██║"
+			,L"██╔═══╝ ██║     ██╔══██║  ╚██╔╝  ██╔══╝  ██╔══██╗    ██╔═══╝     ██║███╗██║██║██║╚██╗██║    ██╗     ██║"
+			,L"██║     ███████╗██║  ██║   ██║   ███████╗██║  ██║    ███████╗    ╚███╔███╔╝██║██║ ╚████║    ╚═╝     ██║"
+			,L"╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚══════╝     ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝            ╚═╝"
+		}
+		});
+
+}
+
+PlayerWinCheck::~PlayerWinCheck()
+{
 }

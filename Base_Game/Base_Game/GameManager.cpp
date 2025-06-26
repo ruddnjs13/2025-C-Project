@@ -144,6 +144,7 @@ void GameManager::CheckAnswer(vector<char> submit)
 			SceneManager::GetInstance()->currentScene = Scene::STAGESLECT;
 			ChangeTurn(player1, player2);
 		}
+		Reset();
 	}
 	else
 	{
