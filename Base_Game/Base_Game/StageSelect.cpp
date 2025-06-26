@@ -26,7 +26,7 @@ void StageSelect::ShuffleStage()
 
 
 	stageArr.clear();
-	std::vector<GimmickMode> stages = {GimmickMode::SHOOT,GimmickMode::SHOOT , GimmickMode::SHOOT };
+	std::vector<GimmickMode> stages = {GimmickMode::WORD,GimmickMode::WORD , GimmickMode::WORD };
 	std::shuffle(stages.begin(), stages.end(), rd);
 	for (int i = 0; i < 3;i++) 
 	{

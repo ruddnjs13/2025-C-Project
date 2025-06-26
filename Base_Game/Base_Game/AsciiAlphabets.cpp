@@ -157,14 +157,6 @@ AsciiAlphabets::AsciiAlphabets()
 	,L" ╚══▀▀═╝	"
 	} });
 
-	asciiMap.insert({ 'R',{
-	 L"██████╗ "
-	,L"██╔══██╗"
-	,L"██████╔╝"
-	,L"██╔═══╝ "
-	,L"██║	   "
-	,L"╚═╝	   "
-	} });
 
 	asciiMap.insert({ 'R',{
 	 L"██████╗ "
@@ -174,15 +166,6 @@ AsciiAlphabets::AsciiAlphabets()
 	,L"██║  ██║"
 	,L"╚═╝  ╚═╝"
 
-	} });
-
-	asciiMap.insert({ 'S',{
-	 L"██████╗ "
-	,L"██╔══██╗"
-	,L"██████╔╝"
-	,L"██╔═══╝ "
-	,L"██║	   "
-	,L"╚═╝	   "
 	} });
 
 	asciiMap.insert({ 'S',{
