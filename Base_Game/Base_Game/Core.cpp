@@ -37,7 +37,7 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1000, 800,true, L"Game");
+	SetConsoleSettings(1100, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	if (!InitAllSounds())
@@ -57,6 +57,12 @@ void Core::Init()
 
 void Core::Update()
 {
+	if (SceneManager::GetInstance()->isReset) 
+	{
+		stageSelect->StageSelectInit();
+		playerWinCheck->PlayerWinInit();
+		
+	}
 	switch (SceneManager::GetInstance()->currentScene)
 	{
 	case Scene::TITLE:
@@ -76,6 +82,7 @@ void Core::Update()
 	case Scene::INFO:
 		break;
 	case Scene::QUIT:
+		exit(0);
 		break;
 	case Scene::END:
 		isRunning = false;

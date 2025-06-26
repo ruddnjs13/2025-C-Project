@@ -159,33 +159,33 @@ void GameManager::Init()
 	
 	if (mode == GimmickMode::CORLOR)
 	{
+		map1->LoadStage(map1->gameMap);
 		colorGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = false;
 		PlalyersInit();
 
-		map1->LoadStage(map1->gameMap);
 		ChooseAnswer(answer);
 	}
 	else if (mode == GimmickMode::WORD)
 	{
+		map2->LoadStage(map2->gameMap);
 		wordGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = false;
 		PlalyersInit();
 
-		map2->LoadStage(map2->gameMap);
 		ChooseAnswer(answer);
 	}
 	else if (mode == GimmickMode::SHOOT)
 	{
+		map3->LoadStage(map3->gameMap);
 		shootingGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = true;
 
 		PlalyersInit();
 
-		map3->LoadStage(map3->gameMap);
 	}
 }
 
