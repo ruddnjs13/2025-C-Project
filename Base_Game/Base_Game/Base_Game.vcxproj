@@ -147,6 +147,7 @@
     <ClInclude Include="StageSelect.h" />
     <ClInclude Include="ShootingGimmick.h" />
     <ClInclude Include="Target.h" />
+    <ClInclude Include="TypeDefines.h" />
     <ClInclude Include="WordGimmick.h" />
     <ClInclude Include="WordList.h" />
   </ItemGroup>

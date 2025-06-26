@@ -44,7 +44,9 @@ void Core::Init()
 	player1->PlayerInit();
 	player2->PlayerInit();
 	GimmickManager::GetInstance()->Init();*/
+
 	GameManager::GetInstance()->Init();
+
 }
 
 void Core::Update()

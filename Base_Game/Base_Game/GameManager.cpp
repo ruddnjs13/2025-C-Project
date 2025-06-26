@@ -178,6 +178,7 @@ void GameManager::Init()
 	}
 	else if (mode == GimmickMode::SHOOT)
 	{
+		shootingGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = true;
 
@@ -236,10 +237,10 @@ void GameManager::Render()
 	}
 	else if (mode == GimmickMode::SHOOT)
 	{
-		shootingGimmick->GimmickRender();
 		map3->MapRender(map3->gameMap);
 		player1->PlayerRender("¦«");
 		player2->PlayerRender("¦«");
+		shootingGimmick->GimmickRender();
 	}
 }
 

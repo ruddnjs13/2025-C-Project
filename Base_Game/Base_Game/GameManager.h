@@ -8,7 +8,6 @@
 #include <vector>
 #include "WordList.h"
 #include "SceneManager.h"
-#include "Target.h"
 #include "ShootingGimmick.h"
 using std::vector;
 using std::cout;
@@ -18,6 +17,7 @@ const int RESULT_Y = GetConsoleResolution().Y / 2;
 
 class Player;
 class Map;
+class ShootingGimmick;
 class GameManager
 {
 private:

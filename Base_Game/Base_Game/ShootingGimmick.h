@@ -1,27 +1,31 @@
 #pragma once
+#include "Console.h"
+#include "TypeDefines.h"
 #include <vector>
-#include "Map.h";
-#include "Player.h";
-#include "Target.h";
-#include <random>
-#include <chrono>
+#include "GimmickBase.h"
+#include "Target.h"
 
-using namespace std::chrono;
+class Target;
+
+const int POINT_UI_X[] = {0, GetConsoleResolution().X/2};
+const int POINT_UI_Y = 0;
 
 
-class ShootingGimmick : GimmickBase
+class ShootingGimmick : public GimmickBase
 {
 private:
 	const int countdownSeconds = 30;
-	int remainingTime = countdownSeconds;
+	unsigned int beforeTime;
+	int spawnInterval = 2;
 
+	int p1_point = 0;
+	int p2_point = 0;
 
-private:
-	vector<Target> targets;
+public:
+	std::vector<Target*> targets;
 public:
 
 	char spawnMap[MAP_HEIGHT][MAP_WIDTH] = { 0, };
-
 
 	void Init() override;
 
@@ -29,9 +33,11 @@ public:
 
 	void GimmickRender() override;
 
+	void RenderUI();
+
 	void Update();
 
-	void CheckHitTargets(POS hitPos);
+	void CheckHitTargets(int playerIdx,POS hitPos);
 
 	bool SpawnTarget();
 

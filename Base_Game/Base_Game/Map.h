@@ -1,5 +1,5 @@
 #pragma once
-#include "Console.h";
+#include "Console.h"
 
 const int MAP_HEIGHT = 15;
 const int MAP_WIDTH = 61;

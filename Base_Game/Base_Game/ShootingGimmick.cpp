@@ -2,6 +2,7 @@
 
 void ShootingGimmick::Init()
 {
+	beforeTime = time(nullptr);
 }
 
 void ShootingGimmick::Interact(char btnType)
@@ -11,48 +12,83 @@ void ShootingGimmick::Interact(char btnType)
 
 void ShootingGimmick::GimmickRender()
 {
-	for (auto target : targets)
+	for (auto& target : targets)
 	{
-		target.Render();
+		target->Render();
 	}
+
+
+}
+void ShootingGimmick::RenderUI()
+{
+	Gotoxy(POINT_UI_X[0], POINT_UI_Y);
+
+
+	Gotoxy(POINT_UI_X[1], POINT_UI_Y);
 }
 void ShootingGimmick::Update()
 {
-	auto startTime = std::chrono::system_clock::now();
-	int Sec = 0;
-
-	if (Sec <= countdownSeconds)
+	int sec = time(nullptr) - beforeTime;
+	
+	if (sec >= spawnInterval)
 	{
-		auto endTime = std::chrono::system_clock::now();
-		auto sec = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime);
-		if (sec.count() > Sec)
+		int maxTries = 30;
+		while (maxTries--)
 		{
-			Sec++;
-			while (true)
+			if (SpawnTarget())
 			{
-				if (SpawnTarget())
-					break;
+				beforeTime = time(nullptr);
+				break;
 			}
 		}
+		if (maxTries <= 0)
+			beforeTime = time(nullptr);
+	}
+
+	for (int i = 0; i < targets.size(); i++)
+	{
+		if (targets[i]->lifeTime >= 2)
+		{
+			Target* temp = targets[i];
+			targets.erase(targets.begin() + i);
+			temp->ClearSpawnMap(spawnMap);
+
+			delete temp;
+		}
+	}
+
+	for (auto target : targets)
+	{
+		target->Update();
 	}
 }
-void ShootingGimmick::CheckHitTargets(POS hitPos)
+void ShootingGimmick::CheckHitTargets(int playerIdx, POS hitPos)
 {
-	for (auto iter = targets.begin(); iter != targets.end(); ++iter)
+	for (int i = 0; i < targets.size(); i++)
 	{
-		if (iter->CheckHit(hitPos))
+		if (targets[i]->CheckHit(hitPos))
 		{
-			// 점수 올리기
-			targets.erase(iter); 
-			return;
+			if (playerIdx == 0)
+			{
+				p1_point++;
+			}
+			else
+			{
+				p2_point++;
+			}
+
+			Target* temp = targets[i];
+			targets.erase(targets.begin() + i);
+			temp->ClearSpawnMap(spawnMap);
+			delete temp;
 		}
 	}
 }
 
 bool ShootingGimmick::SpawnTarget()
 {
-	int dx[] = { -1,0,1 };
-	int dy[] = { 1,0,-1 };
+	int dx[] = { -2,-1,0,1,2 };
+	int dy[] = { 2,1,0,-1,-2 };
 
 	std::mt19937 rng(std::random_device{}());
 
@@ -64,27 +100,23 @@ bool ShootingGimmick::SpawnTarget()
 
 	POS spawnPos = { x,y };
 
-	if (x > MAP_WIDTH - 4 || x < 4 || y > MAP_HEIGHT - 4 || y < 4)
-		return false;
-
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 5; j++)
 		{
-			if (spawnMap[dx[i]][dy[j]] >= 0)
+			if (spawnMap[spawnPos.x + dx[i]][spawnPos.y + dy[j]] >= 1)
 				return false;
 		}
 	}
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 5; j++)
 		{
-			if (spawnMap[dx[i]][dy[j]] >= 0)
-				spawnMap[dx[i]][dy[j]] = 1;
+			spawnMap[spawnPos.x+ dx[i]][spawnPos.y + dy[j]] = 1;
 		}
 	}
 
-	targets.push_back(Target(spawnPos));
+	targets.push_back(new Target({ spawnPos }));
 	return true;
 }
