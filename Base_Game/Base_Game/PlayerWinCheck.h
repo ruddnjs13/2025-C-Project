@@ -14,6 +14,7 @@ public:
 	bool isPlayer1Win = false;
 	bool isPlayer2Win = false;
 	std::map<int, std::vector<std::wstring>> playerWinCheckMessage;
+	std::map<int, std::vector<std::wstring>> playerWinMessage;
 
 public:
 	PlayerWinCheck();
