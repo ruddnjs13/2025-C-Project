@@ -27,14 +27,18 @@ void ShootingGimmick::GimmickRender()
 void ShootingGimmick::RenderUI()
 {
 
-	Gotoxy(POINT_UI_X[0], POINT_UI_Y);
+	Gotoxy(POINT_UI_X[0]+4, POINT_UI_Y);
 	cout << "Player1 : " << p1_point;
 
 	Gotoxy(POINT_UI_X[1], POINT_UI_Y);
 	cout << "Player2 : " << p2_point;
 
-	Gotoxy(POINT_UI_X[1]+30, POINT_UI_Y);
+	Gotoxy(POINT_UI_X[1]+28, POINT_UI_Y);
 	cout << "Timer : " << (countdownSeconds-(time(nullptr) - startTime)) << " ";
+
+	RenderBoard();
+
+
 }
 void ShootingGimmick::Update()
 {
@@ -150,4 +154,29 @@ bool ShootingGimmick::SpawnTarget()
 
 	targets.push_back(new Target({ spawnPos }));
 	return true;
+}
+
+void ShootingGimmick::RenderBoard()
+{
+	Gotoxy(POINT_UI_X[0], POINT_UI_Y-2);
+	for (int i = 0; i < 40; i++)
+	{
+		cout << "бс";
+	}
+	Gotoxy(POINT_UI_X[0], POINT_UI_Y - 2);
+	for (int i = 0; i < 4; i++)
+	{
+		cout << "бс" << '\n';
+	}
+	Gotoxy(POINT_UI_X[0], POINT_UI_Y+2);
+	for (int i = 0; i < 40; i++)
+	{
+		cout << "бс";
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		Gotoxy(POINT_UI_X[0] + 39*2, POINT_UI_Y - 2+i);
+
+		cout << "бс" << '\n';
+	}
 }
