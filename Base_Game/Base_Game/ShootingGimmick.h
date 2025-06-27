@@ -8,7 +8,7 @@
 class Target;
 
 const int POINT_UI_X[] = {0, GetConsoleResolution().X/2};
-const int POINT_UI_Y = 0;
+const int POINT_UI_Y = GetConsoleResolution().Y / 4;
 
 
 class ShootingGimmick : public GimmickBase
