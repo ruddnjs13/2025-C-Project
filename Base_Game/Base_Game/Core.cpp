@@ -37,7 +37,7 @@ void Core::Run()
 void Core::Init()
 {
 	srand((unsigned int)time(nullptr));
-	SetConsoleSettings(1100, 800,true, L"Game");
+	SetConsoleSettings(1200, 800,false, L"Game");
 	SetLockResize();
 	SetCursorVisual(false,50);
 	if (!InitAllSounds())
