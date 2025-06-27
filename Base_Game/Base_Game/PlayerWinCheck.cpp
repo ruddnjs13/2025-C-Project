@@ -18,11 +18,11 @@ void PlayerWinCheck::PlayerWinInit()
 
 void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 {
+	PlayerWinChecker(player1Win, Player2Win);
 	if (SceneManager::GetInstance()->isReset) {
 		PlayerWinInit();
 		SceneManager::GetInstance()->isReset = false;
 	}
-	PlayerWinChecker(player1Win, Player2Win);
 	PlayerWinCheckRender();
 	Sleep(3000);
 	if (isPlayer1Win == false && isPlayer2Win == false) {
@@ -32,6 +32,7 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 	}
 	else
 	{
+		system("cls");
 		SceneManager::GetInstance()->currentScene = Scene::TITLE;
 		SceneManager::GetInstance()->isReset = true;
 	}
@@ -75,14 +76,13 @@ void PlayerWinCheck::PlayerWinCheckRender()
 	{
 		if (isPlayer1Win)
 		{
-			Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
+			Gotoxy(0, GetConsoleResolution().Y / 2);
 			for (int i = 0; i < playerWinMessage[1].size();i++) {
 				wcout << playerWinMessage[1][i] << '\n';
 			}
 		}
 		else
 		{
-			Gotoxy(GetConsoleResolution().X / 2, GetConsoleResolution().Y / 2);
 			for (int i = 0; i < playerWinMessage[2].size();i++) {
 				wcout << playerWinMessage[2][i] << '\n';
 			}

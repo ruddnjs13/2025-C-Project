@@ -11,6 +11,9 @@ void StageSelect::StageSelectInit()
 	ShuffleStage();
 	StageSelectAscii();
 	stageIdx = 0;
+	SceneManager::GetInstance()->player1Win = 0;
+	SceneManager::GetInstance()->player2Win = 0;
+
 }
 
 void StageSelect::StageSelectScene()
@@ -19,9 +22,16 @@ void StageSelect::StageSelectScene()
 	{
 		StageSelectInit();
 	}
-	StageSelectRender();
-	Sleep(3000);
-	SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
+	if (SceneManager::GetInstance()->player1Win <= 1 && SceneManager::GetInstance()->player2Win <= 1) 
+	{
+		StageSelectRender();
+		Sleep(3000);
+		SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
+	}
+	else if(SceneManager::GetInstance()->player1Win > 1 || SceneManager::GetInstance()->player2Win > 1)
+	{
+		SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
+	}
 }
 
 void StageSelect::ShuffleStage()
