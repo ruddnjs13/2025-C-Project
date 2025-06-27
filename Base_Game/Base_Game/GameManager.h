@@ -38,6 +38,7 @@ public:
 	GimmickMode mode;
 
 	vector<char> answer;
+
 	WordList wordList;
 	Player* player1;
 	Player* player2;

@@ -163,6 +163,8 @@ void GameManager::Init()
 		colorGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = false;
+		player1->isShootingMode = false;
+		player2->isShootingMode = false;
 		PlalyersInit();
 
 		ChooseAnswer(answer);
@@ -173,6 +175,8 @@ void GameManager::Init()
 		wordGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = false;
+		player1->isShootingMode = false;
+		player2->isShootingMode = false;
 		PlalyersInit();
 
 		ChooseAnswer(answer);
@@ -183,6 +187,8 @@ void GameManager::Init()
 		shootingGimmick->Init();
 		player1->myTurn = true;
 		player2->myTurn = true;
+		player1->isShootingMode = true;
+		player2->isShootingMode = true;
 
 		PlalyersInit();
 

@@ -5,6 +5,7 @@ void ColorGimmick::Init()
 	slotIdx = 0;
 	for (int i = 0; i < 5; i++) {
 		submitArr[i] = COLOR::GRAY;
+		colorGimickTile[i] = ' ';
 	}
 }
 

@@ -72,7 +72,7 @@ Menu MainMenu::GetCurMenu()
 	int x = resolution.X / 4 * 3;
 	static int y = resolution.Y / 2;
 	static int originy = y;
-	Key eKey = KeyController(0);
+	Key eKey = KeyController(0, false);
 	// 2 
 	switch (eKey)
 	{

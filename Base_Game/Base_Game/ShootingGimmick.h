@@ -14,8 +14,9 @@ const int POINT_UI_Y = 0;
 class ShootingGimmick : public GimmickBase
 {
 private:
-	const int countdownSeconds = 30;
+	const int countdownSeconds = 60;
 	unsigned int beforeTime;
+	unsigned int startTime;
 	int spawnInterval = 2;
 
 	int p1_point = 0;

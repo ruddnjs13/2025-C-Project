@@ -1,6 +1,6 @@
 #include "KeyController.h"
 #include<Windows.h>
-Key KeyController(int idx)
+Key KeyController(int idx, bool isNotdelay)
 {
 
 	if (idx == 1)
@@ -27,7 +27,8 @@ Key KeyController(int idx)
 		}
 		if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 		{
-			Sleep(200);
+			if(isNotdelay == false)
+				Sleep(200);
 			return Key::SPACE;
 		}
 		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
@@ -62,7 +63,8 @@ Key KeyController(int idx)
 
 		if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		{
-			Sleep(200);
+			if (isNotdelay == false)
+				Sleep(200);
 			return Key::SPACE;
 		}
 		if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
