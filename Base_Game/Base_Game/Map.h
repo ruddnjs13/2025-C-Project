@@ -25,6 +25,7 @@ Map(int idx);
 	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
+	//bool IsExclude()
 };
 
 
