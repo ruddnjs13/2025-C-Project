@@ -1,10 +1,10 @@
 #pragma once
 #include<iostream>
 #include <string>
-#include <map>
 #include <vector>
 #include "SceneManager.h"
 #include "Console.h"
+#include <unordered_map>
 using std::string;
 class PlayerWinCheck
 {
@@ -13,8 +13,8 @@ public:
 	int player2Win = 0;
 	bool isPlayer1Win = false;
 	bool isPlayer2Win = false;
-	std::map<int, std::vector<std::wstring>> playerWinCheckMessage;
-	std::map<int, std::vector<std::wstring>> playerWinMessage;
+	std::unordered_map<int, std::vector<std::wstring>> playerWinCheckMessage;
+	std::unordered_map<int, std::vector<std::wstring>> playerWinMessage;
 
 public:
 	PlayerWinCheck();

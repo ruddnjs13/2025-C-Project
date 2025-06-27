@@ -9,6 +9,7 @@
 #include "GameManager.h"
 #include "PlayerWinCheck.h"
 #include "GameScene.h"
+#include "InfoScene.h"
 #include "Mci.h"
 
 class Core
@@ -34,6 +35,7 @@ private:
 	Player* player2;
 	GameScene* gameScene;
 	Map* map1;
+	InfoScene* infoScene;
 
 };
 
