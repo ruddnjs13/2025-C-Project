@@ -140,6 +140,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="InfoScene.h" />
     <ClInclude Include="KeyController.h" />
+    <ClInclude Include="MainAnim.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Mci.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="InfoScene.cpp" />
     <ClCompile Include="KeyController.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainAnim.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Mci.cpp" />

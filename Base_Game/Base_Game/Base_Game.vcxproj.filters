@@ -103,6 +103,7 @@
       <Filter>03. Object\Gimmick\Shooting</Filter>
     </ClCompile>
     <ClCompile Include="InfoScene.cpp" />
+    <ClCompile Include="MainAnim.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -168,5 +169,6 @@
       <Filter>99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="InfoScene.h" />
+    <ClInclude Include="MainAnim.h" />
   </ItemGroup>
 </Project>
