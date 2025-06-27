@@ -4,6 +4,8 @@ void ShootingGimmick::Init()
 {
 	startTime = time(nullptr);
 	beforeTime = time(nullptr);
+	p1_point = 0;
+	p2_point = 0;
 }
 
 void ShootingGimmick::Interact(char btnType)
@@ -32,7 +34,7 @@ void ShootingGimmick::RenderUI()
 	cout << "Player2 : " << p2_point;
 
 	Gotoxy(POINT_UI_X[1]+30, POINT_UI_Y);
-	cout << "Timer : " << (70-(time(nullptr) - startTime)) << " ";
+	cout << "Timer : " << (countdownSeconds-(time(nullptr) - startTime)) << " ";
 }
 void ShootingGimmick::Update()
 {
@@ -57,9 +59,21 @@ void ShootingGimmick::Update()
 	{
 		// p1_point와 p2_point를 비교해서 승점 올려주기
 
-		Gotoxy(4, 4);
-		cout << "게임 끝";
-		Sleep(100000);
+		if (p1_point > p2_point) 
+		{
+			SceneManager::GetInstance()->player1Win++;
+			SceneManager::GetInstance()->currentScene = Scene::STAGESLECT;
+		}
+		else if(p1_point < p2_point)
+		{
+			SceneManager::GetInstance()->player2Win++;
+			SceneManager::GetInstance()->currentScene = Scene::STAGESLECT;
+		}
+		else
+		{
+			Init();
+			SceneManager::GetInstance()->currentScene = Scene::WINCHECK;
+		}
 	}
 
 	for (int i = 0; i < targets.size(); i++)

@@ -28,7 +28,6 @@ void Core::Run()
 	while (isRunning)
 	{
 		Update();
-		Gotoxy(0, 0);
 		Render();
 		FrameSync(60);
 	}
@@ -57,12 +56,6 @@ void Core::Init()
 
 void Core::Update()
 {
-	if (SceneManager::GetInstance()->isReset) 
-	{
-		stageSelect->StageSelectInit();
-		playerWinCheck->PlayerWinInit();
-		
-	}
 	switch (SceneManager::GetInstance()->currentScene)
 	{
 	case Scene::TITLE:

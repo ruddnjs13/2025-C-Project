@@ -51,4 +51,5 @@ void SceneManager::EnterAnimation()
 	CrossAnimation(resolution, delaytime);
 	//SetColor(COLOR::WHITE, COLOR::MINT);
 	system("cls");
+	GameManager::GetInstance()->Init();
 }
