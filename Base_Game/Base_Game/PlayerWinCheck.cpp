@@ -32,6 +32,7 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 	}
 	else
 	{
+		PlaySoundID(SOUNDID::WIN);
 		system("cls");
 		SceneManager::GetInstance()->currentScene = Scene::TITLE;
 		SceneManager::GetInstance()->isReset = true;

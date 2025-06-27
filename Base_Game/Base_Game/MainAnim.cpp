@@ -78,7 +78,7 @@ void MainAnim::AnimRender()
         int baseX = GetConsoleResolution().X / 2;
         int baseY = 0;
 
-        Gotoxy(baseX, baseY + i);  // Y 좌표에 i 더해서 줄마다 내려가게!
+        Gotoxy(baseX, baseY + i);
         std::wcout << BalloonAscii[1][i];
     }
     coloridx++;
@@ -88,7 +88,7 @@ void MainAnim::AnimRender()
         int baseX = GetConsoleResolution().X / 2;
         int baseY = GetConsoleResolution().Y/2 -12;
 
-        Gotoxy(baseX, baseY + i);  // Y 좌표에 i 더해서 줄마다 내려가게!
+        Gotoxy(baseX, baseY + i);
         std::wcout << BalloonAscii[1][i];
     }
     int wcoutmode = _setmode(_fileno(stdout), coutmode);
