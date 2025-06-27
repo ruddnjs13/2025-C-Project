@@ -18,10 +18,14 @@ void PlayerWinCheck::PlayerWinInit()
 
 void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 {
+	if (SceneManager::GetInstance()->isReset) {
+		PlayerWinInit();
+		SceneManager::GetInstance()->isReset = false;
+	}
 	PlayerWinChecker(player1Win, Player2Win);
 	PlayerWinCheckRender();
 	Sleep(3000);
-	if (isPlayer1Win == false || isPlayer2Win == false) {
+	if (isPlayer1Win == false && isPlayer2Win == false) {
 
 		SceneManager::GetInstance()->currentScene = Scene::GAME;
 		SceneManager::GetInstance()->EnterAnimation();
@@ -37,11 +41,11 @@ void PlayerWinCheck::PlayerWinChecker(int player1Win, int Player2Win)
 {
 	this->player1Win = player1Win;
 	this->player2Win = Player2Win;
-	if (player1Win >= 2) 
+	if (player1Win > 1) 
 	{
 		isPlayer1Win = true;
 	}
-	if (Player2Win>=2)
+	if (Player2Win>1)
 	{
 		isPlayer2Win = true;
 	}
