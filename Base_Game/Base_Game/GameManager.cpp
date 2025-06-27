@@ -108,12 +108,32 @@ void GameManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
-				for (int j = 0; j < Color_HEIGHT; ++j)
-				{
-					SetColor(COLOR::RED, COLOR::BLACK);
-					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+				bool isExist = false;
 
+				for (auto c : answer)
+				{
+					if (c == submit[i])
+					{
+						for (int j = 0; j < Color_HEIGHT; ++j)
+						{
+							SetColor(COLOR::YELLOW, COLOR::BLACK);
+							Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+							cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+						}
+						isExist = true;
+						break;
+					}
+				}
+				if (isExist == false)
+				{
+					for (int j = 0; j < Color_HEIGHT; ++j)
+					{
+						SetColor(COLOR::RED, COLOR::BLACK);
+						Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+						cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
+					}
 				}
 				isSelect = false;
 			}
