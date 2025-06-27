@@ -32,7 +32,7 @@ void ShootingGimmick::RenderUI()
 	cout << "Player2 : " << p2_point;
 
 	Gotoxy(POINT_UI_X[1]+30, POINT_UI_Y);
-	cout << "Timer : " << (70-(time(nullptr) - startTime));
+	cout << "Timer : " << (70-(time(nullptr) - startTime)) << " ";
 }
 void ShootingGimmick::Update()
 {

@@ -224,23 +224,22 @@ void GameManager::Update()
 	}
 }
 
-
 void GameManager::Render()
 {
 	if (mode == GimmickMode::CORLOR)
 	{
-		colorGimmick->GimmickRender();
 		map1->MapRender(map1->gameMap);
 		player1->PlayerRender("¢Â");
 		player2->PlayerRender("¢Â");
+		colorGimmick->GimmickRender();
 
 	}
 	else if(mode == GimmickMode::WORD)
 	{
-		wordGimmick->GimmickRender();
 		map2->MapRender(map2->gameMap);
 		player1->PlayerRender("¢Â");
 		player2->PlayerRender("¢Â");
+		wordGimmick->GimmickRender();
 	}
 	else if (mode == GimmickMode::SHOOT)
 	{
@@ -258,11 +257,11 @@ void GameManager::Reset()
 	system("cls");
 }
 
-
 void GameManager::ChangeTurn(Player* p1, Player* p2)
 {
 	p1->myTurn = !p1->myTurn;
 	p2->myTurn = !p2->myTurn;
 }
+
 
 
