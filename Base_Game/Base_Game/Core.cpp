@@ -9,6 +9,7 @@ Core::Core()
 	, stageSelect(nullptr)
 	, playerWinCheck(nullptr)
 	, gameScene(nullptr)
+	, infoScene(nullptr)
 {
 	player1 = new Player(0);
 	player2 = new Player(1);
@@ -17,9 +18,18 @@ Core::Core()
 	stageSelect = new StageSelect;
 	playerWinCheck = new PlayerWinCheck;
 	gameScene = new GameScene;
+	infoScene = new InfoScene;
 }
 Core::~Core()
 {
+	delete player1;
+	delete player2;
+	delete map1;
+	delete mainMenu;
+	delete stageSelect;
+	delete playerWinCheck;
+	delete gameScene;
+	delete infoScene;
 }
 
 void Core::Run()
@@ -59,6 +69,7 @@ void Core::Update()
 	switch (SceneManager::GetInstance()->currentScene)
 	{
 	case Scene::TITLE:
+		system("cls");
 		mainMenu->MainMenuScene();
 		break;
 	case Scene::STAGESLECT:
@@ -73,6 +84,8 @@ void Core::Update()
 		gameScene->GamePlayerScene();
 		break;
 	case Scene::INFO:
+		system("cls");
+		infoScene->Info();
 		break;
 	case Scene::QUIT:
 		exit(0);
