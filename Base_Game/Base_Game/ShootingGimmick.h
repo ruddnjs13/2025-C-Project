@@ -42,5 +42,7 @@ public:
 
 	bool SpawnTarget();
 
+	void RenderBoard();
+
 };
 
