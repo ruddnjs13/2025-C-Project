@@ -1,12 +1,15 @@
 ﻿#include "MainMenu.h"
 
 MainMenu::MainMenu()
+	:anim(nullptr)
 {
-	
+	anim = new MainAnim;
+	MainMenuInit();
 }
 
 MainMenu::~MainMenu()
 {
+	delete anim;
 }
 
 void MainMenu::MainMenuScene()
@@ -17,11 +20,15 @@ void MainMenu::MainMenuScene()
 		MainMenuUpdate();
 		FrameSync(60);
 		MainMenuRender();
+		Gotoxy(0, 0);
+		anim->AnimUpdate();
+		anim->AnimRender();
 	}
 }
 
 void MainMenu::MainMenuInit()
 {
+	anim->SetRandomColor();
 }
 
 void MainMenu::MainMenuUpdate()
