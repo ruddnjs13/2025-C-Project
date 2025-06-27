@@ -1,7 +1,5 @@
 #pragma once
 #include <vector>
-#include "Player.h"
-#include "Target.h"
 
 typedef struct _pos
 {
@@ -12,9 +10,3 @@ typedef struct _pos
 		return (x == other.x && y == other.y);
 	}
 }POS, * PPOS;
-
-typedef struct _excludeData
-{
-	Player* player;
-	std::vector<Target*> targets;
-}EXCLUDEDATA;
