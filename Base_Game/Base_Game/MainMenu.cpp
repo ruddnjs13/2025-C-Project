@@ -28,7 +28,6 @@ void MainMenu::MainMenuScene()
 
 void MainMenu::MainMenuInit()
 {
-	anim->SetRandomColor();
 }
 
 void MainMenu::MainMenuUpdate()
