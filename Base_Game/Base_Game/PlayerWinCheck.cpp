@@ -53,9 +53,9 @@ void PlayerWinCheck::PlayerWinChecker(int player1Win, int Player2Win)
 
 void PlayerWinCheck::PlayerWinCheckRender()
 {
+	int coutmode = _setmode(_fileno(stdout), _O_U16TEXT);
 	if (!isPlayer1Win && !isPlayer2Win) 
 	{
-		int coutmode = _setmode(_fileno(stdout), _O_U16TEXT);
 		Gotoxy(0, GetConsoleResolution().Y / 4);
 		int player1 = (player1Win * 10) + 1;
 		int player2 = (player2Win * 10) + 2;
@@ -70,7 +70,6 @@ void PlayerWinCheck::PlayerWinCheckRender()
 			wcout << playerWinCheckMessage[player2][i] << '\n';
 		}
 		wcout << endl;
-		int wcoutmode = _setmode(_fileno(stdout), coutmode);
 	}
 	else
 	{
@@ -89,6 +88,7 @@ void PlayerWinCheck::PlayerWinCheckRender()
 			}
 		}
 	}
+	int wcoutmode = _setmode(_fileno(stdout), coutmode);
 }
 
 void PlayerWinCheck::PlayerWinCheckAscii()
