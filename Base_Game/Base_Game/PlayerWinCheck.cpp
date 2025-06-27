@@ -83,6 +83,7 @@ void PlayerWinCheck::PlayerWinCheckRender()
 		}
 		else
 		{
+			Gotoxy(0, GetConsoleResolution().Y / 2);
 			for (int i = 0; i < playerWinMessage[2].size();i++) {
 				wcout << playerWinMessage[2][i] << '\n';
 			}
