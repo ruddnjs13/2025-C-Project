@@ -23,7 +23,7 @@ void Target::Render()
 
 	for (int i = 0; i < 5; i++)
 	{
-		Gotoxy(myPos.x * 2 - 2, myPos.y - 2 + MAP_START_Y + i);
+		Gotoxy(myPos.x * 2 - 4, myPos.y - 2 + MAP_START_Y + i);
 		wcout << target[i] << '\n';
 	}
 	int wcoutmode = _setmode(_fileno(stdout), coutmode);
@@ -40,9 +40,6 @@ void Target::Clear()
 
 void Target::ClearSpawnMap(char spawnMap[MAP_HEIGHT][MAP_WIDTH])
 {
-	int dx[] = { -2,-1,0,1,2 };
-	int dy[] = { 2,1,0,-1,-2 };
-
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
@@ -55,13 +52,11 @@ void Target::ClearSpawnMap(char spawnMap[MAP_HEIGHT][MAP_WIDTH])
 bool Target::CheckHit(POS hitPos)
 {
 
-	int dx[] = { -2,-1,0,1,2 };
-	int dy[] = { -2,1,0,-1,2 };
-
 	for (int i = 0; i < 5; i++)
 	{
 		for (int j = 0; j < 5; j++)
 		{
+			if ((abs(dx[i]) + abs(dy[j])) >= 4) continue;
 			int checkX = myPos.x + dx[i];
 			int checkY = myPos.y + dy[j];
 

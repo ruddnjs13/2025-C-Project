@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "Map.h"
+#include <cmath>
 
 class Target
 {
@@ -16,6 +17,9 @@ public:
 			,L"¡á¡à¡à¡à¡á"
 			,L"  ¡á¡á¡á  "
 	};
+
+	int dx[5] = { -2,-1,0,1,2 };
+	int dy[5] = { 2,1,0,-1,-2 };
 public:
 	POS myPos;
 

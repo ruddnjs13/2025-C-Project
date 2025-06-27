@@ -42,17 +42,17 @@ void ShootingGimmick::Update()
 	
 	if (sec >= spawnInterval)
 	{
-		int maxTries = 30;
-		while (maxTries--)
+		int spawnCnt = 0;
+		while (true)
 		{
 			if (SpawnTarget())
 			{
+				spawnCnt++;
 				beforeTime = time(nullptr);
-				break;
+				if(spawnCnt >= 2)
+					break;
 			}
 		}
-		if (maxTries <= 0)
-			beforeTime = time(nullptr);
 	}
 
 	if (time(nullptr) - startTime > countdownSeconds)

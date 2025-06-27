@@ -134,6 +134,7 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Enums.h" />
+    <ClInclude Include="ExcludeData.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GimmickBase.h" />
     <ClInclude Include="GameManager.h" />

@@ -11,6 +11,7 @@ const string stageNames[] = { "stage1.txt", "stage2.txt","stage3.txt" };
 #include <fstream>
 #include "Enums.h"
 #include "Player.h"
+#include "ExcludeData.h"
 class Player;
 
 
@@ -21,7 +22,7 @@ public:
 	int mapIdx = 0;
 public:
 Map(int idx);
-	void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
+void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], EXCLUDEDATA exData);
 	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);

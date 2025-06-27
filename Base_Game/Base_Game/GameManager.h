@@ -9,6 +9,7 @@
 #include "WordList.h"
 #include "SceneManager.h"
 #include "ShootingGimmick.h"
+#include "ExcludeData.h"
 using std::vector;
 using std::cout;
 const int MAX_ANSWER_LENGTH = 5;
@@ -38,6 +39,8 @@ public:
 	GimmickMode mode;
 
 	vector<char> answer;
+
+	EXCLUDEDATA exData;
 
 	WordList wordList;
 	Player* player1;

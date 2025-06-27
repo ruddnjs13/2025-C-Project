@@ -25,17 +25,31 @@ void Map::LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 }
 
-void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
+void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], EXCLUDEDATA exData)
 {
-	Gotoxy(MAP_START_X, MAP_START_Y);
 	for (int i = 0; i < MAP_HEIGHT; ++i)
 	{
 		for (int j = 0; j < MAP_WIDTH; ++j)
 		{
-			/*if (j == player1->position.tPos.x && i == player2->position.tPos.y)
-				cout << "??";
-			else */
-			if (gameMap[i][j] == (char)Tile::WALL)
+			Gotoxy(MAP_START_X+j*2, MAP_START_Y+i);
+
+			bool isFlag = false;
+
+			for (auto& target : exData.targets)
+			{
+				if (target->CheckHit({ j,i }))
+				{
+					isFlag = true;
+					break;
+				}
+			}
+			if (isFlag) continue;
+
+			else if (exData.player1->position.tPos.x == j && exData.player1->position.tPos.y == i 
+				|| exData.player2->position.tPos.x == j && exData.player2->position.tPos.y == i)
+				continue;
+			
+			else if (gameMap[i][j] == (char)Tile::WALL)
 				cout << "бс";
 			else if (gameMap[i][j] == (char)Tile::ROAD)
 				cout << "  ";
@@ -73,10 +87,8 @@ void Map::MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 				cout << "бс";
 				SetColor(COLOR::WHITE);
 			}
-			else
-				cout << ' ' << gameMap[i][j];
+		
 		}
-		cout << endl;
 	}
 }
 

@@ -156,6 +156,8 @@ void GameManager::CheckAnswer(vector<char> submit)
 
 void GameManager::Init()
 {
+	exData.player1 = GameManager::GetInstance()->player1;
+	exData.player2 = GameManager::GetInstance()->player2;
 	
 	if (mode == GimmickMode::CORLOR)
 	{
@@ -221,6 +223,7 @@ void GameManager::Update()
 		player1->PlayerUpdate(map3->gameMap);
 		player2->PlayerUpdate(map3->gameMap);
 		shootingGimmick->Update();
+		exData.targets = GameManager::GetInstance()->shootingGimmick->targets;
 	}
 }
 
@@ -228,7 +231,7 @@ void GameManager::Render()
 {
 	if (mode == GimmickMode::CORLOR)
 	{
-		map1->MapRender(map1->gameMap);
+		map1->MapRender(map1->gameMap, exData);
 		player1->PlayerRender("¢Â");
 		player2->PlayerRender("¢Â");
 		colorGimmick->GimmickRender();
@@ -236,14 +239,16 @@ void GameManager::Render()
 	}
 	else if(mode == GimmickMode::WORD)
 	{
-		map2->MapRender(map2->gameMap);
+
+		map2->MapRender(map2->gameMap, exData);
 		player1->PlayerRender("¢Â");
 		player2->PlayerRender("¢Â");
 		wordGimmick->GimmickRender();
 	}
 	else if (mode == GimmickMode::SHOOT)
 	{
-		map3->MapRender(map3->gameMap);
+
+		map3->MapRender(map3->gameMap, exData);
 		player1->PlayerRender("¦«");
 		player2->PlayerRender("¦«");
 		shootingGimmick->GimmickRender();
