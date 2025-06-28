@@ -119,7 +119,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 	else if(GameManager::GetInstance()->mode == GimmickMode::SHOOT)
 	{
-		PlaySoundID(SOUNDID::SHOT);
+		PlaySoundID(SOUNDID::SHOOT);
 
 		GameManager::GetInstance()->shootingGimmick->CheckHitTargets(playerIdx, position.tPos);
 	}

@@ -2,18 +2,12 @@
 
 Core::Core()
 	: isRunning(true)
-	, player1(nullptr)
-	, player2(nullptr)
-	,map1(nullptr)
 	, mainMenu(nullptr)
 	, stageSelect(nullptr)
 	, playerWinCheck(nullptr)
 	, gameScene(nullptr)
 	, infoScene(nullptr)
 {
-	player1 = new Player(0);
-	player2 = new Player(1);
-	map1 = new Map(0);
 	mainMenu = new MainMenu;
 	stageSelect = new StageSelect;
 	playerWinCheck = new PlayerWinCheck;
@@ -22,9 +16,6 @@ Core::Core()
 }
 Core::~Core()
 {
-	delete player1;
-	delete player2;
-	delete map1;
 	delete mainMenu;
 	delete stageSelect;
 	delete playerWinCheck;
@@ -38,7 +29,6 @@ void Core::Run()
 	while (isRunning)
 	{
 		Update();
-		Render();
 		FrameSync(60);
 	}
 }
@@ -55,10 +45,6 @@ void Core::Init()
 		return;
 	}
 	PlaySoundID(SOUNDID::BGM, true);
-	/*map1->LoadStage(map1->gameMap);
-	player1->PlayerInit();
-	player2->PlayerInit();
-	GimmickManager::GetInstance()->Init();*/
 
 	GameManager::GetInstance()->Init();
 
@@ -94,22 +80,7 @@ void Core::Update()
 		isRunning = false;
 		break;
 	}
-	/*if (playerTurn == 0)
-	{
-		player1->PlayerUpdate(map1->gameMap);
-	}
-	else
-	{
-		player2->PlayerUpdate(map1->gameMap);
-	}*/
+	
 	
 }
 
-void Core::Render()
-{
-	/*map1->MapRender(map1->gameMap, player1);
-	player1->PlayerRender("��");
-	player2->PlayerRender("��");
-	GimmickManager::GetInstance()->Render();*/
-	
-}
