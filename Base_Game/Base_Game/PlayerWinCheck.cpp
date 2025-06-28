@@ -74,6 +74,7 @@ void PlayerWinCheck::PlayerWinCheckRender()
 	}
 	else
 	{
+		PlaySoundID(SOUNDID::WIN);
 		if (isPlayer1Win)
 		{
 			Gotoxy(0, GetConsoleResolution().Y / 2);

@@ -99,8 +99,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	{
 		if (GameManager::GetInstance()->mode == GimmickMode::CORLOR)
 		{
-			CloseSoundID(SOUNDID::SELECTCOLOR);
-			CloseSoundID(SOUNDID::SELECTWORD);
+
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
@@ -110,8 +109,6 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 		}
 		else if(GameManager::GetInstance()->mode == GimmickMode::WORD)
 		{
-			CloseSoundID(SOUNDID::SELECTWORD);
-			CloseSoundID(SOUNDID::SELECTCOLOR);
 			vector<char> submit;
 			for (int i = 0; i < 5; i++)
 			{
@@ -122,8 +119,7 @@ void Player::Select(char gameMap[MAP_HEIGHT][MAP_WIDTH])
 	}
 	else if(GameManager::GetInstance()->mode == GimmickMode::SHOOT)
 	{
-		CloseSoundID(SOUNDID::SELECTWORD);
-		CloseSoundID(SOUNDID::SELECTCOLOR);
+		PlaySoundID(SOUNDID::SHOT);
 
 		GameManager::GetInstance()->shootingGimmick->CheckHitTargets(playerIdx, position.tPos);
 	}

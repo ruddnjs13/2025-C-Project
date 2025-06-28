@@ -88,8 +88,6 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>02. Manager</Filter>
     </ClCompile>
-    <ClCompile Include="AsciiAlphabets.cpp" />
-    <ClCompile Include="WordList.cpp" />
     <ClCompile Include="ShootingGimmick.cpp">
       <Filter>03. Object\Gimmick\Shooting</Filter>
     </ClCompile>
@@ -102,7 +100,18 @@
     <ClCompile Include="Target.cpp">
       <Filter>03. Object\Gimmick\Shooting</Filter>
     </ClCompile>
-    <ClCompile Include="InfoScene.cpp" />
+    <ClCompile Include="MainAnim.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoScene.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="AsciiAlphabets.cpp">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClCompile>
+    <ClCompile Include="WordList.cpp">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -147,8 +156,6 @@
     <ClInclude Include="SceneManager.h">
       <Filter>02. Manager</Filter>
     </ClInclude>
-    <ClInclude Include="AsciiAlphabets.h" />
-    <ClInclude Include="WordList.h" />
     <ClInclude Include="ShootingGimmick.h">
       <Filter>03. Object\Gimmick\Shooting</Filter>
     </ClInclude>
@@ -167,6 +174,17 @@
     <ClInclude Include="ExcludeData.h">
       <Filter>99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="InfoScene.h" />
+    <ClInclude Include="MainAnim.h">
+      <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoScene.h">
+      <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="AsciiAlphabets.h">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClInclude>
+    <ClInclude Include="WordList.h">
+      <Filter>03. Object\Gimmick\Word</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
