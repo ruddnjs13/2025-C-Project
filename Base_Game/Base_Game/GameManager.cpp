@@ -30,6 +30,7 @@ GameManager::~GameManager()
 {
 	delete wordGimmick;
 	delete colorGimmick;
+	delete shootingGimmick;
 	delete player1;
 	delete player2;
 	delete map1;
