@@ -32,7 +32,6 @@ void PlayerWinCheck::PlayerWinCheckScene(int player1Win, int Player2Win)
 	}
 	else
 	{
-		PlaySoundID(SOUNDID::WIN);
 		system("cls");
 		SceneManager::GetInstance()->currentScene = Scene::TITLE;
 		SceneManager::GetInstance()->isReset = true;
@@ -75,6 +74,7 @@ void PlayerWinCheck::PlayerWinCheckRender()
 	}
 	else
 	{
+		PlaySoundID(SOUNDID::WIN);
 		if (isPlayer1Win)
 		{
 			Gotoxy(0, GetConsoleResolution().Y / 2);

@@ -14,7 +14,7 @@ void PlayMciDevice(UINT _deviceId, bool repeat = false);
 
 enum class SOUNDID
 {
-    BGM, SELECTCOLOR,SELECTWORD,WIN,ENTER, END
+    BGM, SELECTCOLOR,SELECTWORD,WIN,SHOOT,ENTER, END
 };
 
 struct SoundEntry
