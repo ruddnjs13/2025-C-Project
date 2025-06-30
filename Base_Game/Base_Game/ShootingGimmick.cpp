@@ -24,6 +24,7 @@ void ShootingGimmick::GimmickRender()
 
 
 }
+
 void ShootingGimmick::RenderUI()
 {
 
@@ -148,6 +149,8 @@ bool ShootingGimmick::SpawnTarget()
 	{
 		for (int j = 0; j < 5; j++)
 		{
+			if ((abs(dx[i]) + abs(dy[j])) >= 4) continue;
+
 			spawnMap[spawnPos.x+ dx[i]][spawnPos.y + dy[j]] = 1;
 		}
 	}

@@ -4,6 +4,8 @@ const int Color_WIDTH  = 16;
 #include "GimmickBase.h"
 #include "Enums.h"
 
+
+
 class ColorGimmick : public GimmickBase 
 {
 public:

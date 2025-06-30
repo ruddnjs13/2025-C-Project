@@ -187,4 +187,7 @@
       <Filter>03. Object\Gimmick\Word</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
 </Project>

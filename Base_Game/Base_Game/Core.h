@@ -23,7 +23,6 @@ public:
 private:
 	void Init();
 	void Update();
-	void Render();
 
 private:
 	bool isRunning;
@@ -31,12 +30,8 @@ private:
 	MainMenu* mainMenu;
 	StageSelect* stageSelect;
 	PlayerWinCheck* playerWinCheck;
-	Player* player1;
-	Player* player2;
 	GameScene* gameScene;
-	Map* map1;
 	InfoScene* infoScene;
-
 };
 
 

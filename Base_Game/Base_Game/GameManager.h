@@ -57,6 +57,7 @@ public:
 	
 	void ChooseAnswer(vector<char>& answer);
 	void CheckAnswer(vector<char> submit);
+	void DrawColorBox(int i, COLOR color);
 	void Init();
 	void PlalyersInit();
 	void Update();

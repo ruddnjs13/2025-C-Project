@@ -26,7 +26,6 @@ void MapRender(char gameMap[MAP_HEIGHT][MAP_WIDTH], EXCLUDEDATA exData);
 	void LoadStage(char gameMap[MAP_HEIGHT][MAP_WIDTH]);
 	bool IsAlphabet(char target);
 	bool IsColor(char target);
-	//bool IsExclude()
 };
 
 

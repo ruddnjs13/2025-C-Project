@@ -30,6 +30,7 @@ GameManager::~GameManager()
 {
 	delete wordGimmick;
 	delete colorGimmick;
+	delete shootingGimmick;
 	delete player1;
 	delete player2;
 	delete map1;
@@ -49,7 +50,6 @@ void GameManager::ChooseAnswer(vector<char>& answer)
 
 		std::shuffle(arr.begin(), arr.end(),rd);
 
-	    answer.clear();
 		for (int i = 0; i < 5; i++)
 		{
 			answer.push_back(arr[i]);
@@ -80,24 +80,12 @@ void GameManager::CheckAnswer(vector<char> submit)
 		{
 			if (answer[i] != submit[i])
 			{
-				for (int j = 0; j < Color_HEIGHT; ++j)
-				{
-					SetColor(COLOR::RED, COLOR::BLACK);
-					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
-
-				}
+				DrawColorBox(i,COLOR::RED);
 				isSelect = false;
 			}
 			else
 			{
-				for (int j = 0; j < Color_HEIGHT; ++j)
-				{
-					SetColor(COLOR::GREEN, COLOR::BLACK);
-					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
-
-				}
+				DrawColorBox(i, COLOR::GREEN);
 			}
 		}
 		SetColor(COLOR::WHITE, COLOR::BLACK);
@@ -114,38 +102,21 @@ void GameManager::CheckAnswer(vector<char> submit)
 				{
 					if (c == submit[i])
 					{
-						for (int j = 0; j < Color_HEIGHT; ++j)
-						{
-							SetColor(COLOR::YELLOW, COLOR::BLACK);
-							Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-							cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+						DrawColorBox(i, COLOR::YELLOW);
 
-						}
 						isExist = true;
 						break;
 					}
 				}
 				if (isExist == false)
 				{
-					for (int j = 0; j < Color_HEIGHT; ++j)
-					{
-						SetColor(COLOR::RED, COLOR::BLACK);
-						Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-						cout << "¡á¡á¡á¡á¡á¡á" << "\n";
-
-					}
+					DrawColorBox(i, COLOR::RED);
 				}
 				isSelect = false;
 			}
 			else
 			{
-				for (int j = 0; j < Color_HEIGHT; ++j)
-				{
-					SetColor(COLOR::GREEN, COLOR::BLACK);
-					Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
-					cout << "¡á¡á¡á¡á¡á¡á" << "\n";
-
-				}
+				DrawColorBox(i, COLOR::GREEN);
 			}
 		}
 		SetColor(COLOR::WHITE, COLOR::BLACK);
@@ -171,6 +142,17 @@ void GameManager::CheckAnswer(vector<char> submit)
 		Sleep(2000);
 		Reset();
 		ChangeTurn(player1, player2);
+	}
+}
+
+void GameManager::DrawColorBox(int i ,COLOR color)
+{
+	for (int j = 0; j < Color_HEIGHT; ++j)
+	{
+		SetColor(color, COLOR::BLACK);
+		Gotoxy(RESULT_X + (Color_WIDTH * i), RESULT_Y + j);
+		cout << "¡á¡á¡á¡á¡á¡á" << "\n";
+
 	}
 }
 
@@ -213,7 +195,6 @@ void GameManager::Init()
 		player2->isShootingMode = true;
 
 		PlalyersInit();
-
 	}
 }
 
